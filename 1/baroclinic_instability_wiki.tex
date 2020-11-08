@@ -1,4 +1,5 @@
-\documentclass{article} 
+\documentclass{article}
+\usepackage{tikz} 
 \title{Baroclinic Instabilities} 
 \author{Jacob Perez} 
 \begin{document} 
@@ -17,6 +18,11 @@ where $d_{y_*}$ and $d_{z_*}$ are displacements in the $y$ and $z$ planes respec
   0 < \tan\phi < \left(\frac{\partial z_*}{\partial y_*}\right),
 \end{equation}
 will cause the buyoancy force to accelerate the fluid parcel further and further away from its initial position. This is the main idea behind a baroclinic instability. For the fluid within this section defined by the angle $\phi$ lower density fluid will rise and the higher density fluid will sink, in turn releasing potential energy. The idea of varying densitys can be directly linked variations in temperature of the fluid, meaning that a baroclinic instability is a form of thermal convection. 
+\begin{figure}
+  \centering
+  \input{pedlosky_sketch.tikz}
+  \caption{pedlosky example}
+\end{figure}
 
 \section{The Charney Model} 
 The first publication on theoretical models of baroclinic instabilities was by Jules Charney in 1947. Charneys' model is in fact a slightly more complicated model than a later model proposed by Eady in 1949, with the main difference being the inclusion of the $\beta$ effect in the model proposd by Charney.  

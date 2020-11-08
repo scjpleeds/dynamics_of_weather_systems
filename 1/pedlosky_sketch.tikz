@@ -1,0 +1,8 @@
+\begin{tikzpicture}
+\draw[->,thick] (-5,0)--(5,0) node[right]{$y_*$};
+\draw[->,thick] (0,-5)--(0,5) node[above]{$z_*$};
+\draw[thick, rotate around = {315:(0,0)}] (4,-0.5) rectangle (-4,0.5) node[above]{$\theta_*$};
+\fill (1.5,-1) circle [radius=2pt] node[below]{$A$};
+\fill (-2.5,1) circle [radius=2pt] node[left] {$B$};
+\draw (1.5,-1) -- (-2.5,1);
+\end{tikzpicture}
