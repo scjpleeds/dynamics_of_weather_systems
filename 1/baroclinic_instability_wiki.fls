@@ -113,6 +113,8 @@ INPUT C:\Users\jpwes\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgf
 INPUT C:\Users\jpwes\AppData\Local\Programs\MiKTeX\tex\generic\pgf\modules\pgfmodulematrix.code.tex
 INPUT C:\Users\jpwes\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarytopaths.code.tex
 INPUT C:\Users\jpwes\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarytopaths.code.tex
+INPUT C:\Users\jpwes\AppData\Local\Programs\MiKTeX\tex\latex\natbib\natbib.sty
+INPUT C:\Users\jpwes\AppData\Local\Programs\MiKTeX\tex\latex\natbib\natbib.sty
 INPUT C:\Users\jpwes\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdfmode.def
 INPUT C:\Users\jpwes\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdfmode.def
 INPUT c:\Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\1\baroclinic_instability_wiki.aux
@@ -143,6 +145,8 @@ OUTPUT c:\Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_s
 INPUT C:\Users\jpwes\AppData\Local\MiKTeX\pdftex\config\pdftex.map
 INPUT c:\Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\1\pedlosky_sketch.tikz
 INPUT c:\Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\1\pedlosky_sketch.tikz
+INPUT c:\Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\1\baroclinic_instability_wiki.bbl
+INPUT c:\Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\1\baroclinic_instability_wiki.bbl
 INPUT c:\Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\1\baroclinic_instability_wiki.aux
 INPUT C:\Users\jpwes\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\jpwes\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb

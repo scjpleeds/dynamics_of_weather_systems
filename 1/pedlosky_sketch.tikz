@@ -5,4 +5,8 @@
 \fill (2.5,-1) circle [radius=2pt] node[below]{$A$};
 \fill (-2.5,1) circle [radius=2pt] node[left] {$B$};
 \draw (2.5,-1) -- (-2.5,1);
+%\draw[dashed] (-2,0.75) arc (135:180:1) node[left]{$\phi$};
+%\draw[dashed] (-1.5,0.75) arc (135:173:1.25) node[right]{$\alpha$};
+\draw[dashed] (-1.25,0) +(130:1cm) arc (130:180:1cm) node[above left]{$\phi$};
+\draw[dashed] (-0.75,0) +(135:1cm) arc (135:180:1cm) node[above right]{$\alpha$}; 
 \end{tikzpicture}

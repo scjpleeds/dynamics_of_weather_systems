@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.26)  9 NOV 2020 22:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.26)  10 NOV 2020 18:26
 entering extended mode
 **"c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/1/baroclinic_instability_wiki.tex"
 ("c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/1/baroclinic_instability_wiki.tex"
@@ -232,9 +232,15 @@ File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \tikz@expandcount=\count195
  (C:\Users\jpwes\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-))) (C:\Users\jpwes\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdfmode.def
+))) (C:\Users\jpwes\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip49
+\bibsep=\skip50
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count196
+) (C:\Users\jpwes\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-06-29 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count196
+\l__kernel_color_stack_int=\count197
 \l__pdf_internal_box=\box56
 ) ("c:/Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\1\baroclinic_instability_wiki.aux")
 \openout1 = `baroclinic_instability_wiki.aux'.
@@ -255,16 +261,16 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
  ABD: EveryShipout initializing macros (C:\Users\jpwes\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count197
+\scratchcounter=\count198
 \scratchdimen=\dimen187
 \scratchbox=\box57
-\nofMPsegments=\count198
-\nofMParguments=\count199
+\nofMPsegments=\count199
+\nofMParguments=\count266
 \everyMPshowfont=\toks28
-\MPscratchCnt=\count266
+\MPscratchCnt=\count267
 \MPscratchDim=\dimen188
-\MPnumerator=\count267
-\makeMPintoPDFobject=\count268
+\MPnumerator=\count268
+\makeMPintoPDFobject=\count269
 \everyMPtoPDFconversion=\toks29
 ) (C:\Users\jpwes\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -287,17 +293,17 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
  [1
 
-{C:/Users/jpwes/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] ("c:/Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\1\pedlosky_sketch.tikz") [2] [3] ("c:/Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\1\baroclinic_instability_wiki.aux") ) 
+{C:/Users/jpwes/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] ("c:/Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\1\pedlosky_sketch.tikz") ("c:/Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\1\baroclinic_instability_wiki.bbl") [2] [3] ("c:/Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\1\baroclinic_instability_wiki.aux") ) 
 Here is how much of TeX's memory you used:
- 11482 strings out of 480790
- 240810 string characters out of 2897300
- 449076 words of memory out of 3000000
- 27307 multiletter control sequences out of 15000+200000
+ 11871 strings out of 480790
+ 246327 string characters out of 2897300
+ 455027 words of memory out of 3000000
+ 27689 multiletter control sequences out of 15000+200000
  536593 words of font info for 38 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,9n,60p,691b,693s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on "c:/Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\1\baroclinic_instability_wiki.pdf" (3 pages, 136251 bytes).
+Output written on "c:/Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\1\baroclinic_instability_wiki.pdf" (3 pages, 131511 bytes).
 PDF statistics:
  63 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
