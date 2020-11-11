@@ -7,27 +7,30 @@
 \tableofcontents 
 \section{Introduction} 
 
-A baroclinic instability is a fluid dynamical instability, that can be used to explain the generation and growth of weather phenomena in the mid-latitudes. The main two sources of instabilities are the vertical and horizontal shear of the mean background wind profile. The requirement for vertical shearing implies that a meridional temperature gradient, which in turn means there is available potential energy (APE) which can be released and transferred to the disturbances in the flow. The process of transferring APE into the disturbances is a baroclinic instability.  
-\subsection{Qualitative example} 
-A qualitative description of this process given here the same one provided by \cite{Pedlosky1979}, to describe the mechanism behind a baroclinic instability.  In figure \ref{pedloskyexample} below we have the following situation, a constant potential temperature ($\theta_*$) surface tilts upward in the meridional plane by an angle $\alpha$. Consider a fluid parcel, starting at position A be displaced to position B. By considering the change in density when moving from A to B, the restoring force becomes  
+Baroclinic instability is a fluid dynamical instability that occurs in stably stratified, rotating fluids. They are used to explain the generation and growth of extratropical cyclones. The main source of a baroclinic instability is caused by vertical shear of the background wind profile. On Earth this shearing is generated through the differential heating of the Earth from Sun causing a temperature gradient between the pole and equator. The existence of a meridional temperature gradient indicates a source of available potential energy (APE) released into the flow. The process of converting the APE produced from the meridional temperature gradient into kinetic energy (KE) is the essence of baroclinic instability.  
+
+\subsection{Basic Mechanism} 
+
+To make this idea clearer, a qualitative description of this process is given by \cite{Pedlosky1979}. In figure \ref{pedloskyexample} below we have the following situation, a constant potential temperature ($\theta_*$) surface tilts upward in the meridional plane by an angle $\alpha$. This creates a meridional the meridional temperature gradient. Now consider a fluid parcel starting at position A, be displaced to position B. By considering the change in density when moving from A to B, the restoring force becomes  
 \begin{equation}
   E_* = \frac{g}{\theta_*}\frac{\partial\theta_*}{\partial z_*}\sin\phi\left[d_{z_*}-d_{y_*}\left(\frac{\partial z_*}{\partial y_*}\right)_{\theta_*}\right]
 \end{equation}
-where $d_{y_*}$ and $d_{z_*}$ are displacements in the $y$ and $z$ planes respectively and $\phi=\tan^{-1}(d_{z_*}/d_{y_*})$ is the angle of displacement. From this we can deduce that any vertical displacement ($d_{y_*}=0$ and $\sin\phi = 1$) reduces $E_*$ to the Brunt-V\"as\"al\"a frequency. For positive restoring forces we see that the system will return to an equilibrium state, but for a negative restoring force occuring when the fluid element satisfies
+where $d_{y_*}$ and $d_{z_*}$ are displacements in the $y$ and $z$ planes respectively and $\phi=\tan^{-1}(d_{z_*}/d_{y_*})$ is the angle of displacement. From this we can deduce that any vertical displacement ($d_{y_*}=0$ and $\sin\phi = 1$) reduces $E_*$ to the Brunt-V\"as\"al\"a frequency. For positive restoring forces we see that the system will return to an equilibrium state, but for a negative restoring force occurring when the fluid element satisfies
 \begin{equation}
   0 < \tan\phi < \left(\frac{\partial z_*}{\partial y_*}\right),
 \end{equation}
-will cause the buyoancy force to accelerate the fluid parcel further and further away from its initial position. This is the main idea behind a baroclinic instability. For the fluid within this section defined by the angle $\phi$, the lower density fluid will rise and the higher density fluid will sink, in turn releasing potential energy. The idea of varying densitys can be directly linked variations in temperature of the fluid, meaning that a baroclinic instability is a form of thermal convection. 
-\begin{figure}[b]
+will cause the buoyancy force to accelerate the fluid parcel further and further away from its initial position. This is the main idea behind a baroclinic instability. For the fluid within this section defined by the angle $\phi$, the lower density fluid will rise, and the higher density fluid will sink, in turn releasing potential energy. The idea of varying densities can be directly linked variations in temperature of the fluid, meaning that a baroclinic instability is a form of thermal convection.
+
+\begin{figure}[hb]
   \centering
   \input{pedlosky_sketch.tikz}
-  \caption{The tilting of the potential temperature creates a region of instability. Fluid parcels on a trajectory within these region will convert the available potential energy in kinetic energy, causing them to accelerate away from there initial position. }
+  \caption{The tilting of the potential temperature creates a region of instability. Fluid parcels on a trajectory within these region will convert the APE into KE, causing them to accelerate away from there initial position. }
   \label{pedloskyexample}
 \end{figure}
 
+\section{The Charney Model}
+\cite{Hoskins2013}
 \section{Cyclogenesis} 
-
-
 
 \section{Summary}
 \bibliography{references.bib}

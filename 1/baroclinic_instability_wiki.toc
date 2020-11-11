@@ -1,4 +1,5 @@
 \contentsline {section}{\numberline {1}Introduction}{1}%
-\contentsline {subsection}{\numberline {1.1}Qualitative example}{1}%
-\contentsline {section}{\numberline {2}Cyclogenesis}{2}%
-\contentsline {section}{\numberline {3}Summary}{2}%
+\contentsline {subsection}{\numberline {1.1}Basic Mechanism}{1}%
+\contentsline {section}{\numberline {2}The Charney Model}{3}%
+\contentsline {section}{\numberline {3}Cyclogenesis}{3}%
+\contentsline {section}{\numberline {4}Summary}{3}%

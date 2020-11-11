@@ -1,7 +1,11 @@
 \begin{thebibliography}{}
 
+\bibitem[\protect\astroncite{Hoskins and James}{2013}]{Hoskins2013}
+Hoskins, B.~J. and James, I.~N. (2013).
+\newblock {\em {Fluid Dynamics of the Midlatitude Atmosphere}}.
+
 \bibitem[\protect\astroncite{Pedlosky}{1979}]{Pedlosky1979}
 Pedlosky, J. (1979).
-\newblock Geophysical fluid dynamics.
+\newblock {\em Geophysical fluid dynamics.}
 
 \end{thebibliography}
