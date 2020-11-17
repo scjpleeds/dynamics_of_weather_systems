@@ -28,8 +28,21 @@ will cause the buoyancy force to accelerate the fluid parcel further and further
   \label{pedloskyexample}
 \end{figure}
 
-\section{The Charney Model}
-\cite{Hoskins2013}
+\section{The Eady Model}
+The main feature that causes baroclinic instabilities to grow is the process of converting the APE into KE. One of the earliest and simplesmathematical models that describes this process is the model described by \cite{Eady1949}. Following the description given by \cite{Hoskins2013}, the model proposed by Eady makes the following assumptions
+\begin{itemize}
+  \item There is no meridional variation in the Coriolis force i.e. The flow is on the $f$ plane,
+  \item The density ($\rho$) and the stratification ($N^2$) are constant,
+  \item The flow is bounded above and below by rigid surfaces at $z=\pm H/2$. 
+\end{itemize}
+The mean flow state is independent has a uniform vertical shear $\overline{u}(z) = \Lambda z$ and there is a constant meridional buoyancy gradient 
+$$\frac{\partial\overline{b}}{\partial y} = -\Lambda f_0.$$
+\begin{figure}[hb]
+  \centering
+  \input{Eady_sketch.tikz}
+  \caption{ }
+  \label{eadyexample}
+\end{figure}
 \section{Cyclogenesis} 
 
 \section{Summary}

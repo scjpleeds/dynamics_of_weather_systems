@@ -7,45 +7,45 @@ The style file: apa.bst
 Database file #1: references.bib
 Warning--empty publisher in Hoskins2013
 Warning--empty publisher in Pedlosky1979
-You've used 2 entries,
+You've used 3 entries,
             1940 wiz_defined-function locations,
-            484 strings with 3956 characters,
-and the built_in function-call counts, 606 in all, are:
-= -- 50
-> -- 20
-< -- 2
-+ -- 6
-- -- 6
-* -- 50
-:= -- 111
-add.period$ -- 4
-call.type$ -- 2
-change.case$ -- 11
-chr.to.int$ -- 2
-cite$ -- 4
-duplicate$ -- 28
-empty$ -- 47
-format.name$ -- 10
-if$ -- 113
+            491 strings with 4027 characters,
+and the built_in function-call counts, 949 in all, are:
+= -- 86
+> -- 27
+< -- 3
++ -- 8
+- -- 8
+* -- 78
+:= -- 171
+add.period$ -- 7
+call.type$ -- 3
+change.case$ -- 17
+chr.to.int$ -- 3
+cite$ -- 5
+duplicate$ -- 42
+empty$ -- 74
+format.name$ -- 13
+if$ -- 179
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 4
-newline$ -- 11
-num.names$ -- 6
-pop$ -- 19
+missing$ -- 5
+newline$ -- 16
+num.names$ -- 9
+pop$ -- 22
 preamble$ -- 1
-purify$ -- 13
+purify$ -- 19
 quote$ -- 0
-skip$ -- 21
+skip$ -- 32
 stack$ -- 0
-substring$ -- 24
-swap$ -- 4
+substring$ -- 55
+swap$ -- 6
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 8
+type$ -- 14
 warning$ -- 2
-while$ -- 4
+while$ -- 8
 width$ -- 0
-write$ -- 22
+write$ -- 35
 (There were 2 warnings)
