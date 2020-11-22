@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex baroclinic_instability_wiki"] 1606049244 "baroclinic_instability_wiki.aux" "baroclinic_instability_wiki.bbl" "baroclinic_instability_wiki" 1606049420
+["bibtex baroclinic_instability_wiki"] 1606049244 "baroclinic_instability_wiki.aux" "baroclinic_instability_wiki.bbl" "baroclinic_instability_wiki" 1606082517
   "C:/Users/jpwes/AppData/Local/Programs/MiKTeX/bibtex/bst/beebe/apa.bst" 954231233 23582 e3c8338eb1efb7432441aa8861285f53 ""
   "baroclinic_instability_wiki.aux" 1606049420 1280 d68febea4514449cc9d5648de844f9c0 "pdflatex"
   "references.bib" 1605520038 3695 fa93768caa8c21368b64b5afc89d9c7f ""
   (generated)
-  "baroclinic_instability_wiki.bbl"
   "baroclinic_instability_wiki.blg"
-["pdflatex"] 1606049419 "c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/1/baroclinic_instability_wiki.tex" "c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/1/baroclinic_instability_wiki.pdf" "baroclinic_instability_wiki" 1606049420
+  "baroclinic_instability_wiki.bbl"
+["pdflatex"] 1606049419 "c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/1/baroclinic_instability_wiki.tex" "c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/1/baroclinic_instability_wiki.pdf" "baroclinic_instability_wiki" 1606082517
   "C:/Users/jpwes/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1605610132 11548 6610dbd47645e6ebf5ef1d95b1f41639 ""
   "C:/Users/jpwes/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1603726651 10020125 fbba16f3cbb3851af89f0fb3325c9ea8 ""
   "C:/Users/jpwes/AppData/Local/MiKTeX/pdftex/config/pdftex.map" 1605725824 81315 b227a78563fe6dddc2abc061be8565d8 ""
@@ -140,9 +140,9 @@
   "c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/1/baroclinic_instability_wiki.tex" 1606049419 5072 c08906bcee815776388d76a18faed64c ""
   "pedlosky_sketch.tikz" 1606049180 681 54f58482cab73d9026161a5706f97f29 ""
   (generated)
-  "baroclinic_instability_wiki.toc"
+  "c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/1/baroclinic_instability_wiki.log"
+  "baroclinic_instability_wiki.log"
+  "baroclinic_instability_wiki.aux"
   "baroclinic_instability_wiki.pdf"
   "c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/1/baroclinic_instability_wiki.pdf"
-  "c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/1/baroclinic_instability_wiki.log"
-  "baroclinic_instability_wiki.aux"
-  "baroclinic_instability_wiki.log"
+  "baroclinic_instability_wiki.toc"
