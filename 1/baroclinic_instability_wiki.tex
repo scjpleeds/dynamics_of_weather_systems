@@ -35,16 +35,16 @@ where $\overline{q}$ is the zonal potential vorticity profile.
 Following the description given by \cite{Hoskins2013}, the model makes the following assumptions
 \begin{itemize}
   \item There is no meridional variation in the Coriolis force i.e. The flow is on the $f$ plane,
-  \item The density ($\rho$) and the stratification ($N^2$) are constant,
+  \item The reference density $\rho_R$ and the stratification $N^2$ are constant,
   \item The flow is bounded above and below by rigid surfaces at $z=\pm H/2$. 
 \end{itemize}
-The mean flow state is independent has a uniform vertical shear $\overline{u}(z) = \Lambda z$ and there is a constant meridional buoyancy gradient 
-$$\frac{\partial\overline{b}}{\partial y} = -\Lambda f_0,$$
-where $f_0$ is the Coriolis force. With these assumptions for the basic state, we satisfy the criteria for an instability. 
+The flow of the basic state is independent has a uniform vertical shear $\overline{u}(z) = \Lambda z$ and there is a constant meridional buoyancy gradient 
+$$-\frac{\partial\overline{b}}{\partial y} = f_0\frac{\partial\overline{u}}{\partial z}= \Lambda f_0,$$
+from the thermal wind and $f_0$ is the Coriolis force. These assumptions for the basic state satisfy the criteria for an instability with the boundary conditions at $\displaystyle z= H/2 \quad \frac{\partial\overline u}{\partial z} > 0$ and $\displaystyle z= -H/2 \quad \frac{\partial\overline u}{\partial z} < 0$. The gradient of $\overline{q}$ between $z=\pm H/2$ is 0. A schematic of the model set up is shown in figure \ref{eadyexample}.
 \begin{figure}[hb]
   \centering
   \input{Eady_sketch.tikz}
-  \caption{ }
+  \caption{Sketch of the model described by Eady.}
   \label{eadyexample}
 \end{figure}
 \section{Cyclogenesis} 

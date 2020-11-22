@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.26)  22 NOV 2020 10:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.26)  22 NOV 2020 12:50
 entering extended mode
 **"c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/1/baroclinic_instability_wiki.tex"
 ("c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/1/baroclinic_instability_wiki.tex"
@@ -359,19 +359,24 @@ Package grfext Info: Graphics extension search list:
 
  [1
 
-{C:/Users/jpwes/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] ("c:/Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\1\pedlosky_sketch.tikz") [2] ("c:/Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\1\Eady_sketch.tikz") ("c:/Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\1\baroclinic_instability_wiki.bbl") [3] ("c:/Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\1\baroclinic_instability_wiki.aux") ) 
+{C:/Users/jpwes/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] ("c:/Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\1\pedlosky_sketch.tikz") [2] ("c:/Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\1\Eady_sketch.tikz")
+Overfull \hbox (6.87976pt too wide) in paragraph at lines 17--47
+ [][] 
+ []
+
+("c:/Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\1\baroclinic_instability_wiki.bbl") [3] [4] ("c:/Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\1\baroclinic_instability_wiki.aux") ) 
 Here is how much of TeX's memory you used:
- 12985 strings out of 480790
- 262335 string characters out of 2897300
- 475406 words of memory out of 3000000
- 28748 multiletter control sequences out of 15000+200000
+ 13000 strings out of 480790
+ 262595 string characters out of 2897300
+ 477406 words of memory out of 3000000
+ 28763 multiletter control sequences out of 15000+200000
  538402 words of font info for 45 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,8n,60p,842b,693s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,9n,60p,842b,693s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\jpwes\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on "c:/Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\1\baroclinic_instability_wiki.pdf" (3 pages, 154207 bytes).
+Output written on "c:/Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\1\baroclinic_instability_wiki.pdf" (4 pages, 156422 bytes).
 PDF statistics:
- 72 PDF objects out of 1000 (max. 8388607)
+ 75 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
