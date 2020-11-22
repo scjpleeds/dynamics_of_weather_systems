@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage{tikz,natbib} 
+\usepackage{tikz,natbib,amsmath} 
 \title{Baroclinic Instabilities} 
 \author{Jacob Perez} 
 \begin{document} 
@@ -24,19 +24,23 @@ will cause the buoyancy force to accelerate the fluid parcel further and further
 \begin{figure}[hb]
   \centering
   \input{pedlosky_sketch.tikz}
-  \caption{The tilting of the potential temperature creates a region of instability. Fluid parcels on a trajectory within these region will convert the APE into KE, causing them to accelerate away from there initial position. }
+  \caption{The tilting of the potential temperature creates a region of instability. Fluid parcels on a trajectory within this region will convert the APE into KE, causing them to accelerate away from there initial position. }
   \label{pedloskyexample}
 \end{figure}
 
 \section{The Eady Model}
-The main feature that causes baroclinic instabilities to grow is the process of converting the APE into KE. One of the earliest and simplesmathematical models that describes this process is the model described by \cite{Eady1949}. Following the description given by \cite{Hoskins2013}, the model proposed by Eady makes the following assumptions
+The process that causes baroclinic instabilities to grow is the process of converting the APE into KE. One of the earliest and simplest mathematical models that gives an indication as to which particular cases will lead to a growing instability is the model proposed by \cite{Eady1949}. Before describing the model we have to mention the criteria for an instability, that being the Charney-Stern criteria. The criteria states 
+$$\frac{\partial\overline{q}}{\partial y}\text{ must change sign somewhere in the }(y,z)\text{ plane,} $$
+where $\overline{q}$ is the zonal potential vorticity profile. 
+Following the description given by \cite{Hoskins2013}, the model makes the following assumptions
 \begin{itemize}
   \item There is no meridional variation in the Coriolis force i.e. The flow is on the $f$ plane,
   \item The density ($\rho$) and the stratification ($N^2$) are constant,
   \item The flow is bounded above and below by rigid surfaces at $z=\pm H/2$. 
 \end{itemize}
 The mean flow state is independent has a uniform vertical shear $\overline{u}(z) = \Lambda z$ and there is a constant meridional buoyancy gradient 
-$$\frac{\partial\overline{b}}{\partial y} = -\Lambda f_0.$$
+$$\frac{\partial\overline{b}}{\partial y} = -\Lambda f_0,$$
+where $f_0$ is the Coriolis force. With these assumptions for the basic state, we satisfy the criteria for an instability. 
 \begin{figure}[hb]
   \centering
   \input{Eady_sketch.tikz}
