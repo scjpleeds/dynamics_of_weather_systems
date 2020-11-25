@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1604859684 "baroclinic_instability_wiki.tex" "baroclinic_instability_wiki.pdf" "baroclinic_instability_wiki" 1604859684
+["pdflatex"] 1604859684 "baroclinic_instability_wiki.tex" "baroclinic_instability_wiki.pdf" "baroclinic_instability_wiki" 1604862828
   "/etc/texmf/web2c/texmf.cnf" 1603634668 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -36,7 +36,7 @@
   "baroclinic_instability_wiki.tex" 1604841131 3005 5e0f2d96d0f9c8c803a659f16ec8112d ""
   "baroclinic_instability_wiki.toc" 1604859684 497 fe8ef95cf71e5b20cce0e82ef00e8c9e "pdflatex"
   (generated)
-  "baroclinic_instability_wiki.aux"
-  "baroclinic_instability_wiki.pdf"
   "baroclinic_instability_wiki.toc"
   "baroclinic_instability_wiki.log"
+  "baroclinic_instability_wiki.aux"
+  "baroclinic_instability_wiki.pdf"
