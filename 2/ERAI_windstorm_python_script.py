@@ -40,7 +40,7 @@ mon= "12"
 
 # Just want to output for one time and day...then use e.g.:
 hours = ["12"]
-days = ["03"]
+days = ["03","04"]
 
 # In[]: Loop over all years, months, days and hours specified above to load in the data and then plot horizontal windspeed
 # vertical cross-sections of windspeed, calculate relative vorticity and plot relative vorticity. 
