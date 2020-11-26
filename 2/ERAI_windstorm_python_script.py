@@ -1,7 +1,5 @@
-#!/usr/bin/env python2
-# -*- coding: utf-8 -*-
 """
-Created on Sun Feb 17 17:50:59 2019
+reated on Sun Feb 17 17:50:59 2019
 Script to load in ERA-interim data. Calculate windspeed, Coriolis force and Relative vorticity.
 Plot horizontal windspeed and vertical cross-sections of windspeed
 Plot relative vorticity
@@ -22,15 +20,14 @@ import matplotlib.pyplot as plt
 import math
 import matplotlib.ticker as mticker
 from cartopy.mpl.gridliner import LONGITUDE_FORMATTER, LATITUDE_FORMATTER
-
+plt.switch_backend('agg')
 
 
 
 
 # In[]: Specify the path out for all figures that will be saved i.e. the path to your directory on linux or the directory you wish to 
-# save the figures
-#pathout ="/nfs/see-fs-02_users/username/SOEEmodule"
-
+# save the figurepathout ="/nfs/see-fs-02_users/username/SOEEmodule"
+pathout ="/nfs/see-fs-01_users/scjp/winter_storm_friedhelm/plots"
 
 # In[]: Specify the year, month, hours and days for which you wish to plot data for
 year = "2011"
@@ -43,13 +40,13 @@ mon= "12"
 
 # Just want to output for one time and day...then use e.g.:
 hours = ["12"]
-days = ["03"]
+days = ["03","04"]
 
 # In[]: Loop over all years, months, days and hours specified above to load in the data and then plot horizontal windspeed
 # vertical cross-sections of windspeed, calculate relative vorticity and plot relative vorticity. 
 for d in days:
     for time in hours: 
-        erai_data = Dataset('data/ggap201112031200.nc') #'/nfs/a321/datasets/ERA-interim/'+str(year)+'/ap/ggap' + str(year)+''+str(mon)+''+str(d)+''+str(time)+'00.nc','r')
+        erai_data = Dataset('/nfs/a321/datasets/ERA-interim/'+str(year)+'/ap/ggap' + str(year)+''+str(mon)+''+str(d)+''+str(time)+'00.nc','r')
        
         
         
@@ -66,7 +63,7 @@ for d in days:
         
         u   = erai_data.variables['U'][:] #u winds
         v   = erai_data.variables['V'][:] #v winds
- 
+        w   = erai_data.variables['W'][:] #w winds
         erai_data.close()
         
         
@@ -79,14 +76,14 @@ for d in days:
         # instread of 0 to 360 degrees. We don't need to do this for p as it is just a 1D array
         u = u[:,:,:,indcs]
         v = v[:,:,:,indcs]
-        
+        w = w[:,:,:,indcs]
         lon = lon[indcs]
       
  
         
         # In[]: 
         #define the pressure level you wish to use to plot the horizontal windspeed and relative vorticity plots
-        p_lev = 500 # this indicates 200hPa level
+        p_lev = 500 # this indicates 500hPa level
         p_level = '500' # this is used to label the figures which are saved at the end
         
         # Find at which index in the array for pressure the p_lev specified is located
@@ -95,11 +92,13 @@ for d in days:
         # Take time/pressure slice of U and V
         u_slice = u[0,pressure,:,:]
         v_slice = v[0,pressure,:,:]
-        print (u_slice.shape, 'u_slice')
+        w_slice = w[0,pressure,:,:]
+        print u_slice.shape, 'u_slice'
         
         #Make arrays 2D so now just an array of u and v winds for pressure level p_lev at all latitude and longitudes
         u_slice = u_slice[0,0,:,:]
         v_slice=v_slice[0,0,:,:]
+        w_slice = w_slice[0,0,:,:]
       
 
         
@@ -119,7 +118,6 @@ for d in days:
     
 
         Coriolis = 2*earthrot*np.sin(lat*pi/180)
-        print(Coriolis, 'Coriolis')
              
         
         
@@ -146,15 +144,7 @@ for d in days:
             
             return d
         
-        
-        # ### Checking output to determine the distance between points in metres rather than degrees
-        
-        # In[107]:
-        
-        
-        print( haversine( 0,50,1,50) ) # ~70km per degree in midlats
-        
-        print( haversine( 0,0,1,0) ) # ~111km per degree at equator
+     
         
         
         # ### Calculate dx,dy across points
@@ -164,7 +154,6 @@ for d in days:
         
         
         dx_array = np.empty( u_slice.shape)# 
-        print(dx_array.shape, 'dx_array shape')
         dy_array = np.empty( u_slice.shape)# 
         
         
@@ -284,7 +273,7 @@ for d in days:
         vorticity = vort *100000 
         
         
-        print("now onto producing the plots!!!!!")
+        print "now onto producing the plots!!!!!"
         
         # In[] : Specify the subsection of the Global domain which you wish to plot: latitude and longitude required.
         # If you wish to plot for the whole Globe then comment this section out using #
@@ -304,18 +293,16 @@ for d in days:
         #Find the values in the longitude array at which this subsection range of longitudes lies between
         lon_min_index = np.min(lons)  
         lon_max_index = np.max(lons) + 1
-        print(lon_subset, 'lon_subet')
         #Repeat for latitude
         lats = np.where((lat >= lat_min) & (lat <= lat_max))[0]
         lat_subset = lat[lats]
         lat_min_index =np.min(lats) 
-        lat_max_index = np.max(lats) +1
-        print(lat_subset ,'lat_subset')
+        lat_max_index = np.max(lats) + 1
         
         # Find the values of u and v for just the subdomain (and still only for one pressure level)
         u_subset=  u_slice[lat_min_index:lat_max_index,lon_min_index:lon_max_index]
         v_subset = v_slice[lat_min_index:lat_max_index,lon_min_index:lon_max_index]
-
+        w_subset = w_slice[lat_min_index:lat_max_index,lon_min_index:lon_max_index]
         # In[]: Plot the windspeed with windbarbs to indicate wind direction
 
         #Specify manually the contour levels that will be plotted
@@ -352,11 +339,11 @@ for d in days:
      
         plt.title("Windspeed")
         #Save the figures for all dates and times input at the start
-        plt.savefig('/ERA_interim_Windspeed_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')
+        plt.savefig(pathout+'/ERA_interim_Windspeed_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')
         plt.show()
 
         
-        print ('plotted windspeed now onto cross-section')
+        print 'plotted windspeed now onto cross-section'
         
         # In[]: Find the longitude value through which you wish to plot a vertical cross-section#
         #Function the nearest longitude from the ERA data to the longitude that you want to plot
@@ -368,10 +355,10 @@ for d in days:
         lon_cross_section = -10
         #Find the nearest longitude value to lon_cross_section value that is contained in the ERA-interim longitude values
         nearest = find_nearest(lon_subset,lon_cross_section)
-        print(nearest , 'nearest value')
+        print nearest , 'nearest value'
         #Find the number within the longitude array at which the longitude you wish to plot a cross-section through is located
         lon_slice_index = np.where(lon_subset == nearest)[0]
-        print (lon_slice_index, 'lon_slice_index')
+        print lon_slice_index, 'lon_slice_index'
         
         
         #Create an array of windspeeds for all pressure levels, through the sub-section range of latitudes and 
@@ -397,7 +384,7 @@ for d in days:
         plt.show()
 
         
-        print('plotted  windspeed cross section now to plot relative vorticity')
+        print 'plotted  windspeed cross section now to plot relative vorticity'
         
         # In[]: Plot the relative vorticity
         
@@ -420,11 +407,35 @@ for d in days:
         gl.xformatter = LONGITUDE_FORMATTER
         gl.yformatter = LATITUDE_FORMATTER
         #Save and show the figure
-        plt.title("Windspeed")
-        plt.savefig('/ERA_interim_Relative_vorticity_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')
+        plt.title("Relative Vorticity")
+        plt.savefig(pathout+'/ERA_interim_Relative_vorticity_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')
         plt.show()
         
-        
+        '''
+        fig = plt.figure(figsize=(10,10))
+        ax = plt.axes(projection=ccrs.PlateCarree())
+        #clevels = [-20,-18,-16,-14,-12,-10,-8,-6,-4,-2,0,2,4,6,8,10,12,14,16,18,20]
+        plt.contourf(lon_subset, lat_subset, w[lat_min_index:lat_max_index, lon_min_index:lon_max_index], transform=ccrs.PlateCarree(),cmap='seismic',extend='both')
+        cbar = plt.colorbar(orientation='horizontal')
+        cbar.outline.set_linewidth(0.5)
+        cbar.ax.tick_params(labelsize=10)
+        cbar.set_label('Velocity $ms^{-1}$)')
+        ax.add_feature(countries_50m, linewidth=1)
+        gl = ax.gridlines(color="black", linestyle="dotted",draw_labels='True')
+        gl.xlabels_top = False
+        gl.ylabels_left = False
+        gl.xlines = True
+        gl.ylines = True
+        gl.xlocator = mticker.FixedLocator([-40,-35,-30,-25,-20,-15,-10,-5, 0,5,10,15,20,25,30])
+        gl.ylocator = mticker.FixedLocator([30,35,40,45,50,55,60,65,70,75,80])
+        gl.xformatter = LONGITUDE_FORMATTER
+        gl.yformatter = LATITUDE_FORMATTER
+        #Save and show the figure
+        plt.title("Vertical Velocity")
+        plt.savefig(pathout+'/ERA_interim_Vertical_velocity_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')
+        plt.show()
+        '''
+
         
 
         
