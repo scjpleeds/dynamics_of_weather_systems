@@ -1,12 +1,12 @@
 # Fdb version 3
-["pdflatex"] 1606341729 "baroclinic_instability_wiki.tex" "baroclinic_instability_wiki.pdf" "baroclinic_instability_wiki" 1606341729
+["pdflatex"] 1606341729 "baroclinic_instability_wiki.tex" "baroclinic_instability_wiki.pdf" "baroclinic_instability_wiki" 1606341938
   "/etc/texmf/web2c/texmf.cnf" 1603634668 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/tex/latex/base/article.cls" 1580683321 20023 e427dd9e17e239bf926ef3aab67fe35e ""
   "/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo" 1580683321 8446 9874cccac5fee462272c582807dbbf56 ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1603634679 4791333 1fc4a7a758f5384abb61365be4867df1 ""
-  "baroclinic_instability_wiki.aux" 1606341702 1280 d68febea4514449cc9d5648de844f9c0 "pdflatex"
+  "baroclinic_instability_wiki.aux" 1606341702 1280 d68febea4514449cc9d5648de844f9c0 ""
   "baroclinic_instability_wiki.tex" 1606341702 5016 c08906bcee815776388d76a18faed64c ""
   "tikz.sty" 0 -1 0 ""
   (generated)
