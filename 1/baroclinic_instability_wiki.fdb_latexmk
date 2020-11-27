@@ -1,5 +1,24 @@
 # Fdb version 3
+<<<<<<< HEAD
 ["bibtex baroclinic_instability_wiki"] 1606496283 "baroclinic_instability_wiki.aux" "baroclinic_instability_wiki.bbl" "baroclinic_instability_wiki" 1606498841
+=======
+<<<<<<< HEAD
+["pdflatex"] 1606341729 "baroclinic_instability_wiki.tex" "baroclinic_instability_wiki.pdf" "baroclinic_instability_wiki" 1606341938
+  "/etc/texmf/web2c/texmf.cnf" 1603634668 475 c0e671620eb5563b2130f56340a5fde8 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/article.cls" 1580683321 20023 e427dd9e17e239bf926ef3aab67fe35e ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo" 1580683321 8446 9874cccac5fee462272c582807dbbf56 ""
+  "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
+  "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1603634679 4791333 1fc4a7a758f5384abb61365be4867df1 ""
+  "baroclinic_instability_wiki.aux" 1606341702 1280 d68febea4514449cc9d5648de844f9c0 ""
+  "baroclinic_instability_wiki.tex" 1606341702 5016 c08906bcee815776388d76a18faed64c ""
+  "tikz.sty" 0 -1 0 ""
+  (generated)
+  "baroclinic_instability_wiki.pdf"
+  "baroclinic_instability_wiki.log"
+=======
+["bibtex baroclinic_instability_wiki"] 1606049244 "baroclinic_instability_wiki.aux" "baroclinic_instability_wiki.bbl" "baroclinic_instability_wiki" 1606406125
+>>>>>>> add838e889392cf4a3968ee5a39568bdd474a67d
   "C:/Users/jpwes/AppData/Local/Programs/MiKTeX/bibtex/bst/beebe/apa.bst" 954231233 23582 e3c8338eb1efb7432441aa8861285f53 ""
   "baroclinic_instability_wiki.aux" 1606496284 1280 b1438b70eb2ad2353b12732894153780 "pdflatex"
   "references.bib" 1605520038 3695 fa93768caa8c21368b64b5afc89d9c7f ""
@@ -141,4 +160,8 @@
   "baroclinic_instability_wiki.log"
   "baroclinic_instability_wiki.toc"
   "baroclinic_instability_wiki.pdf"
+<<<<<<< HEAD
   "c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/1/baroclinic_instability_wiki.pdf"
+=======
+>>>>>>> 3aa151324bf5a9d9018488efd182589b996533e8
+>>>>>>> add838e889392cf4a3968ee5a39568bdd474a67d
