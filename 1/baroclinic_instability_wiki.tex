@@ -1,16 +1,16 @@
 \documentclass{article}
 \usepackage{tikz,natbib,amsmath} 
+\usepackage[margin=1in]{geometry}
 \title{Baroclinic Instabilities} 
 \author{Jacob Perez} 
+\parskip = 2.5mm
 \begin{document} 
 \maketitle
 \tableofcontents 
 \section{Introduction} 
-
 Baroclinic instability is a fluid dynamical instability that occurs in stably stratified, rotating fluids. They are used to explain the generation and growth of extratropical cyclones. The main source of a baroclinic instability is caused by vertical shear of the background wind profile. On Earth this shearing is generated through the differential heating of the Earth from Sun causing a temperature gradient between the pole and equator. The existence of a meridional temperature gradient indicates a source of available potential energy (APE) released into the flow. The process of converting the APE produced from the meridional temperature gradient into kinetic energy (KE) is the essence of baroclinic instability.  
 
 \subsection{Basic Mechanism} 
-
 To make this idea clearer, a qualitative description of this process is given by \cite{Pedlosky1979}. In figure \ref{pedloskyexample} below we have the following situation, a constant potential temperature ($\theta_*$) surface tilts upward in the meridional plane by an angle $\alpha$. This creates a meridional the meridional temperature gradient. Now consider a fluid parcel starting at position A, be displaced to position B. By considering the change in density when moving from A to B, the restoring force becomes  
 \begin{equation}
   E_* = \frac{g}{\theta_*}\frac{\partial\theta_*}{\partial z_*}\sin\phi\left[d_{z_*}-d_{y_*}\left(\frac{\partial z_*}{\partial y_*}\right)_{\theta_*}\right]
@@ -20,7 +20,6 @@ where $d_{y_*}$ and $d_{z_*}$ are displacements in the $y$ and $z$ planes respec
   0 < \tan\phi < \left(\frac{\partial z_*}{\partial y_*}\right),
 \end{equation}
 will cause the buoyancy force to accelerate the fluid parcel further and further away from its initial position. This is the main idea behind a baroclinic instability. For the fluid within this section defined by the angle $\phi$, the lower density fluid will rise, and the higher density fluid will sink, in turn releasing potential energy. The idea of varying densities can be directly linked variations in temperature of the fluid, meaning that a baroclinic instability is a form of thermal convection.
-
 \begin{figure}[hb]
   \centering
   \input{pedlosky_sketch.tikz}
@@ -39,14 +38,49 @@ Following the description given by \cite{Hoskins2013}, the model makes the follo
   \item The flow is bounded above and below by rigid surfaces at $z=\pm H/2$. 
 \end{itemize}
 The flow of the basic state is independent has a uniform vertical shear $\overline{u}(z) = \Lambda z$ and there is a constant meridional buoyancy gradient 
-$$-\frac{\partial\overline{b}}{\partial y} = f_0\frac{\partial\overline{u}}{\partial z}= \Lambda f_0,$$
-from the thermal wind and $f_0$ is the Coriolis force. These assumptions for the basic state satisfy the criteria for an instability with the boundary conditions at $\displaystyle z= H/2 \quad \frac{\partial\overline u}{\partial z} > 0$ and $\displaystyle z= -H/2 \quad \frac{\partial\overline u}{\partial z} < 0$. The gradient of $\overline{q}$ between $z=\pm H/2$ is 0. A schematic of the model set up is shown in figure \ref{eadyexample}.
+\begin{equation}
+  -\frac{\partial\overline{b}}{\partial y} = f_0\frac{\partial\overline{u}}{\partial z}= \Lambda f_0,
+\end{equation}
+from the thermal wind and $f_0$ is the Coriolis force. These assumptions for the basic state satisfy the criteria for an instability with the boundary conditions at $ z= H/2 \quad \partial\overline u/\partial z > 0$ and at $ z= -H/2 \quad \partial\overline{u}/\partial z < 0$. The gradient of $\overline{q}$ between $z=\pm H/2$ is 0. A schematic of the model set up is shown in figure \ref{eadyexample}. Flow in this model is governed by the quasi-geostrophic potential vorticty equation
+\begin{equation}
+  \left(\frac{\partial}{\partial t} +\overline{u}\frac{\partial}{\partial x}\right)q' = 0 
+\end{equation}
+where $q'$ is a perturbation of the potential vorticity given by,
+\begin{equation}
+  q' = \nabla^2_{H} \psi' +\frac{f_0^2}{N^2}\frac{\partial^2\psi'}{\partial z^2}
+\end{equation}
+where $\psi'$ is a perturbation of the stream function and $\nabla_H$ is the horizontal Laplacian. At the top and bottom boundaries the thermodynamic energy equation is 
+\begin{equation}
+  \left(\frac{\partial}{\partial t}+\overline{u}\frac{\partial}{\partial x}\right)T' = 0
+\end{equation}
+where $T'$ is a temperature perturbation. To understand the growth of these perturbations we seek wave like solutions of the form 
+\begin{equation}
+  \psi' = \Re\left[\Psi(z)e^{i(k(x-ct)+ly)}\right],
+\end{equation}
+where $k,l$ are the zonal and meridional wave numbers and $\Psi,c$ are the complex amplitude and phase speed. Using the fact that the equation governing the flow of the potential vorticty perturbation has to be zero throughout the domain, substituting the wave soltion we get the following equation for the wave amplitude, 
+\begin{equation}
+  \frac{d^2\Psi}{dz^2} - K\Psi = 0,
+\end{equation}
+where $K=\sqrt{k^2+l^2}$. Solutions to this equation take the form 
+\begin{equation}
+  \Psi(z) = a\cosh(Kz)+b\sinh(Kz)
+\end{equation}
+where $a$ and $b$ are arbitrary constants that are determined through the boundary conditions. Through some algebraic manipulation eliminating these constants, we can obtain the following form of the phase speed,
+\begin{equation}
+  c^2 = \frac{1}{K^2}\left(\frac{K}{2}-\coth\left(\frac{K}{2}\right)\right)\left(\frac{K}{2}-\tanh\left(\frac{K}{2}\right)\right).
+\end{equation}
+From this we can determine the criteria for the stable and unstable waves based on when the right hand side of the equation for the phase speed is positive or negative. These two cases are:
+\begin{enumerate}
+  \item For $K<2.399$ we have $c^2<0$ which gives an imaginary phase speed. This corresponds to pairs of growing and decaying modes. 
+  \item For $K>2.399$ we have $c^2>0$ giving a real phase speed. This gives a pair of stable modes that propagate at phase speeds $\pm c$. 
+\end{enumerate}
 \begin{figure}[hb]
   \centering
   \input{Eady_sketch.tikz}
   \caption{Sketch of the model described by Eady.}
   \label{eadyexample}
 \end{figure}
+
 \section{Cyclogenesis} 
 
 \section{Summary}
