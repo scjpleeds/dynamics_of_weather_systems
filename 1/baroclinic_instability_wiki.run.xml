@@ -41,37 +41,37 @@
   >
 ]>
 <requests version="1.0">
-  <internal package="biblatex" priority="9" active="1">
+  <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>baroclinic_instability_wiki.aux</file>
-      <file>baroclinic_instability_wiki-blx.bib</file>
+      <file>baroclinic_instability_wiki.bcf</file>
     </provides>
     <requires type="dynamic">
       <file>baroclinic_instability_wiki.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
+      <file>apa.dbx</file>
       <file>blx-compat.def</file>
-      <file>blx-bibtex.def</file>
       <file>biblatex.def</file>
       <file>standard.bbx</file>
-      <file>authortitle.bbx</file>
-      <file>verbose-trad2.bbx</file>
-      <file>verbose-trad2.cbx</file>
+      <file>apa.bbx</file>
+      <file>apa.cbx</file>
       <file>biblatex.cfg</file>
       <file>english.lbx</file>
+      <file>american.lbx</file>
+      <file>american-apa.lbx</file>
+      <file>english-apa.lbx</file>
     </requires>
   </internal>
-  <external package="biblatex" priority="5" active="1">
-    <generic>bibtex</generic>
+  <external package="biblatex" priority="5" active="0">
+    <generic>biber</generic>
     <cmdline>
-      <binary>bibtex</binary>
-      <option>-min-crossrefs 2</option>
+      <binary>biber</binary>
       <infile>baroclinic_instability_wiki</infile>
     </cmdline>
     <input>
-      <file>baroclinic_instability_wiki.aux</file>
+      <file>baroclinic_instability_wiki.bcf</file>
     </input>
     <output>
       <file>baroclinic_instability_wiki.bbl</file>
@@ -80,14 +80,10 @@
       <file>baroclinic_instability_wiki.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>baroclinic_instability_wiki.aux</file>
-      <file>baroclinic_instability_wiki-blx.bib</file>
+      <file>baroclinic_instability_wiki.bcf</file>
     </requires>
     <requires type="editable">
-      <file>referen.bib</file>
-    </requires>
-    <requires type="static">
-      <file>biblatex.bst</file>
+      <file>references.bib</file>
     </requires>
   </external>
 </requests>

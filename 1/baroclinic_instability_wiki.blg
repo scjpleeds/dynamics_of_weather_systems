@@ -1,51 +1,17 @@
-This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
-Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
-The top-level auxiliary file: baroclinic_instability_wiki.aux
-I couldn't open style file apa.bst
----line 13 of file baroclinic_instability_wiki.aux
- : \bibstyle{apa
- :              }
-I'm skipping whatever remains of this command
-I found no style file---while reading file baroclinic_instability_wiki.aux
-You've used 3 entries,
-            0 wiz_defined-function locations,
-            91 strings with 607 characters,
-and the built_in function-call counts, 0 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 0
-:= -- 0
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
-chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 0
-format.name$ -- 0
-if$ -- 0
-int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 0
-num.names$ -- 0
-pop$ -- 0
-preamble$ -- 0
-purify$ -- 0
-quote$ -- 0
-skip$ -- 0
-stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
-text.prefix$ -- 0
-top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 0
-(There were 2 error messages)
+[0] Config.pm:304> INFO - This is Biber 2.14 (beta)
+[0] Config.pm:307> INFO - Logfile is 'baroclinic_instability_wiki.blg'
+[117] biber:322> INFO - === Sun Nov 29, 2020, 13:51:55
+[137] Biber.pm:415> INFO - Reading 'baroclinic_instability_wiki.bcf'
+[253] Biber.pm:943> INFO - Found 3 citekeys in bib section 0
+[276] Biber.pm:4256> INFO - Processing section 0
+[276] Utils.pm:75> INFO - Globbing data source 'references.bib'
+[277] Utils.pm:91> INFO - Globbed data source 'references.bib' to references.bib
+[290] Biber.pm:4455> INFO - Looking for bibtex format file 'references.bib' for section 0
+[292] bibtex.pm:1653> INFO - LaTeX decoding ...
+[303] bibtex.pm:1471> INFO - Found BibTeX data source 'references.bib'
+[381] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[381] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[381] Biber.pm:4084> INFO - Sorting list 'apa/global//global/global' of type 'entry' with template 'apa' and locale 'en-US'
+[382] Biber.pm:4090> INFO - No sort tailoring available for locale 'en-US'
+[386] bbl.pm:652> INFO - Writing 'baroclinic_instability_wiki.bbl' with encoding 'UTF-8'
+[389] bbl.pm:755> INFO - Output to baroclinic_instability_wiki.bbl

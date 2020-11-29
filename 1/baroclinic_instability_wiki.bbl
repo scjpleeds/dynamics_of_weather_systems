@@ -1,0 +1,132 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/global//global/global}
+    \entry{Eady1949}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=cff34b5ad79d58c9bd0821f8bb01b72c}{%
+           family={Eady},
+           familyi={E\bibinitperiod},
+           given={E\bibnamedelima T},
+           giveni={E\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{cff34b5ad79d58c9bd0821f8bb01b72c}
+      \strng{fullhash}{cff34b5ad79d58c9bd0821f8bb01b72c}
+      \strng{bibnamehash}{cff34b5ad79d58c9bd0821f8bb01b72c}
+      \strng{authorbibnamehash}{cff34b5ad79d58c9bd0821f8bb01b72c}
+      \strng{authornamehash}{cff34b5ad79d58c9bd0821f8bb01b72c}
+      \strng{authorfullhash}{cff34b5ad79d58c9bd0821f8bb01b72c}
+      \field{sortinit}{E}
+      \field{sortinithash}{c554bd1a0b76ea92b9f105fe36d9c7b0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Tellus}
+      \field{title}{{Long waves and cyclone waves}}
+      \field{volume}{1}
+      \field{year}{1949}
+      \field{pages}{33\bibrangedash 52}
+      \range{pages}{20}
+      \verb{file}
+      \verb :C$\backslash$:/Users/jpwes/Downloads/Eady49.pdf:pdf
+      \endverb
+    \endentry
+    \entry{Hoskins2013}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=c2cb0bb078d27fcbaf82f196ab184d55}{%
+           family={Hoskins},
+           familyi={H\bibinitperiod},
+           given={Brian\bibnamedelima J.},
+           giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d90e733a7bc1c7f87ed417335fa097f9}{%
+           family={James},
+           familyi={J\bibinitperiod},
+           given={Ian\bibnamedelima N.},
+           giveni={I\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{cf4867f9feb45bfb8c83ee5dc693a084}
+      \strng{fullhash}{cf4867f9feb45bfb8c83ee5dc693a084}
+      \strng{bibnamehash}{cf4867f9feb45bfb8c83ee5dc693a084}
+      \strng{authorbibnamehash}{cf4867f9feb45bfb8c83ee5dc693a084}
+      \strng{authornamehash}{cf4867f9feb45bfb8c83ee5dc693a084}
+      \strng{authorfullhash}{cf4867f9feb45bfb8c83ee5dc693a084}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This book gives a coherent development of the current understanding of the fluid dynamics of the middle latitude atmosphere. It is primarily aimed at post-graduate and advanced undergraduate level students and does not assume any previous knowledge of fluid mechanics, meteorology or atmospheric science. The book will be an invaluable resource for any quantitative atmospheric scientist who wishes to increase their understanding of the subject. The importance of the rotation of the Earth and the stable stratification of its atmosphere, with their implications for the balance of larger-scale flows, is highlighted throughout. Clearly structured throughout, the first of three themes deals with the development of the basic equations for an atmosphere on a rotating, spherical planet and discusses scale analyses of these equations. The second theme explores the importance of rotation and introduces vorticity and potential vorticity, as well as turbulence. In the third theme, the concepts developed in the first two themes are used to give an understanding of balanced motion in real atmospheric phenomena. It starts with quasi-geostrophic theory and moves on to linear and nonlinear theories for mid-latitude weather systems and their fronts. The potential vorticity perspective on weather systems is highlighted with a discussion of the Rossby wave propagation and potential vorticity mixing covered in the final chapter.}
+      \field{booktitle}{Fluid Dynamics of the Midlatitude Atmosphere}
+      \field{isbn}{9781118526002}
+      \field{title}{{Fluid Dynamics of the Midlatitude Atmosphere}}
+      \field{year}{2013}
+      \verb{doi}
+      \verb 10.1002/9781118526002
+      \endverb
+    \endentry
+    \entry{Pedlosky1979}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=eb00690b18fae5d777518b572da81519}{%
+           family={Pedlosky},
+           familyi={P\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag}%
+      }
+      \strng{namehash}{eb00690b18fae5d777518b572da81519}
+      \strng{fullhash}{eb00690b18fae5d777518b572da81519}
+      \strng{bibnamehash}{eb00690b18fae5d777518b572da81519}
+      \strng{authorbibnamehash}{eb00690b18fae5d777518b572da81519}
+      \strng{authornamehash}{eb00690b18fae5d777518b572da81519}
+      \strng{authorfullhash}{eb00690b18fae5d777518b572da81519}
+      \field{sortinit}{P}
+      \field{sortinithash}{bb5b15f2db90f7aef79bb9e83defefcb}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This book is based largely on the core curriculum in geophpysical fluid dynamics taught in the Department of Geophysical Sciences, University of Chicago. The focus is on the application of fluid mechanics to the dynamics of large scale flows in the oceans and the atmosphere. Chapters 1 and 2 discuss certain elementary but fundamental ideas in general terms before the complexities of scaling are required. In Chapter 3 the inviscid dynamics of a homogeneous fluid is discussed in order to expose, in the simplest context, the nature of quaasiogeostrophic motion. Chapter 4 describes some of the simple ideas of the influence of friction on large-scale flows in the context of a homogeneous fluid. Chapter 5 serves to exemplify the use of the homogeneous model in the discussion of a problem of major geophysical interest, ie. the wind-driven ocean circulation. Chapter 6 has two main purposes. First is the systematic development of the quasigeostrophic dynamics of a stratified fluid for flow on a sphere. Careful attention is given to the development of the -plane model on logical and straightforward lines. Chapter 7 is reserved for instability theory. Varolcinic and barotropic instability are both discussed in Chapter 7. The final chapter discussed certain topics, not easily grouped into the broad categories of earlier chapters, and chosen primarily to illustrate the way in which the ideas previously developed can be extended by similar methods.-P.N.Chroston}
+      \field{booktitle}{Geophysical fluid dynamics.}
+      \field{isbn}{3540903682}
+      \field{issn}{00401951}
+      \field{title}{Geophysical fluid dynamics.}
+      \field{year}{1979}
+      \verb{doi}
+      \verb 10.1017/cbo9780511980121.008
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

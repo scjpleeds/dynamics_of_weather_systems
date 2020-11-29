@@ -1,6 +1,8 @@
-\documentclass{article}
-\usepackage{tikz,natbib,amsmath} 
-\usepackage[margin=1in]{geometry}
+\documentclass[a4paper,12pt]{article}
+\usepackage{tikz,amsmath}
+\usepackage[bibstyle=apa,citestyle=apa]{biblatex}
+\usepackage[margin=0.75in]{geometry}
+\addbibresource{references.bib}
 \title{Baroclinic Instabilities} 
 \author{Jacob Perez} 
 \parskip = 2.5mm
@@ -31,6 +33,7 @@ will cause the buoyancy force to accelerate the fluid parcel further and further
 The process that causes baroclinic instabilities to grow is the process of converting the APE into KE. One of the earliest and simplest mathematical models that gives an indication as to which particular cases will lead to a growing instability is the model proposed by \cite{Eady1949}. Before describing the model we have to mention the criteria for an instability, that being the Charney-Stern criteria. The criteria states 
 $$\frac{\partial\overline{q}}{\partial y}\text{ must change sign somewhere in the }(y,z)\text{ plane,} $$
 where $\overline{q}$ is the zonal potential vorticity profile. 
+\subsection{Setup}
 Following the description given by \cite{Hoskins2013}, the model makes the following assumptions
 \begin{itemize}
   \item There is no meridional variation in the Coriolis force i.e. The flow is on the $f$ plane,
@@ -53,11 +56,13 @@ where $\psi'$ is a perturbation of the stream function and $\nabla_H$ is the hor
 \begin{equation}
   \left(\frac{\partial}{\partial t}+\overline{u}\frac{\partial}{\partial x}\right)T' = 0
 \end{equation}
-where $T'$ is a temperature perturbation. To understand the growth of these perturbations we seek wave like solutions of the form 
+where $T'$ is a temperature perturbation. 
+\subsection{Wave solutions}
+Since the equations governing the flow are linear, we can understand how the growth of the perturbations with waves. So take the following wave-like solutions for our equations to be
 \begin{equation}
   \psi' = \Re\left[\Psi(z)e^{i(k(x-ct)+ly)}\right],
 \end{equation}
-where $k,l$ are the zonal and meridional wave numbers and $\Psi,c$ are the complex amplitude and phase speed. Using the fact that the equation governing the flow of the potential vorticty perturbation has to be zero throughout the domain, substituting the wave soltion we get the following equation for the wave amplitude, 
+where $k,l$ are the zonal and meridional wave numbers and $\Psi,c$ are the complex amplitude and phase speed. Using the fact that the equation governing the flow of the potential vorticty perturbation has to be zero throughout the domain, substituting the wave solution into our equations above, we get the following equation for the amplitude, 
 \begin{equation}
   \frac{d^2\Psi}{dz^2} - K\Psi = 0,
 \end{equation}
@@ -80,11 +85,16 @@ From this we can determine the criteria for the stable and unstable waves based 
   \caption{Sketch of the model described by Eady.}
   \label{eadyexample}
 \end{figure}
+\begin{figure}[hb]
+  \centering
+  \caption{Growth perturbations} 
+  \label{growthpicture}
+\end{figure}
 
 \section{Cyclogenesis} 
-
+Baroclinic instabilities can be seen in physically in the process of cyclogenesis. Cyclogenesis is strengthening and growth of a cyclonic circulation, this is the main process that leads to large weather systems that form. 
 \section{Summary}
-\bibliography{references.bib}
-\bibliographystyle{apa}
-
+%\bibliography{references.bib}
+%\bibliographystyle{unsrt}
+\printbibliography
 \end{document}
