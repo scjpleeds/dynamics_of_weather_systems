@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.26)  30 NOV 2020 10:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.26)  30 NOV 2020 10:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -567,23 +567,7 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count416
 \l__pdf_internal_box=\box58
-) (./baroclinic_instability_wiki.aux
-
-./baroclinic_instability_wiki.aux:24: LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 <
-      <<<<<< HEAD
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: Label `growthpicture' multiply defined.
-
-)
+) (./baroclinic_instability_wiki.aux)
 \openout1 = `baroclinic_instability_wiki.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
@@ -686,89 +670,33 @@ Package biblatex Info: Reference segment=0 on input line 9.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./baroclinic_instability_wiki.toc
-
-./baroclinic_instability_wiki.toc:16: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.16 ...sline {section}{\numberline {4}Summary}{6}
-                                                  %
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./baroclinic_instability_wiki.toc:16: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.16 ...sline {section}{\numberline {4}Summary}{6}
-                                                  %
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./baroclinic_instability_wiki.toc:18: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.18 ...sline {section}{\numberline {4}Summary}{4}
-                                                  {}%
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./baroclinic_instability_wiki.toc:18: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.18 ...sline {section}{\numberline {4}Summary}{4}
-                                                  {}%
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-)
+(./baroclinic_instability_wiki.toc)
 \tf@toc=\write5
 \openout5 = `baroclinic_instability_wiki.toc'.
 
- [2] (./pedlosky_sketch.tikz) [3] (./Eady_sketch.tikz) [4]
-<growthrates.png, id=29, 1003.75pt x 577.15625pt>
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./pedlosky_sketch.tikz) [2] (./Eady_sketch.tikz) [3]
+<growthrates.png, id=26, 1003.75pt x 577.15625pt>
 File: growthrates.png Graphic file (type png)
 <use growthrates.png>
 Package pdftex.def Info: growthrates.png  used on input line 91.
 (pdftex.def)             Requested size: 489.10287pt x 281.24144pt.
- [5] [6 <./growthrates.png>] (./baroclinic_instability_wiki.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
-
-Package biblatex Warning: Please rerun LaTeX.
-(biblatex)                Page breaks have changed.
-
+ [4] [5 <./growthrates.png>] [6] (./baroclinic_instability_wiki.aux)
 Package logreq Info: Writing requests to 'baroclinic_instability_wiki.run.xml'.
 \openout1 = `baroclinic_instability_wiki.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 20726 strings out of 481239
- 407977 string characters out of 5920376
- 1093701 words of memory out of 5000000
- 35684 multiletter control sequences out of 15000+600000
+ 20725 strings out of 481239
+ 407964 string characters out of 5920376
+ 1093526 words of memory out of 5000000
+ 35683 multiletter control sequences out of 15000+600000
  539315 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,9n,60p,1596b,4720s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on baroclinic_instability_wiki.pdf (6 pages, 260838 bytes).
+Output written on baroclinic_instability_wiki.pdf (6 pages, 260398 bytes).
 PDF statistics:
  76 PDF objects out of 1000 (max. 8388607)
  54 compressed objects within 1 object stream
