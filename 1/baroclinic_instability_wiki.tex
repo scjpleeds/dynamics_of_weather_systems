@@ -84,27 +84,31 @@ where $a$ and $b$ are arbitrary constants that are determined through the bounda
 From this we can determine the criteria for the stable and unstable waves based on when the right hand side of the equation for the phase speed is positive or negative. These two cases are:
 \begin{enumerate}
   \item For $K<2.399$ we have $c^2<0$ which gives an imaginary phase speed. This corresponds to pairs of growing and decaying modes. 
-  \item For $K>2.399$ we have $c^2>0$ giving a real phase speed. This gives a pair of stable modes that propagate at phase speeds $\pm c$. Examples of the vertical structure of the unstable and stable waves are shown in figure \ref{growthpicture}.
+  \item For $K>2.399$ we have $c^2>0$ giving a real phase speed. This gives a pair of stable modes that propagate at phase speeds $\pm c$. 
+  
+  Examples of the vertical structure of the unstable and stable waves are shown in figure \ref{growthpicture}.
 \end{enumerate}
 \begin{figure}[htp!]
   \centering
   \includegraphics[width=\textwidth]{growthrates.png}
-  \caption{Vertical structure of the unstable and stable Eady waves taken from Vallis. Dashed lines represent negative values. Tilting in the the unstable waves occurs due to shearing. (!!!!!!!insert citation!!!!)} 
+  \caption{Vertical structure of the unstable and stable Eady waves taken from \cite{Vallis2019}. Dashed lines represent negative values. Tilting in the the unstable waves occurs due to shearing.} 
   \label{growthpicture}
 \end{figure}
-
 \section{Cyclogenesis} 
 Baroclinic instabilities can be seen in physically in the process of cyclogenesis. Cyclogenesis is strengthening and growth of a cyclonic circulation, this is the main process that for example, leads to the formation of extratropical cyclones in our atmosphere. From the Eady model, considering only the imaginary part of \ref{phasespeed} we can obtain the Eady growth rate, 
 \begin{equation}
   \sigma = 0.31\frac{f}{N}\frac{\partial u}{\partial z}
 \end{equation}
-which can be used to diagnose regions on Earth of the most unstable waves indicating favourable regions of cyclogenesis.
+which can be used to diagnose regions on Earth of the most unstable waves indicating favourable regions of cyclogenesis. For example figure \ref{physicalgrowthrate} is a plot of $\sigma$ over the North Atlantic region and we can see a distinct maximum occuring just off of the east coast of the North America. This region marks the beginning of the storm track in the mid-latitudes.
 \begin{figure}[!htp]
   \centering
-  \caption{Contour plot of the Eady growth rate over the North Atlantic $(0-60W)$.}
+  \caption{Contour plot of the Eady growth rate over the North Atlantic.}
+  \label{physicalgrowthrate}
 \end{figure} 
 \section{Summary}
+Here we have broken down a baroclinic instability into three parts. The first part is understanding that a the tilt of a constant potential temperature surface creates APE due to changing height which (if enough is available) creates an instability where APE is converted into KE and accelerates a fluid parcel away from its initial position. To understand how and when this acceleration we looked at the simplest model, that being the Eady model, which derives a criteria based on the the values of the zonal and meridional wave numbers. We then looked at the physical process of cyclogenesis, which is driven through this process of the growth of unstable waves create cyclones and through observing the Eady growth rate over the North Atlantic we saw that an area of high wave activity occurs near the west coast of North America.
 %\bibliography{references.bib}
 %\bibliographystyle{unsrt}
+\newpage
 \printbibliography
 \end{document}

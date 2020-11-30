@@ -126,6 +126,50 @@
       \verb 10.1017/cbo9780511980121.008
       \endverb
     \endentry
+    \entry{Vallis2019}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=8f57bb65308f3d73b5310349ae662afd}{%
+           family={Vallis},
+           familyi={V\bibinitperiod},
+           given={Geoffrey\bibnamedelima K.},
+           giveni={G\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8f57bb65308f3d73b5310349ae662afd}
+      \strng{fullhash}{8f57bb65308f3d73b5310349ae662afd}
+      \strng{bibnamehash}{8f57bb65308f3d73b5310349ae662afd}
+      \strng{authorbibnamehash}{8f57bb65308f3d73b5310349ae662afd}
+      \strng{authornamehash}{8f57bb65308f3d73b5310349ae662afd}
+      \strng{authorfullhash}{8f57bb65308f3d73b5310349ae662afd}
+      \field{sortinit}{V}
+      \field{sortinithash}{02432525618c08e2b03cac47c19764af}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Predicting the binding mode of flexible polypeptides to proteins is an important task that falls outside the domain of applicability of most small molecule and protein−protein docking tools. Here, we test the small molecule flexible ligand docking program Glide on a set of 19 non-$\alpha$-helical peptides and systematically improve pose prediction accuracy by enhancing Glide sampling for flexible polypeptides. In addition, scoring of the poses was improved by post-processing with physics-based implicit solvent MM- GBSA calculations. Using the best RMSD among the top 10 scoring poses as a metric, the success rate (RMSD ≤ 2.0 {Å} for the interface backbone atoms) increased from 21{\%} with default Glide SP settings to 58{\%} with the enhanced peptide sampling and scoring protocol in the case of redocking to the native protein structure. This approaches the accuracy of the recently developed Rosetta FlexPepDock method (63{\%} success for these 19 peptides) while being over 100 times faster. Cross-docking was performed for a subset of cases where an unbound receptor structure was available, and in that case, 40{\%} of peptides were docked successfully. We analyze the results and find that the optimized polypeptide protocol is most accurate for extended peptides of limited size and number of formal charges, defining a domain of applicability for this approach.}
+      \field{booktitle}{Journal of Chemical Information and Modeling}
+      \field{eprinttype}{arXiv}
+      \field{isbn}{9788578110796}
+      \field{issn}{1098-6596}
+      \field{number}{9}
+      \field{title}{{Atmospheric and Oceanic Fluid Dynamics (2nd Edition)}}
+      \field{volume}{53}
+      \field{year}{2019}
+      \field{pages}{1689\bibrangedash 1699}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1017/CBO9781107415324.004
+      \endverb
+      \verb{eprint}
+      \verb arXiv:1011.1669v3
+      \endverb
+      \verb{file}
+      \verb :C$\backslash$:/Users/jpwes/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Vallis - 2019 - Atmospheric and Oceanic Fluid Dynamics (2nd Edition).pdf:pdf
+      \endverb
+      \keyw{icle}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput
