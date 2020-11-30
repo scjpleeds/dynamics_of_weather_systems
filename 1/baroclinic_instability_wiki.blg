@@ -1,17 +1,17 @@
 [0] Config.pm:304> INFO - This is Biber 2.14 (beta)
 [0] Config.pm:307> INFO - Logfile is 'baroclinic_instability_wiki.blg'
-[117] biber:322> INFO - === Sun Nov 29, 2020, 13:51:55
-[137] Biber.pm:415> INFO - Reading 'baroclinic_instability_wiki.bcf'
-[253] Biber.pm:943> INFO - Found 3 citekeys in bib section 0
-[276] Biber.pm:4256> INFO - Processing section 0
-[276] Utils.pm:75> INFO - Globbing data source 'references.bib'
-[277] Utils.pm:91> INFO - Globbed data source 'references.bib' to references.bib
-[290] Biber.pm:4455> INFO - Looking for bibtex format file 'references.bib' for section 0
-[292] bibtex.pm:1653> INFO - LaTeX decoding ...
-[303] bibtex.pm:1471> INFO - Found BibTeX data source 'references.bib'
-[381] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[381] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[381] Biber.pm:4084> INFO - Sorting list 'apa/global//global/global' of type 'entry' with template 'apa' and locale 'en-US'
-[382] Biber.pm:4090> INFO - No sort tailoring available for locale 'en-US'
-[386] bbl.pm:652> INFO - Writing 'baroclinic_instability_wiki.bbl' with encoding 'UTF-8'
-[389] bbl.pm:755> INFO - Output to baroclinic_instability_wiki.bbl
+[129] biber:322> INFO - === Mon Nov 30, 2020, 10:18:44
+[155] Biber.pm:415> INFO - Reading 'baroclinic_instability_wiki.bcf'
+[293] Biber.pm:943> INFO - Found 3 citekeys in bib section 0
+[319] Biber.pm:4256> INFO - Processing section 0
+[320] Utils.pm:75> INFO - Globbing data source 'references.bib'
+[320] Utils.pm:91> INFO - Globbed data source 'references.bib' to references.bib
+[337] Biber.pm:4455> INFO - Looking for bibtex format file 'references.bib' for section 0
+[339] bibtex.pm:1653> INFO - LaTeX decoding ...
+[353] bibtex.pm:1471> INFO - Found BibTeX data source 'references.bib'
+[460] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[460] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[461] Biber.pm:4084> INFO - Sorting list 'apa/global//global/global' of type 'entry' with template 'apa' and locale 'en-US'
+[461] Biber.pm:4090> INFO - No sort tailoring available for locale 'en-US'
+[469] bbl.pm:652> INFO - Writing 'baroclinic_instability_wiki.bbl' with encoding 'UTF-8'
+[473] bbl.pm:755> INFO - Output to baroclinic_instability_wiki.bbl
