@@ -1,11 +1,11 @@
 # Fdb version 3
-["biber baroclinic_instability_wiki"] 1606657914 "baroclinic_instability_wiki.bcf" "baroclinic_instability_wiki.bbl" "baroclinic_instability_wiki" 1606658828
-  "baroclinic_instability_wiki.bcf" 1606658828 115293 fe221823614ea29a5bb672965d702968 "pdflatex"
+["biber baroclinic_instability_wiki"] 1606657914 "baroclinic_instability_wiki.bcf" "baroclinic_instability_wiki.bbl" "baroclinic_instability_wiki" 1606731298
+  "baroclinic_instability_wiki.bcf" 1606731298 115293 fe221823614ea29a5bb672965d702968 "pdflatex"
   "references.bib" 1606655947 3713 5d5bc536f58d61500918660c45757194 ""
   (generated)
-  "baroclinic_instability_wiki.bbl"
   "baroclinic_instability_wiki.blg"
-["pdflatex"] 1606658827 "baroclinic_instability_wiki.tex" "baroclinic_instability_wiki.pdf" "baroclinic_instability_wiki" 1606658828
+  "baroclinic_instability_wiki.bbl"
+["pdflatex"] 1606731297 "baroclinic_instability_wiki.tex" "baroclinic_instability_wiki.pdf" "baroclinic_instability_wiki" 1606731298
   "/etc/texmf/web2c/texmf.cnf" 1603634668 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -151,16 +151,17 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1606419540 4770781 1ed1abab22da9c3e2cc82e4db562318b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1606419584 8258204 d806b00d51338aa0ebb4018374dae25a ""
   "Eady_sketch.tikz" 1606655495 622 bc33003394669f6083d627e2215780d8 ""
-  "baroclinic_instability_wiki.aux" 1606658828 2847 c39cbbf9b8294fc5ee7db14bfc840b97 "pdflatex"
+  "baroclinic_instability_wiki.aux" 1606731298 3284 accbf4445debd8d9dd59aaef3d33e363 "pdflatex"
   "baroclinic_instability_wiki.bbl" 1606657915 7631 6421e127e0315c2e4319e2f553f011ee "biber baroclinic_instability_wiki"
-  "baroclinic_instability_wiki.run.xml" 1606658828 2588 a92bf1f009fda6effde616353fdb2b0e "pdflatex"
-  "baroclinic_instability_wiki.tex" 1606658825 7952 2aeaa86f8ed11948ab6ef22f474169e8 ""
-  "baroclinic_instability_wiki.toc" 1606658828 758 b30d0630a3d360b9cfee711b11d32cff "pdflatex"
+  "baroclinic_instability_wiki.run.xml" 1606731298 2588 a92bf1f009fda6effde616353fdb2b0e "pdflatex"
+  "baroclinic_instability_wiki.tex" 1606731295 8812 685a866065d0815271f412cd5238ea22 ""
+  "baroclinic_instability_wiki.toc" 1606731298 758 aee48a09b43f51b94a670f4f4a2d9b38 "pdflatex"
+  "growthrates.png" 1606727712 176510 2ee5267c098f537ae76ea02e29d94813 ""
   "pedlosky_sketch.tikz" 1606655495 670 54f58482cab73d9026161a5706f97f29 ""
   (generated)
-  "baroclinic_instability_wiki.pdf"
-  "baroclinic_instability_wiki.toc"
-  "baroclinic_instability_wiki.aux"
   "baroclinic_instability_wiki.log"
-  "baroclinic_instability_wiki.run.xml"
+  "baroclinic_instability_wiki.toc"
   "baroclinic_instability_wiki.bcf"
+  "baroclinic_instability_wiki.pdf"
+  "baroclinic_instability_wiki.run.xml"
+  "baroclinic_instability_wiki.aux"

@@ -57,6 +57,12 @@ where $\psi'$ is a perturbation of the stream function and $\nabla_H$ is the hor
   \left(\frac{\partial}{\partial t}+\overline{u}\frac{\partial}{\partial x}\right)T' = 0
 \end{equation}
 where $T'$ is a temperature perturbation. 
+\begin{figure}[ht]
+  \centering
+  \input{Eady_sketch.tikz}
+  \caption{Sketch of the model described by Eady.}
+  \label{eadyexample}
+\end{figure}
 \subsection{Wave solutions}
 Since the equations governing the flow are linear, we can understand how the growth of the perturbations with waves. So take the following wave-like solutions for our equations to be
 \begin{equation}
@@ -73,26 +79,30 @@ where $K=\sqrt{k^2+l^2}$. Solutions to this equation take the form
 where $a$ and $b$ are arbitrary constants that are determined through the boundary conditions. Through some algebraic manipulation eliminating these constants, we can obtain the following form of the phase speed,
 \begin{equation}
   c^2 = \frac{1}{K^2}\left(\frac{K}{2}-\coth\left(\frac{K}{2}\right)\right)\left(\frac{K}{2}-\tanh\left(\frac{K}{2}\right)\right).
+  \label{phasespeed}
 \end{equation}
 From this we can determine the criteria for the stable and unstable waves based on when the right hand side of the equation for the phase speed is positive or negative. These two cases are:
 \begin{enumerate}
   \item For $K<2.399$ we have $c^2<0$ which gives an imaginary phase speed. This corresponds to pairs of growing and decaying modes. 
-  \item For $K>2.399$ we have $c^2>0$ giving a real phase speed. This gives a pair of stable modes that propagate at phase speeds $\pm c$. 
+  \item For $K>2.399$ we have $c^2>0$ giving a real phase speed. This gives a pair of stable modes that propagate at phase speeds $\pm c$. Examples of the vertical structure of the unstable and stable waves are shown in figure \ref{growthpicture}.
 \end{enumerate}
-\begin{figure}[hb]
+\begin{figure}[htp!]
   \centering
-  \input{Eady_sketch.tikz}
-  \caption{Sketch of the model described by Eady.}
-  \label{eadyexample}
-\end{figure}
-\begin{figure}[hb]
-  \centering
-  \caption{Growth perturbations} 
+  \includegraphics[width=\textwidth]{growthrates.png}
+  \caption{Vertical structure of the unstable and stable Eady waves taken from Vallis. Dashed lines represent negative values. Tilting in the the unstable waves occurs due to shearing. (!!!!!!!insert citation!!!!)} 
   \label{growthpicture}
 \end{figure}
 
 \section{Cyclogenesis} 
-Baroclinic instabilities can be seen in physically in the process of cyclogenesis. Cyclogenesis is strengthening and growth of a cyclonic circulation, this is the main process that leads to large weather systems that form. 
+Baroclinic instabilities can be seen in physically in the process of cyclogenesis. Cyclogenesis is strengthening and growth of a cyclonic circulation, this is the main process that for example, leads to the formation of extratropical cyclones in our atmosphere. From the Eady model, considering only the imaginary part of \ref{phasespeed} we can obtain the Eady growth rate, 
+\begin{equation}
+  \sigma = 0.31\frac{f}{N}\frac{\partial u}{\partial z}
+\end{equation}
+which can be used to diagnose regions on Earth of the most unstable waves indicating favourable regions of cyclogenesis.
+\begin{figure}[!htp]
+  \centering
+  \caption{Contour plot of the Eady growth rate over the North Atlantic $(0-60W)$.}
+\end{figure} 
 \section{Summary}
 %\bibliography{references.bib}
 %\bibliographystyle{unsrt}

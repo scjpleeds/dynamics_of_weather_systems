@@ -230,6 +230,9 @@ INPUT pedlosky_sketch.tikz
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm
 INPUT Eady_sketch.tikz
 INPUT Eady_sketch.tikz
+INPUT growthrates.png
+INPUT ./growthrates.png
+INPUT ./growthrates.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
 INPUT baroclinic_instability_wiki.aux
 INPUT baroclinic_instability_wiki.run.xml
