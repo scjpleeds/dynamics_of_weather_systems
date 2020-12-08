@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.29)  30 NOV 2020 19:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.29)  2 DEC 2020 19:36
 entering extended mode
 **"c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/1/baroclinic_instability_wiki.tex"
 ("c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/1/baroclinic_instability_wiki.tex"
@@ -687,25 +687,36 @@ Package biblatex Info: Reference segment=0 on input line 9.
 <growthrates.png, id=25, 1003.75pt x 577.15625pt>
 File: growthrates.png Graphic file (type png)
 <use growthrates.png>
-Package pdftex.def Info: growthrates.png  used on input line 93.
+Package pdftex.def Info: growthrates.png  used on input line 91.
 (pdftex.def)             Requested size: 489.10287pt x 281.24144pt.
- [4] [5 <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/1/growthrates.png>] [6] ("c:/Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\1\baroclinic_instability_wiki.aux")
+ [4]
+<baroclinicity_contour_ref.pdf, id=29, 1084.05pt x 1084.05pt>
+File: baroclinicity_contour_ref.pdf Graphic file (type pdf)
+<use baroclinicity_contour_ref.pdf>
+Package pdftex.def Info: baroclinicity_contour_ref.pdf  used on input line 109.
+(pdftex.def)             Requested size: 489.10287pt x 489.10822pt.
+<noreaster.jpg, id=30, 1026.83624pt x 1004.75375pt>
+File: noreaster.jpg Graphic file (type jpg)
+<use noreaster.jpg>
+Package pdftex.def Info: noreaster.jpg  used on input line 115.
+(pdftex.def)             Requested size: 244.55144pt x 239.29074pt.
+ [5 <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/1/growthrates.png>] [6 <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/1/baroclinicity_contour_ref.pdf>] [7 <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/1/noreaster.jpg>] ("c:/Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\1\baroclinic_instability_wiki.aux")
 Package logreq Info: Writing requests to 'baroclinic_instability_wiki.run.xml'.
 \openout1 = `baroclinic_instability_wiki.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 21088 strings out of 479799
- 424249 string characters out of 2869722
- 1179144 words of memory out of 3000000
- 37764 multiletter control sequences out of 15000+200000
+ 21102 strings out of 479799
+ 424581 string characters out of 2869722
+ 1179152 words of memory out of 3000000
+ 37775 multiletter control sequences out of 15000+200000
  542065 words of font info for 53 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,9n,111p,1680b,4805s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\jpwes\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "c:/Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\1\baroclinic_instability_wiki.pdf" (6 pages, 265822 bytes).
+Output written on "c:/Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\1\baroclinic_instability_wiki.pdf" (7 pages, 989208 bytes).
 PDF statistics:
- 74 PDF objects out of 1000 (max. 8388607)
+ 112 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 
