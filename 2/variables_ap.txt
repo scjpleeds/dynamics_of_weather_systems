@@ -1,0 +1,261 @@
+ Copyright (C) 1995-2015 - All Rights Reserved
+ University Corporation for Atmospheric Research
+ NCAR Command Language Version 6.3.0
+ The use of this software is governed by a License Agreement.
+ See http://www.ncl.ucar.edu/ for more details.
+
+Variable: f
+Type: file
+filename:	ggap201101291800
+path:	/nfs/a321/datasets/ERA-interim/2011/ap/ggap201101291800.nc
+   file global attributes:
+      history : Sat May 18 19:39:12 2019: ncatted -a standard_name,STRF,o,c,atmosphere_horizontal_streamfunction -a standard_name,VPOT,o,c,atmosphere_horizontal_velocity_potential /nfs/a137/earceb/ERA-interim/2011/ap/ggap201101291800.nc
+Tue May 31 14:54:57 BST 2011 - CONVSH V1.92 16-February-2006
+      NCO : netCDF Operators version 4.7.5 (Homepage = http://nco.sf.net, Code = http://github.com/nco/nco)
+   dimensions:
+      longitude = 512
+      latitude = 256
+      p = 37
+      t = 1  // unlimited
+   variables:
+      float longitude ( longitude )
+         long_name :	longitude
+         units :	degrees_east
+         point_spacing :	even
+         modulo :	 
+
+      float latitude ( latitude )
+         long_name :	latitude
+         units :	degrees_north
+
+      float p ( p )
+         long_name :	p
+         units :	mbar
+         positive :	down
+
+      float t ( t )
+         long_name :	t
+         units :	days since 2011-01-29 18:00:00
+         time_origin :	29-JAN-2011:18:00:00
+
+      float Z ( t, p, latitude, longitude )
+         source :	GRIB data
+         name :	Z
+         title :	Geopotential
+         date :	29/01/11
+         time :	18:00
+         long_name :	Geopotential
+         standard_name :	geopotential
+         units :	m**2 s**-2
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	-2951.871
+         valid_max :	487751.1
+
+      float T ( t, p, latitude, longitude )
+         source :	GRIB data
+         name :	T
+         title :	Temperature
+         date :	29/01/11
+         time :	18:00
+         long_name :	Temperature
+         standard_name :	air_temperature
+         units :	K
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	185.538
+         valid_max :	313.0137
+
+      float W ( t, p, latitude, longitude )
+         source :	GRIB data
+         name :	W
+         title :	Vertical velocity
+         date :	29/01/11
+         time :	18:00
+         long_name :	Vertical velocity
+         standard_name :	vertical_air_velocity_expressed_as_tendency_of_pressure
+         units :	Pa s**-1
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	-3.161767
+         valid_max :	2.17164
+
+      float STRF ( t, p, latitude, longitude )
+         source :	GRIB data
+         name :	STRF
+         title :	Stream function
+         date :	29/01/11
+         time :	18:00
+         long_name :	Stream function
+         standard_name :	atmosphere_horizontal_streamfunction
+         units :	m**2 s**-1
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	-2.901595e+08
+         valid_max :	3.746788e+08
+
+      float VPOT ( t, p, latitude, longitude )
+         source :	GRIB data
+         name :	VPOT
+         title :	Velocity potential
+         date :	29/01/11
+         time :	18:00
+         long_name :	Velocity potential
+         standard_name :	atmosphere_horizontal_velocity_potential
+         units :	m**2 s**-1
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	-6.62868e+07
+         valid_max :	5.942034e+07
+
+      float U ( t, p, latitude, longitude )
+         source :	GRIB data
+         name :	U
+         title :	U velocity
+         date :	29/01/11
+         time :	18:00
+         long_name :	U velocity
+         standard_name :	eastward_wind
+         units :	m s**-1
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	-109.0025
+         valid_max :	160.3899
+
+      float V ( t, p, latitude, longitude )
+         source :	GRIB data
+         name :	V
+         title :	V velocity
+         date :	29/01/11
+         time :	18:00
+         long_name :	V velocity
+         standard_name :	northward_wind
+         units :	m s**-1
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	-138.5675
+         valid_max :	130.6184
+
+      float R ( t, p, latitude, longitude )
+         source :	GRIB data
+         name :	R
+         title :	Relative humidity
+         date :	29/01/11
+         time :	18:00
+         long_name :	Relative humidity
+         standard_name :	relative_humidity
+         units :	%
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	-4.557139
+         valid_max :	152.4008
+
+      float VO ( t, p, latitude, longitude )
+         source :	GRIB data
+         name :	VO
+         title :	Vorticity (relative)
+         date :	29/01/11
+         time :	18:00
+         long_name :	Vorticity (relative)
+         standard_name :	atmosphere_relative_vorticity
+         units :	s**-1
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	-0.0004887737
+         valid_max :	0.0004034491
+
+      float D ( t, p, latitude, longitude )
+         source :	GRIB data
+         name :	D
+         title :	Divergence
+         date :	29/01/11
+         time :	18:00
+         long_name :	Divergence
+         standard_name :	divergence_of_wind
+         units :	s**-1
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	-0.0001834962
+         valid_max :	0.0002373683
+
+      float PV ( t, p, latitude, longitude )
+         source :	GRIB data
+         name :	PV
+         title :	Potential vorticity
+         date :	29/01/11
+         time :	18:00
+         long_name :	Potential vorticity
+         standard_name :	thunderstorm_probability
+         units :	K m**2 kg**-1 s**-1
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	-0.007486381
+         valid_max :	0.03071859
+
+      float Q ( t, p, latitude, longitude )
+         source :	GRIB data
+         name :	Q
+         title :	Specific humidity
+         date :	29/01/11
+         time :	18:00
+         long_name :	Specific humidity
+         standard_name :	specific_humidity
+         units :	kg kg**-1
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	7.404088e-07
+         valid_max :	0.02185721
+
+      float O3 ( t, p, latitude, longitude )
+         source :	GRIB data
+         name :	O3
+         title :	Ozone mass mixing ratio
+         date :	29/01/11
+         time :	18:00
+         long_name :	Ozone mass mixing ratio
+         units :	kg kg**-1
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	1.033685e-09
+         valid_max :	1.772159e-05
+
+      float CLWC ( t, p, latitude, longitude )
+         source :	GRIB data
+         name :	CLWC
+         title :	Cloud liquid water content
+         date :	29/01/11
+         time :	18:00
+         long_name :	Cloud liquid water content
+         units :	kg kg**-1
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	 0
+         valid_max :	0.001069546
+
+      float CIWC ( t, p, latitude, longitude )
+         source :	GRIB data
+         name :	CIWC
+         title :	Cloud ice water content
+         date :	29/01/11
+         time :	18:00
+         long_name :	Cloud ice water content
+         units :	kg kg**-1
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	 0
+         valid_max :	0.0004925728
+
+      float CC ( t, p, latitude, longitude )
+         source :	GRIB data
+         name :	CC
+         title :	Cloud cover
+         date :	29/01/11
+         time :	18:00
+         long_name :	Cloud cover
+         units :	(0 - 1)
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	 0
+         valid_max :	 1
+
+ 

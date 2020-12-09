@@ -1,0 +1,567 @@
+ Copyright (C) 1995-2015 - All Rights Reserved
+ University Corporation for Atmospheric Research
+ NCAR Command Language Version 6.3.0
+ The use of this software is governed by a License Agreement.
+ See http://www.ncl.ucar.edu/ for more details.
+
+Variable: f
+Type: file
+filename:	ggas201101291800
+path:	/nfs/a321/datasets/ERA-interim/2011/as/ggas201101291800.nc
+   file global attributes:
+      history : Tue May 31 15:12:26 BST 2011 - CONVSH V1.92 16-February-2006
+   dimensions:
+      longitude = 512
+      latitude = 256
+      surface = 1
+      t = 1  // unlimited
+      depth = 1
+      depth_1 = 1
+      depth_2 = 1
+      depth_3 = 1
+   variables:
+      float longitude ( longitude )
+         long_name :	longitude
+         units :	degrees_east
+         point_spacing :	even
+         modulo :	 
+
+      float latitude ( latitude )
+         long_name :	latitude
+         units :	degrees_north
+
+      float surface ( surface )
+         long_name :	surface
+         units :	level
+         positive :	up
+
+      float t ( t )
+         long_name :	t
+         units :	days since 2011-01-29 18:00:00
+         time_origin :	29-JAN-2011:18:00:00
+
+      float CI ( t, surface, latitude, longitude )
+         source :	GRIB data
+         name :	CI
+         title :	Sea-ice cover
+         date :	29/01/11
+         time :	18:00
+         long_name :	Sea-ice cover
+         standard_name :	wind_from_direction
+         units :	(0 - 1)
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	 0
+         valid_max :	 1
+
+      float ASN ( t, surface, latitude, longitude )
+         source :	GRIB data
+         name :	ASN
+         title :	Snow albedo
+         date :	29/01/11
+         time :	18:00
+         long_name :	Snow albedo
+         standard_name :	wind_speed
+         units :	(0 - 1)
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	0.5
+         valid_max :	0.8499985
+
+      float RSN ( t, surface, latitude, longitude )
+         source :	GRIB data
+         name :	RSN
+         title :	Snow density
+         date :	29/01/11
+         time :	18:00
+         long_name :	Snow density
+         standard_name :	eastward_wind
+         units :	kg**-3
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	100
+         valid_max :	300
+
+      float SSTK ( t, surface, latitude, longitude )
+         source :	GRIB data
+         name :	SSTK
+         title :	Sea surface temperature
+         date :	29/01/11
+         time :	18:00
+         long_name :	Sea surface temperature
+         standard_name :	northward_wind
+         units :	K
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	269.8611
+         valid_max :	304.9861
+
+      float depth ( depth )
+         long_name :	depth
+         units :	cm
+         positive :	down
+
+      float ISTL1 ( t, depth, latitude, longitude )
+         source :	GRIB data
+         name :	ISTL1
+         title :	Ice surface temperature layer 1
+         date :	29/01/11
+         time :	18:00
+         long_name :	Ice surface temperature layer 1
+         standard_name :	atmosphere_horizontal_streamfunction
+         units :	K
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	235.4078
+         valid_max :	273.16
+
+      float depth_1 ( depth_1 )
+         long_name :	depth
+         units :	cm
+         positive :	down
+
+      float ISTL2 ( t, depth_1, latitude, longitude )
+         source :	GRIB data
+         name :	ISTL2
+         title :	Ice surface temperature layer 2
+         date :	29/01/11
+         time :	18:00
+         long_name :	Ice surface temperature layer 2
+         standard_name :	atmosphere_horizontal_velocity_potential
+         units :	K
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	238.4962
+         valid_max :	273.1599
+
+      float depth_2 ( depth_2 )
+         long_name :	depth
+         units :	cm
+         positive :	down
+
+      float ISTL3 ( t, depth_2, latitude, longitude )
+         source :	GRIB data
+         name :	ISTL3
+         title :	Ice surface temperature layer 3
+         date :	29/01/11
+         time :	18:00
+         long_name :	Ice surface temperature layer 3
+         units :	K
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	249.4024
+         valid_max :	272.6103
+
+      float depth_3 ( depth_3 )
+         long_name :	depth
+         units :	cm
+         positive :	down
+
+      float ISTL4 ( t, depth_3, latitude, longitude )
+         source :	GRIB data
+         name :	ISTL4
+         title :	Ice surface temperature layer 4
+         date :	29/01/11
+         time :	18:00
+         long_name :	Ice surface temperature layer 4
+         standard_name :	vertical_air_velocity_expressed_as_tendency_of_sigma
+         units :	K
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	261.8823
+         valid_max :	271.9797
+
+      float SWVL1 ( t, depth, latitude, longitude )
+         source :	GRIB data
+         name :	SWVL1
+         title :	Volumetric soil water layer 1
+         date :	29/01/11
+         time :	18:00
+         long_name :	Volumetric soil water layer 1
+         standard_name :	vertical_air_velocity_expressed_as_tendency_of_pressure
+         units :	m**3 m**-3
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	-0
+         valid_max :	0.4709606
+
+      float SWVL2 ( t, depth_1, latitude, longitude )
+         source :	GRIB data
+         name :	SWVL2
+         title :	Volumetric soil water layer 2
+         date :	29/01/11
+         time :	18:00
+         long_name :	Volumetric soil water layer 2
+         standard_name :	upward_air_velocity
+         units :	m**3 m**-3
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	-0
+         valid_max :	0.4722252
+
+      float SWVL3 ( t, depth_2, latitude, longitude )
+         source :	GRIB data
+         name :	SWVL3
+         title :	Volumetric soil water layer 3
+         date :	29/01/11
+         time :	18:00
+         long_name :	Volumetric soil water layer 3
+         standard_name :	atmosphere_absolute_vorticity
+         units :	m**3 m**-3
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	-0
+         valid_max :	0.4689334
+
+      float SWVL4 ( t, depth_3, latitude, longitude )
+         source :	GRIB data
+         name :	SWVL4
+         title :	Volumetric soil water layer 4
+         date :	29/01/11
+         time :	18:00
+         long_name :	Volumetric soil water layer 4
+         units :	m**3 m**-3
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	-0
+         valid_max :	0.4722443
+
+      float SP ( t, surface, latitude, longitude )
+         source :	GRIB data
+         name :	SP
+         title :	Surface pressure
+         date :	29/01/11
+         time :	18:00
+         long_name :	Surface pressure
+         standard_name :	surface_air_pressure
+         units :	Pa
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	51540.61
+         valid_max :	104223.8
+
+      float TCW ( t, surface, latitude, longitude )
+         source :	GRIB data
+         name :	TCW
+         title :	Total column water
+         date :	29/01/11
+         time :	18:00
+         long_name :	Total column water
+         units :	kg m**-2
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	0.2044737
+         valid_max :	71.0006
+
+      float TCWV ( t, surface, latitude, longitude )
+         source :	GRIB data
+         name :	TCWV
+         title :	Total column water vapour
+         date :	29/01/11
+         time :	18:00
+         long_name :	Total column water vapour
+         standard_name :	lwe_thickness_of_atmosphere_water_vapour_content
+         units :	kg m**-2
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	0.2044737
+         valid_max :	69.4713
+
+      float STL1 ( t, depth, latitude, longitude )
+         source :	GRIB data
+         name :	STL1
+         title :	Soil temperature level 1
+         date :	29/01/11
+         time :	18:00
+         long_name :	Soil temperature level 1
+         standard_name :	surface_temperature
+         units :	K
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	211.3763
+         valid_max :	318.7792
+
+      float SD ( t, surface, latitude, longitude )
+         source :	GRIB data
+         name :	SD
+         title :	Snow depth
+         date :	29/01/11
+         time :	18:00
+         long_name :	Snow depth
+         standard_name :	lwe_thickness_of_surface_snow_amount
+         units :	m of water equivalent
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	 0
+         valid_max :	10
+
+      float CHNK ( t, surface, latitude, longitude )
+         source :	GRIB data
+         name :	CHNK
+         title :	Charnock
+         date :	29/01/11
+         time :	18:00
+         long_name :	Charnock
+         units :	 
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	0.009522203
+         valid_max :	0.07464814
+
+      float MSL ( t, surface, latitude, longitude )
+         source :	GRIB data
+         name :	MSL
+         title :	Mean sea-level pressure
+         date :	29/01/11
+         time :	18:00
+         long_name :	Mean sea-level pressure
+         standard_name :	air_pressure_at_sea_level
+         units :	Pa
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	96397.08
+         valid_max :	104923.2
+
+      float TCC ( t, surface, latitude, longitude )
+         source :	GRIB data
+         name :	TCC
+         title :	Total cloud cover
+         date :	29/01/11
+         time :	18:00
+         long_name :	Total cloud cover
+         standard_name :	cloud_area_fraction
+         units :	(0 - 1)
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	9.999779e-13
+         valid_max :	 1
+
+      float U10 ( t, surface, latitude, longitude )
+         source :	GRIB data
+         name :	U10
+         title :	10 metre U wind component
+         date :	29/01/11
+         time :	18:00
+         long_name :	10 metre U wind component
+         standard_name :	eastward_wind
+         units :	m s**-1
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	-16.28665
+         valid_max :	24.30396
+
+      float V10 ( t, surface, latitude, longitude )
+         source :	GRIB data
+         name :	V10
+         title :	10 metre V wind component
+         date :	29/01/11
+         time :	18:00
+         long_name :	10 metre V wind component
+         standard_name :	northward_wind
+         units :	m s**-1
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	-20.47661
+         valid_max :	24.96054
+
+      float T2 ( t, surface, latitude, longitude )
+         source :	GRIB data
+         name :	T2
+         title :	2 metre temperature
+         date :	29/01/11
+         time :	18:00
+         long_name :	2 metre temperature
+         standard_name :	air_temperature
+         units :	K
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	204.688
+         valid_max :	312.1443
+
+      float D2 ( t, surface, latitude, longitude )
+         source :	GRIB data
+         name :	D2
+         title :	2 metre dewpoint temperature
+         date :	29/01/11
+         time :	18:00
+         long_name :	2 metre dewpoint temperature
+         standard_name :	dew_point_temperature
+         units :	K
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	204.2392
+         valid_max :	301.2717
+
+      float STL2 ( t, depth_1, latitude, longitude )
+         source :	GRIB data
+         name :	STL2
+         title :	Soil temperature level 2
+         date :	29/01/11
+         time :	18:00
+         long_name :	Soil temperature level 2
+         units :	K
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	215.0783
+         valid_max :	313.9424
+
+      float SR ( t, surface, latitude, longitude )
+         source :	GRIB data
+         name :	SR
+         title :	Surface roughness
+         date :	29/01/11
+         time :	18:00
+         long_name :	Surface roughness
+         standard_name :	surface_roughness_length
+         units :	m
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	0.0009999999
+         valid_max :	99.99905
+
+      float AL ( t, surface, latitude, longitude )
+         source :	GRIB data
+         name :	AL
+         title :	Albedo
+         date :	29/01/11
+         time :	18:00
+         long_name :	Albedo
+         standard_name :	surface_albedo
+         units :	(0 - 1)
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	0.06999999
+         valid_max :	0.4884939
+
+      float STL3 ( t, depth_2, latitude, longitude )
+         source :	GRIB data
+         name :	STL3
+         title :	Soil temperature level 3
+         date :	29/01/11
+         time :	18:00
+         long_name :	Soil temperature level 3
+         units :	K
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	218.1866
+         valid_max :	312.2782
+
+      float LCC ( t, surface, latitude, longitude )
+         source :	GRIB data
+         name :	LCC
+         title :	Low cloud cover
+         date :	29/01/11
+         time :	18:00
+         long_name :	Low cloud cover
+         units :	(0 - 1)
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	 0
+         valid_max :	 1
+
+      float MCC ( t, surface, latitude, longitude )
+         source :	GRIB data
+         name :	MCC
+         title :	Medium cloud cover
+         date :	29/01/11
+         time :	18:00
+         long_name :	Medium cloud cover
+         units :	(0 - 1)
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	 0
+         valid_max :	 1
+
+      float HCC ( t, surface, latitude, longitude )
+         source :	GRIB data
+         name :	HCC
+         title :	High cloud cover
+         date :	29/01/11
+         time :	18:00
+         long_name :	High cloud cover
+         units :	(0 - 1)
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	9.999779e-13
+         valid_max :	 1
+
+      float SRC ( t, surface, latitude, longitude )
+         source :	GRIB data
+         name :	SRC
+         title :	Skin reservoir content
+         date :	29/01/11
+         time :	18:00
+         long_name :	Skin reservoir content
+         units :	m of water
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	 0
+         valid_max :	0.00118947
+
+      float TCO3 ( t, surface, latitude, longitude )
+         source :	GRIB data
+         name :	TCO3
+         title :	Total column ozone
+         date :	29/01/11
+         time :	18:00
+         long_name :	Total column ozone
+         units :	kg m**-2
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	0.004607415
+         valid_max :	0.01112306
+
+      float LSRH ( t, surface, latitude, longitude )
+         source :	GRIB data
+         name :	LSRH
+         title :	Logarithm of surface roughness length for heat
+         date :	29/01/11
+         time :	18:00
+         long_name :	Logarithm of surface roughness length for heat
+         units :	 
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	-20
+         valid_max :	-1.386719
+
+      float SKT ( t, surface, latitude, longitude )
+         source :	GRIB data
+         name :	SKT
+         title :	Skin temperature
+         date :	29/01/11
+         time :	18:00
+         long_name :	Skin temperature
+         units :	K
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	190
+         valid_max :	327.3359
+
+      float STL4 ( t, depth_3, latitude, longitude )
+         source :	GRIB data
+         name :	STL4
+         title :	Soil temperature level 4
+         date :	29/01/11
+         time :	18:00
+         long_name :	Soil temperature level 4
+         units :	K
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	219.8206
+         valid_max :	308.4813
+
+      float TSN ( t, surface, latitude, longitude )
+         source :	GRIB data
+         name :	TSN
+         title :	Temperature of snow layer
+         date :	29/01/11
+         time :	18:00
+         long_name :	Temperature of snow layer
+         standard_name :	snow_temperature
+         units :	K
+         missing_value :	2e+20
+         _FillValue :	2e+20
+         valid_min :	182.4734
+         valid_max :	317.9695
+
+ 

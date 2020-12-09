@@ -40,14 +40,15 @@ mon= "12"
 
 # Just want to output for one time and day...then use e.g.:
 hours = ["12"]
-days = ["03","04"]
+days = ["06","07","08","09","10","11","12","13"]
 
 # In[]: Loop over all years, months, days and hours specified above to load in the data and then plot horizontal windspeed
 # vertical cross-sections of windspeed, calculate relative vorticity and plot relative vorticity. 
 for d in days:
     for time in hours: 
         erai_data = Dataset('/nfs/a321/datasets/ERA-interim/'+str(year)+'/ap/ggap' + str(year)+''+str(mon)+''+str(d)+''+str(time)+'00.nc','r')
-       
+        erai_data_surface = Dataset('/nfs/a321/datasets/ERA-interim/'+str(year)+'/as/ggas' + str(year)+''+str(mon)+''+str(d)+''+str(time)+'00.nc','r')
+ 
         
         
         # In[]: Extracting the relevant data from the ERA-interim files loaded
@@ -60,10 +61,19 @@ for d in days:
         
         p   = erai_data.variables['p'][:] #pressure
         t   = erai_data.variables['t'][:] #time
-        
+
+
+        MSLP = erai_data_surface.variables['MSL'][:] #mean sea level pressure
         u   = erai_data.variables['U'][:] #u winds
         v   = erai_data.variables['V'][:] #v winds
         w   = erai_data.variables['W'][:] #w winds
+        Z   = erai_data.variables['Z'][:] #geopotential height 
+        T   = erai_data.variables['T'][:] #tempertature
+        D   = erai_data.variables['D'][:] #divergence
+        PV  = erai_data.variables['PV'][:] #potential vorticity 
+        Q   = erai_data.variables['Q'][:] #specific humidity 
+        CLWC= erai_data.variables['CLWC'][:] #cloud liquid water content 
+        CIWC= erai_data.variables['CIWC'][:] #cloud ice water content
         erai_data.close()
         
         
@@ -77,6 +87,14 @@ for d in days:
         u = u[:,:,:,indcs]
         v = v[:,:,:,indcs]
         w = w[:,:,:,indcs]
+        Z = Z[:,:,:,indcs] 
+        T = T[:,:,:,indcs]
+        D = D[:,:,:,indcs]
+        PV = PV[:,:,:,indcs]
+        Q = Q[:,:,:,indcs]
+        CLWC=CLWC[:,:,:,indcs]
+        CIWC=CIWC[:,:,:,indcs]
+        MSLP = MSLP[:,:,:,indcs]
         lon = lon[indcs]
       
  
@@ -89,17 +107,29 @@ for d in days:
         # Find at which index in the array for pressure the p_lev specified is located
         pressure = np.where(p==p_lev) 
         
-        # Take time/pressure slice of U and V
+        # Take time/pressure slice
         u_slice = u[0,pressure,:,:]
         v_slice = v[0,pressure,:,:]
         w_slice = w[0,pressure,:,:]
-        print u_slice.shape, 'u_slice'
-        
+        Z_slice = Z[0,pressure,:,:]
+        T_slice = T[0,pressure,:,:]
+        D_slice = D[0,pressure,:,:]
+        PV_slice = PV[0,pressure,:,:]
+        Q_slice = Q[0,pressure,:,:]
+        CLWC_slice = CLWC[0,pressure,:,:]
+        CIWC_slice = CIWC[0,pressure,:,:]
+        MSLP_slice = MSLP[0,:,:]
         #Make arrays 2D so now just an array of u and v winds for pressure level p_lev at all latitude and longitudes
         u_slice = u_slice[0,0,:,:]
         v_slice=v_slice[0,0,:,:]
         w_slice = w_slice[0,0,:,:]
-      
+        Z_slice = Z_slice[0,0,:,:]
+        T_slice = T_slice[0,0,:,:]
+        D_slice = D_slice[0,0,:,:]
+        PV_slice = PV_slice[0,0,:,:]
+        Q_slice = Q_slice[0,0,:,:]
+        CLWC_slice = CLWC_slice[0,0,:,:]
+        CIWC_slice = CIWC_slice[0,0,:,:]
 
         
        
@@ -119,7 +149,7 @@ for d in days:
 
         Coriolis = 2*earthrot*np.sin(lat*pi/180)
              
-        
+        print(Coriolis.shape) 
         
         # In[42]: Calculate relative vorticity
        
@@ -212,13 +242,16 @@ for d in days:
         
         du_array = np.empty( u_slice.shape)
         dv_array = np.empty( u_slice.shape)
-        
+        dZu_array = np.empty(Z_slice.shape) 
+        dZv_array = np.empty(Z_slice.shape)
+        dTu_array = np.empty(T_slice.shape)
+        dTv_array = np.empty(T_slice.shape) 
         
         # In[124]: Check the shape of u_slice to check it worked
         
         
-        u_slice.shape
-        
+        print u_slice.shape
+        print Z_slice.shape
         
         # In[126]: Calculate the central finite difference for dv
         #(U(i+1) + u(i-1))/2*dx  central differening
@@ -236,9 +269,8 @@ for d in days:
                     high_index = -1
                 
                 dv_array[i,j] = (v_slice[ i, high_index] - v_slice[ i, low_index])
-
-        
-        
+                dZv_array[i,j] = (Z_slice[i,high_index]-Z_slice[i,low_index])
+                dTv_array[i,j] = (T_slice[i,high_index]-T_slice[i,low_index])
         # In[128]: Calculate the central finite difference for du
         
         for j in range( 0, lon.size):
@@ -257,10 +289,51 @@ for d in days:
                     low_index=0
                     #du_array[i,j] = (u_slice[ high_index, j] - u_slice[ low_index, j])
                 else:
-                    du_array[i,j] = (u_slice[ high_index, j] - u_slice[ low_index, j]) 
+                    du_array[i,j] = (u_slice[ high_index, j] - u_slice[ low_index, j])
+                    dZu_array[i,j] = (Z_slice[high_index,j]-Z_slice[low_index,j])
+                    dTu_array[i,j] = (T_slice[high_index,j]-T_slice[low_index,j])
+        '''
+        dZ_array = np.empty(Z_slice.shape)
+
+        for j in range( 0, lon.size):
+            for i in range( 0, lat.size):
             
+            # Find index +/- 1, remembering that we need to wrap around the earth at
+            # the extent of the coordinates
             
-        
+                low_index = i-1
+                high_index = i+1
+                
+                if high_index == lat.size:
+                    high_index -= 1
+                    #du_array[i,j] = (u_slice[ high_index, j] - u_slice[ low_index, j])
+                elif low_index==-1:
+                    low_index=0
+                    #du_array[i,j] = (u_slice[ high_index, j] - u_slice[ low_index, j])
+                else:
+                    dZ_array[i,j] = (Z_slice[ high_index, j] - Z_slice[ low_index, j]) 
+         
+        dT_array = np.empty(T_slice.shape)
+
+        for j in range( 0, lon.size):
+            for i in range( 0, lat.size):
+            
+            # Find index +/- 1, remembering that we need to wrap around the earth at
+            # the extent of the coordinates
+            
+                low_index = i-1
+                high_index = i+1
+                
+                if high_index == lat.size:
+                    high_index -= 1
+                    #du_array[i,j] = (u_slice[ high_index, j] - u_slice[ low_index, j])
+                elif low_index==-1:
+                    low_index=0
+                    #du_array[i,j] = (u_slice[ high_index, j] - u_slice[ low_index, j])
+                else:
+                    dT_array[i,j] = (T_slice[ high_index, j] - T_slice[ low_index, j])   
+    
+        '''
         
         # In[]: Calculate relative vorticity
         
@@ -269,6 +342,100 @@ for d in days:
         
         vort = dv_array / dx_array + du_array / dy_array   
         
+        #geostrophic wind
+        ug =-(1/Coriolis)*(dZv_array.T/dy_array.T)
+        vg = (1/Coriolis)*(dZu_array.T/dx_array.T)
+        
+        ug = ug.T
+        vg = vg.T
+
+        #ageostrophic wind
+        uag = u_slice - ug
+        vag = v_slice - vg
+        
+        #potential temperature
+        p0 = 1000
+        theta = T_slice*(p0/p_lev)**(0.286)
+
+        #Q vector
+        dug_array = np.empty(ug.shape)
+        dvg_array = np.empty(vg.shape)
+        for j in range( 0, lon.size):
+            for i in range( 0, lat.size):
+            
+            # Find index +/- 1, remembering that we need to wrap around the earth at
+            # the extent of the coordinates
+            
+                low_index = i-1
+                high_index = i+1
+                
+                if high_index == lat.size:
+                    high_index -= 1
+                    #du_array[i,j] = (u_slice[ high_index, j] - u_slice[ low_index, j])
+                elif low_index==-1:
+                    low_index=0
+                    #du_array[i,j] = (u_slice[ high_index, j] - u_slice[ low_index, j])
+                else:
+                    dug_array[i,j] = (ug[ high_index, j] - ug[ low_index, j]) 
+
+        for i in range( 0, lat.size):
+             for j in range( 0, lon.size):
+                
+                # Find index +/- 1, remembering that we need to wrap around the earth at
+                # the extent of the coordinates
+                
+                low_index = j-1
+                high_index = j+1
+                
+                if high_index == lon.size:
+                    high_index = -1
+                
+                dvg_array[i,j] = (vg[ i, high_index] - vg[ i, low_index])
+        
+        Rgas = 287
+        Qx = (dug_array/dx_array)*(dTu_array/dx_array) + (dvg_array/dx_array)*(dTv_array/dy_array)
+        Qy = (dug_array/dy_array)*(dTu_array/dx_array) + (dvg_array/dy_array)*(dTv_array/dy_array)
+
+        Qx = (-Rgas/p_lev)*Qx
+        Qy = (-Rgas/p_lev)*Qy
+        
+        dQx_array = np.empty(Qx.shape)
+        dQy_array = np.empty(Qy.shape)
+        for j in range( 0, lon.size):
+            for i in range( 0, lat.size):
+            
+            # Find index +/- 1, remembering that we need to wrap around the earth at
+            # the extent of the coordinates
+            
+                low_index = i-1
+                high_index = i+1
+                
+                if high_index == lat.size:
+                    high_index -= 1
+                    #du_array[i,j] = (u_slice[ high_index, j] - u_slice[ low_index, j])
+                elif low_index==-1:
+                    low_index=0
+                    #du_array[i,j] = (u_slice[ high_index, j] - u_slice[ low_index, j])
+                else:
+                    dQx_array[i,j] = (Qx[ high_index, j] - Qx[ low_index, j]) 
+
+        for i in range( 0, lat.size):
+             for j in range( 0, lon.size):
+                
+                # Find index +/- 1, remembering that we need to wrap around the earth at
+                # the extent of the coordinates
+                
+                low_index = j-1
+                high_index = j+1
+                
+                if high_index == lon.size:
+                    high_index = -1
+                
+                dQy_array[i,j] = (Qy[ i, high_index] - Qy[ i, low_index])
+
+        divQ = dQx_array/dx_array + dQy_array/dy_array
+
+     
         # Change the units of vorticity 
         vorticity = vort *100000 
         
@@ -411,32 +578,7 @@ for d in days:
         plt.savefig(pathout+'/ERA_interim_Relative_vorticity_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')
         plt.show()
         
-        '''
-        fig = plt.figure(figsize=(10,10))
-        ax = plt.axes(projection=ccrs.PlateCarree())
-        #clevels = [-20,-18,-16,-14,-12,-10,-8,-6,-4,-2,0,2,4,6,8,10,12,14,16,18,20]
-        plt.contourf(lon_subset, lat_subset, w[lat_min_index:lat_max_index, lon_min_index:lon_max_index], transform=ccrs.PlateCarree(),cmap='seismic',extend='both')
-        cbar = plt.colorbar(orientation='horizontal')
-        cbar.outline.set_linewidth(0.5)
-        cbar.ax.tick_params(labelsize=10)
-        cbar.set_label('Velocity $ms^{-1}$)')
-        ax.add_feature(countries_50m, linewidth=1)
-        gl = ax.gridlines(color="black", linestyle="dotted",draw_labels='True')
-        gl.xlabels_top = False
-        gl.ylabels_left = False
-        gl.xlines = True
-        gl.ylines = True
-        gl.xlocator = mticker.FixedLocator([-40,-35,-30,-25,-20,-15,-10,-5, 0,5,10,15,20,25,30])
-        gl.ylocator = mticker.FixedLocator([30,35,40,45,50,55,60,65,70,75,80])
-        gl.xformatter = LONGITUDE_FORMATTER
-        gl.yformatter = LATITUDE_FORMATTER
-        #Save and show the figure
-        plt.title("Vertical Velocity")
-        plt.savefig(pathout+'/ERA_interim_Vertical_velocity_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')
-        plt.show()
-        '''
-
-        
+                
 
         
 
