@@ -39,7 +39,7 @@ mon= "12"
 #days = ['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30']
 
 # Just want to output for one time and day...then use e.g.:
-hours = ["12"]
+hours = ["00","06","12","18"]
 days = ["06","07","08","09","10","11","12","13"]
 
 # In[]: Loop over all years, months, days and hours specified above to load in the data and then plot horizontal windspeed
@@ -75,6 +75,7 @@ for d in days:
         CLWC= erai_data.variables['CLWC'][:] #cloud liquid water content 
         CIWC= erai_data.variables['CIWC'][:] #cloud ice water content
         erai_data.close()
+        erai_data_surface.close()
         
         
         # In[]: Longitude values are loaded in as 0 to 360 degrees. Modify so 
@@ -118,7 +119,7 @@ for d in days:
         Q_slice = Q[0,pressure,:,:]
         CLWC_slice = CLWC[0,pressure,:,:]
         CIWC_slice = CIWC[0,pressure,:,:]
-        MSLP_slice = MSLP[0,:,:]
+        MSLP_slice = MSLP[0,0,:,:]
         #Make arrays 2D so now just an array of u and v winds for pressure level p_lev at all latitude and longitudes
         u_slice = u_slice[0,0,:,:]
         v_slice=v_slice[0,0,:,:]
@@ -140,7 +141,7 @@ for d in days:
         
         wspeed_all = np.sqrt((u**2)+(v**2))
         wspeed_all= wspeed_all[0,:,:,:]
-        
+         
         # In[]: Coriolis force calculation
         
         earthrot = 7.29*10**-5
@@ -227,12 +228,7 @@ for d in days:
                     dy_array[i,j] = haversine( lon[j], lat[low_index], lon[j], lat[high_index]) 
                     
                 else:
-                    dy_array[i,j] = haversine( lon[j], lat[low_index], lon[j], lat[high_index]) 
-        
-      
-        
-     
-        
+                    dy_array[i,j] = haversine( lon[j], lat[low_index], lon[j], lat[high_index])   
         
         # Find du and dv
         # As above, we need to find du and dv using centred difference
@@ -248,10 +244,7 @@ for d in days:
         dTv_array = np.empty(T_slice.shape) 
         
         # In[124]: Check the shape of u_slice to check it worked
-        
-        
-        print u_slice.shape
-        print Z_slice.shape
+         
         
         # In[126]: Calculate the central finite difference for dv
         #(U(i+1) + u(i-1))/2*dx  central differening
@@ -292,49 +285,7 @@ for d in days:
                     du_array[i,j] = (u_slice[ high_index, j] - u_slice[ low_index, j])
                     dZu_array[i,j] = (Z_slice[high_index,j]-Z_slice[low_index,j])
                     dTu_array[i,j] = (T_slice[high_index,j]-T_slice[low_index,j])
-        '''
-        dZ_array = np.empty(Z_slice.shape)
-
-        for j in range( 0, lon.size):
-            for i in range( 0, lat.size):
-            
-            # Find index +/- 1, remembering that we need to wrap around the earth at
-            # the extent of the coordinates
-            
-                low_index = i-1
-                high_index = i+1
-                
-                if high_index == lat.size:
-                    high_index -= 1
-                    #du_array[i,j] = (u_slice[ high_index, j] - u_slice[ low_index, j])
-                elif low_index==-1:
-                    low_index=0
-                    #du_array[i,j] = (u_slice[ high_index, j] - u_slice[ low_index, j])
-                else:
-                    dZ_array[i,j] = (Z_slice[ high_index, j] - Z_slice[ low_index, j]) 
-         
-        dT_array = np.empty(T_slice.shape)
-
-        for j in range( 0, lon.size):
-            for i in range( 0, lat.size):
-            
-            # Find index +/- 1, remembering that we need to wrap around the earth at
-            # the extent of the coordinates
-            
-                low_index = i-1
-                high_index = i+1
-                
-                if high_index == lat.size:
-                    high_index -= 1
-                    #du_array[i,j] = (u_slice[ high_index, j] - u_slice[ low_index, j])
-                elif low_index==-1:
-                    low_index=0
-                    #du_array[i,j] = (u_slice[ high_index, j] - u_slice[ low_index, j])
-                else:
-                    dT_array[i,j] = (T_slice[ high_index, j] - T_slice[ low_index, j])   
-    
-        '''
-        
+       
         # In[]: Calculate relative vorticity
         
         #The the haversine formula is always a positive distance so we need to do dv/dx + du/dy 
@@ -355,7 +306,7 @@ for d in days:
         
         #potential temperature
         p0 = 1000
-        theta = T_slice*(p0/p_lev)**(0.286)
+        theta = T[0,:,:,:]*(p0/p_lev)**(0.286)
 
         #Q vector
         dug_array = np.empty(ug.shape)
@@ -470,7 +421,8 @@ for d in days:
         u_subset=  u_slice[lat_min_index:lat_max_index,lon_min_index:lon_max_index]
         v_subset = v_slice[lat_min_index:lat_max_index,lon_min_index:lon_max_index]
         w_subset = w_slice[lat_min_index:lat_max_index,lon_min_index:lon_max_index]
-        # In[]: Plot the windspeed with windbarbs to indicate wind direction
+        theta_subset = theta[lat_min_index:lat_max_index,lon_min_index:lon_max_index]
+        #In[]: Plot the windspeed with windbarbs to indicate wind direction
 
         #Specify manually the contour levels that will be plotted
         wlevels = [0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75]
@@ -507,7 +459,6 @@ for d in days:
         plt.title("Windspeed")
         #Save the figures for all dates and times input at the start
         plt.savefig(pathout+'/ERA_interim_Windspeed_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')
-        plt.show()
 
         
         print 'plotted windspeed now onto cross-section'
@@ -548,21 +499,20 @@ for d in days:
         plt.title("Windspeed")
         #save the figures for all dates and times 
         plt.savefig(pathout+'/ERA_interim_Windspeed_Cross_Section'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_Longitude_'+str(lon_cross_section)+'.png',format ='png', dpi=150, bbox_inches='tight')
-        plt.show()
 
         
         print 'plotted  windspeed cross section now to plot relative vorticity'
-        
+        #print MSLP_slice.shape 
         # In[]: Plot the relative vorticity
         
         fig = plt.figure(figsize=(10,10))
         ax = plt.axes(projection=ccrs.PlateCarree())
         clevels = [-20,-18,-16,-14,-12,-10,-8,-6,-4,-2,0,2,4,6,8,10,12,14,16,18,20]
-        plt.contourf(lon_subset, lat_subset, vorticity[lat_min_index:lat_max_index, lon_min_index:lon_max_index], levels=clevels, transform=ccrs.PlateCarree(),cmap='seismic',extend='both')
+        plt.contourf(lon_subset, lat_subset,vorticity[lat_min_index:lat_max_index, lon_min_index:lon_max_index], transform=ccrs.PlateCarree(),levels=clevels,cmap='seismic',extend='both')
         cbar = plt.colorbar(orientation='horizontal')
         cbar.outline.set_linewidth(0.5)
         cbar.ax.tick_params(labelsize=10)
-        cbar.set_label('Relative Vorticity $s^{-1}$)')
+        cbar.set_label('$s^{-1}$')
         ax.add_feature(countries_50m, linewidth=1)
         gl = ax.gridlines(color="black", linestyle="dotted",draw_labels='True')
         gl.xlabels_top = False
@@ -575,10 +525,78 @@ for d in days:
         gl.yformatter = LATITUDE_FORMATTER
         #Save and show the figure
         plt.title("Relative Vorticity")
-        plt.savefig(pathout+'/ERA_interim_Relative_vorticity_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')
-        plt.show()
+        plt.savefig(pathout+'/ERA_interim_Relative_Vorticity_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')
+     
         
-                
+        fig = plt.figure(figsize=(10,10))
+        ax = plt.axes(projection=ccrs.PlateCarree())
+       # clevels = [-20,-18,-16,-14,-12,-10,-8,-6,-4,-2,0,2,4,6,8,10,12,14,16,18,20]
+        plt.contourf(lon_subset, lat_subset,MSLP_slice[lat_min_index:lat_max_index, lon_min_index:lon_max_index], 50,transform=ccrs.PlateCarree(),cmap='seismic',extend='both')
+        cbar = plt.colorbar(orientation='horizontal')
+        cbar.outline.set_linewidth(0.5)
+        cbar.ax.tick_params(labelsize=10)
+        cbar.set_label('$Pa$')
+        ax.add_feature(countries_50m, linewidth=1)
+        gl = ax.gridlines(color="black", linestyle="dotted",draw_labels='True')
+        gl.xlabels_top = False
+        gl.ylabels_left = False
+        gl.xlines = True
+        gl.ylines = True
+        gl.xlocator = mticker.FixedLocator([-40,-35,-30,-25,-20,-15,-10,-5, 0,5,10,15,20,25,30])
+        gl.ylocator = mticker.FixedLocator([30,35,40,45,50,55,60,65,70,75,80])
+        gl.xformatter = LONGITUDE_FORMATTER
+        gl.yformatter = LATITUDE_FORMATTER
+        #Save and show the figure
+        plt.title("Mean Sea Level Pressure")
+        plt.savefig(pathout+'/ERA_interim_MSLP_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00.png',format ='png', dpi=150, bbox_inches='tight')
+        
+        
+        fig = plt.figure(figsize=(10,10))
+        ax = plt.axes(projection=ccrs.PlateCarree())
+        clevels = np.arange(-2,2,0.2)
+        plt.contourf(lon_subset, lat_subset,w_slice[lat_min_index:lat_max_index, lon_min_index:lon_max_index], levels=clevels,transform=ccrs.PlateCarree(),cmap='seismic',extend='both')
+        cbar = plt.colorbar(orientation='horizontal')
+        cbar.outline.set_linewidth(0.5)
+        cbar.ax.tick_params(labelsize=10)
+        cbar.set_label('$ms^{-1}$')
+        ax.add_feature(countries_50m, linewidth=1)
+        gl = ax.gridlines(color="black", linestyle="dotted",draw_labels='True')
+        gl.xlabels_top = False
+        gl.ylabels_left = False
+        gl.xlines = True
+        gl.ylines = True
+        gl.xlocator = mticker.FixedLocator([-40,-35,-30,-25,-20,-15,-10,-5, 0,5,10,15,20,25,30])
+        gl.ylocator = mticker.FixedLocator([30,35,40,45,50,55,60,65,70,75,80])
+        gl.xformatter = LONGITUDE_FORMATTER
+        gl.yformatter = LATITUDE_FORMATTER
+        #Save and show the figure
+        plt.title("Vertical Velocity")
+        plt.savefig(pathout+'/ERA_interim_Vertical_velocity_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')
+
+        fig = plt.figure(figsize=(10,10))
+        ax = plt.axes(projection=ccrs.PlateCarree())
+        #clevels = [-20,-18,-16,-14,-12,-10,-8,-6,-4,-2,0,2,4,6,8,10,12,14,16,18,20]
+        clevels = np.arange(-1,1,0.2)
+        plt.contourf(lon_subset, lat_subset,D_slice[lat_min_index:lat_max_index, lon_min_index:lon_max_index]*10**4, transform=ccrs.PlateCarree(),levels=clevels,cmap='seismic',extend='both')
+        cbar = plt.colorbar(orientation='horizontal')
+        cbar.outline.set_linewidth(0.5)
+        cbar.ax.tick_params(labelsize=10)
+        cbar.set_label('$s^{-1}$')
+        ax.add_feature(countries_50m, linewidth=1)
+        gl = ax.gridlines(color="black", linestyle="dotted",draw_labels='True')
+        gl.xlabels_top = False
+        gl.ylabels_left = False
+        gl.xlines = True
+        gl.ylines = True
+        gl.xlocator = mticker.FixedLocator([-40,-35,-30,-25,-20,-15,-10,-5, 0,5,10,15,20,25,30])
+        gl.ylocator = mticker.FixedLocator([30,35,40,45,50,55,60,65,70,75,80])
+        gl.xformatter = LONGITUDE_FORMATTER
+        gl.yformatter = LATITUDE_FORMATTER
+        #Save and show the figure
+        plt.title("Divergence")
+        plt.savefig(pathout+'/ERA_interim_Divergence_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')
+        
+
 
         
 
