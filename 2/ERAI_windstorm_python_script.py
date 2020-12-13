@@ -19,6 +19,7 @@ from netCDF4 import Dataset
 import matplotlib.pyplot as plt
 import math
 import matplotlib.ticker as mticker
+import matplotlib as mpl
 from cartopy.mpl.gridliner import LONGITUDE_FORMATTER, LATITUDE_FORMATTER
 plt.switch_backend('agg')
 
@@ -262,8 +263,8 @@ for d in days:
                     high_index = -1
                 
                 dv_array[i,j] = (v_slice[ i, high_index] - v_slice[ i, low_index])
-                dZv_array[i,j] = (Z_slice[i,high_index]-Z_slice[i,low_index])
-                dTv_array[i,j] = (T_slice[i,high_index]-T_slice[i,low_index])
+                dZu_array[i,j] = (Z_slice[i,high_index]-Z_slice[i,low_index])
+                dTu_array[i,j] = (T_slice[i,high_index]-T_slice[i,low_index])
         # In[128]: Calculate the central finite difference for du
         
         for j in range( 0, lon.size):
@@ -283,8 +284,8 @@ for d in days:
                     #du_array[i,j] = (u_slice[ high_index, j] - u_slice[ low_index, j])
                 else:
                     du_array[i,j] = (u_slice[ high_index, j] - u_slice[ low_index, j])
-                    dZu_array[i,j] = (Z_slice[high_index,j]-Z_slice[low_index,j])
-                    dTu_array[i,j] = (T_slice[high_index,j]-T_slice[low_index,j])
+                    dZv_array[i,j] = (Z_slice[high_index,j]-Z_slice[low_index,j])
+                    dTv_array[i,j] = (T_slice[high_index,j]-T_slice[low_index,j])
        
         # In[]: Calculate relative vorticity
         
@@ -294,7 +295,7 @@ for d in days:
         vort = dv_array / dx_array + du_array / dy_array   
         
         #geostrophic wind
-        ug =-(1/Coriolis)*(dZv_array.T/dy_array.T)
+        ug = (1/Coriolis)*(dZv_array.T/dy_array.T)
         vg = (1/Coriolis)*(dZu_array.T/dx_array.T)
         
         ug = ug.T
@@ -306,7 +307,7 @@ for d in days:
         
         #potential temperature
         p0 = 1000
-        theta = T[0,:,:,:]*(p0/p_lev)**(0.286)
+        theta = T_slice*(p0/p_lev)**(0.286)
 
         #Q vector
         dug_array = np.empty(ug.shape)
@@ -327,7 +328,7 @@ for d in days:
                     low_index=0
                     #du_array[i,j] = (u_slice[ high_index, j] - u_slice[ low_index, j])
                 else:
-                    dug_array[i,j] = (ug[ high_index, j] - ug[ low_index, j]) 
+                    dvg_array[i,j] = (vg[ high_index, j] - vg[ low_index, j]) 
 
         for i in range( 0, lat.size):
              for j in range( 0, lon.size):
@@ -341,7 +342,7 @@ for d in days:
                 if high_index == lon.size:
                     high_index = -1
                 
-                dvg_array[i,j] = (vg[ i, high_index] - vg[ i, low_index])
+                dug_array[i,j] = (ug[ i, high_index] - ug[ i, low_index])
         
         Rgas = 287
         Qx = (dug_array/dx_array)*(dTu_array/dx_array) + (dvg_array/dx_array)*(dTv_array/dy_array)
@@ -368,7 +369,7 @@ for d in days:
                     low_index=0
                     #du_array[i,j] = (u_slice[ high_index, j] - u_slice[ low_index, j])
                 else:
-                    dQx_array[i,j] = (Qx[ high_index, j] - Qx[ low_index, j]) 
+                    dQy_array[i,j] = (Qy[ high_index, j] - Qy[ low_index, j]) 
 
         for i in range( 0, lat.size):
              for j in range( 0, lon.size):
@@ -382,10 +383,9 @@ for d in days:
                 if high_index == lon.size:
                     high_index = -1
                 
-                dQy_array[i,j] = (Qy[ i, high_index] - Qy[ i, low_index])
+                dQx_array[i,j] = (Qx[ i, high_index] - Qx[ i, low_index])
 
         divQ = dQx_array/dx_array + dQy_array/dy_array
-
      
         # Change the units of vorticity 
         vorticity = vort *100000 
@@ -504,7 +504,6 @@ for d in days:
         print 'plotted  windspeed cross section now to plot relative vorticity'
         #print MSLP_slice.shape 
         # In[]: Plot the relative vorticity
-        
         fig = plt.figure(figsize=(10,10))
         ax = plt.axes(projection=ccrs.PlateCarree())
         clevels = [-20,-18,-16,-14,-12,-10,-8,-6,-4,-2,0,2,4,6,8,10,12,14,16,18,20]
@@ -526,16 +525,15 @@ for d in days:
         #Save and show the figure
         plt.title("Relative Vorticity")
         plt.savefig(pathout+'/ERA_interim_Relative_Vorticity_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')
-     
         
         fig = plt.figure(figsize=(10,10))
         ax = plt.axes(projection=ccrs.PlateCarree())
-       # clevels = [-20,-18,-16,-14,-12,-10,-8,-6,-4,-2,0,2,4,6,8,10,12,14,16,18,20]
-        plt.contourf(lon_subset, lat_subset,MSLP_slice[lat_min_index:lat_max_index, lon_min_index:lon_max_index], 50,transform=ccrs.PlateCarree(),cmap='seismic',extend='both')
+        clevels = np.linspace(950,1100,lats.size)
+        plt.contourf(lon_subset, lat_subset,MSLP_slice[lat_min_index:lat_max_index, lon_min_index:lon_max_index]/10**2,levels=clevels,transform=ccrs.PlateCarree(),cmap='jet',extend='both')
         cbar = plt.colorbar(orientation='horizontal')
         cbar.outline.set_linewidth(0.5)
         cbar.ax.tick_params(labelsize=10)
-        cbar.set_label('$Pa$')
+        cbar.set_label('$hPa$')
         ax.add_feature(countries_50m, linewidth=1)
         gl = ax.gridlines(color="black", linestyle="dotted",draw_labels='True')
         gl.xlabels_top = False
@@ -550,11 +548,10 @@ for d in days:
         plt.title("Mean Sea Level Pressure")
         plt.savefig(pathout+'/ERA_interim_MSLP_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00.png',format ='png', dpi=150, bbox_inches='tight')
         
-        
         fig = plt.figure(figsize=(10,10))
         ax = plt.axes(projection=ccrs.PlateCarree())
-        clevels = np.arange(-2,2,0.2)
-        plt.contourf(lon_subset, lat_subset,w_slice[lat_min_index:lat_max_index, lon_min_index:lon_max_index], levels=clevels,transform=ccrs.PlateCarree(),cmap='seismic',extend='both')
+        clevels = np.linspace(-2,2,lats.size)
+        plt.contourf(lon_subset, lat_subset,w_slice[lat_min_index:lat_max_index, lon_min_index:lon_max_index],levels=clevels,transform=ccrs.PlateCarree(),cmap='seismic',extend='both')
         cbar = plt.colorbar(orientation='horizontal')
         cbar.outline.set_linewidth(0.5)
         cbar.ax.tick_params(labelsize=10)
@@ -576,12 +573,12 @@ for d in days:
         fig = plt.figure(figsize=(10,10))
         ax = plt.axes(projection=ccrs.PlateCarree())
         #clevels = [-20,-18,-16,-14,-12,-10,-8,-6,-4,-2,0,2,4,6,8,10,12,14,16,18,20]
-        clevels = np.arange(-1,1,0.2)
-        plt.contourf(lon_subset, lat_subset,D_slice[lat_min_index:lat_max_index, lon_min_index:lon_max_index]*10**4, transform=ccrs.PlateCarree(),levels=clevels,cmap='seismic',extend='both')
+        clevels = np.linspace(-1,1,lats.size)
+        plt.contourf(lon_subset, lat_subset,D_slice[lat_min_index:lat_max_index, lon_min_index:lon_max_index]*10**4,levels=clevels,transform=ccrs.PlateCarree(),cmap='seismic',extend='both')
         cbar = plt.colorbar(orientation='horizontal')
         cbar.outline.set_linewidth(0.5)
         cbar.ax.tick_params(labelsize=10)
-        cbar.set_label('$s^{-1}$')
+        cbar.set_label('$ 10^{-4} s^{-1}$')
         ax.add_feature(countries_50m, linewidth=1)
         gl = ax.gridlines(color="black", linestyle="dotted",draw_labels='True')
         gl.xlabels_top = False
@@ -595,9 +592,253 @@ for d in days:
         #Save and show the figure
         plt.title("Divergence")
         plt.savefig(pathout+'/ERA_interim_Divergence_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')
+       
+
+        fig = plt.figure(figsize=(10,10))
+        ax = plt.axes(projection=ccrs.PlateCarree())
+        clevels = np.linspace(0,2,lats.size)
+        plt.contourf(lon_subset, lat_subset,PV_slice[lat_min_index:lat_max_index, lon_min_index:lon_max_index]*10**4,levels=clevels, transform=ccrs.PlateCarree(),cmap='Reds',extend='both')
+        cbar = plt.colorbar(orientation='horizontal')
+        cbar.outline.set_linewidth(0.5)
+        cbar.ax.tick_params(labelsize=10)
+        cbar.set_label('$10^{-4}$ PVU')
+        ax.add_feature(countries_50m, linewidth=1)
+        gl = ax.gridlines(color="black", linestyle="dotted",draw_labels='True')
+        gl.xlabels_top = False
+        gl.ylabels_left = False
+        gl.xlines = True
+        gl.ylines = True
+        gl.xlocator = mticker.FixedLocator([-40,-35,-30,-25,-20,-15,-10,-5, 0,5,10,15,20,25,30])
+        gl.ylocator = mticker.FixedLocator([30,35,40,45,50,55,60,65,70,75,80])
+        gl.xformatter = LONGITUDE_FORMATTER
+        gl.yformatter = LATITUDE_FORMATTER
+        #Save and show the figure
+        plt.title("Potential Vorticity")
+        plt.savefig(pathout+'/ERA_interim_potential_vorticity_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')
+
+
+        fig = plt.figure(figsize=(10,10))
+        ax = plt.axes(projection=ccrs.PlateCarree())
+        clevels = np.linspace(230,290,lats.size)
+        plt.contourf(lon_subset, lat_subset,T_slice[lat_min_index:lat_max_index, lon_min_index:lon_max_index],levels=clevels, transform=ccrs.PlateCarree(),cmap='jet',extend='both')
+        cbar = plt.colorbar(orientation='horizontal')
+        cbar.outline.set_linewidth(0.5)
+        cbar.ax.tick_params(labelsize=10)
+        cbar.set_label('$K$')
+        ax.add_feature(countries_50m, linewidth=1)
+        gl = ax.gridlines(color="black", linestyle="dotted",draw_labels='True')
+        gl.xlabels_top = False
+        gl.ylabels_left = False
+        gl.xlines = True
+        gl.ylines = True
+        gl.xlocator = mticker.FixedLocator([-40,-35,-30,-25,-20,-15,-10,-5, 0,5,10,15,20,25,30])
+        gl.ylocator = mticker.FixedLocator([30,35,40,45,50,55,60,65,70,75,80])
+        gl.xformatter = LONGITUDE_FORMATTER
+        gl.yformatter = LATITUDE_FORMATTER
+        #Save and show the figure
+        plt.title("Temperature")
+        plt.savefig(pathout+'/ERA_interim_Temperature_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')
+
+        fig = plt.figure(figsize=(10,10))
+        ax = plt.axes(projection=ccrs.PlateCarree())
+        clevels = np.linspace(230,290,lats.size)
+        plt.contourf(lon_subset, lat_subset,theta[lat_min_index:lat_max_index, lon_min_index:lon_max_index],levels=clevels, transform=ccrs.PlateCarree(),cmap='jet',extend='both')
+        cbar = plt.colorbar(orientation='horizontal')
+        cbar.outline.set_linewidth(0.5)
+        cbar.ax.tick_params(labelsize=10)
+        cbar.set_label('$K$')
+        ax.add_feature(countries_50m, linewidth=1)
+        gl = ax.gridlines(color="black", linestyle="dotted",draw_labels='True')
+        gl.xlabels_top = False
+        gl.ylabels_left = False
+        gl.xlines = True
+        gl.ylines = True
+        gl.xlocator = mticker.FixedLocator([-40,-35,-30,-25,-20,-15,-10,-5, 0,5,10,15,20,25,30])
+        gl.ylocator = mticker.FixedLocator([30,35,40,45,50,55,60,65,70,75,80])
+        gl.xformatter = LONGITUDE_FORMATTER
+        gl.yformatter = LATITUDE_FORMATTER
+        #Save and show the figure
+        plt.title("Potential Temperature")
+        plt.savefig(pathout+'/ERA_interim_potential_temperature_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')
+   
+
+        fig = plt.figure(figsize=(10,10))
+        ax = plt.axes(projection=ccrs.PlateCarree())
+        clevels = np.linspace(0,8,lats.size)
+        plt.contourf(lon_subset, lat_subset,Q_slice[lat_min_index:lat_max_index, lon_min_index:lon_max_index]*10**3,levels=clevels, transform=ccrs.PlateCarree(),cmap='Reds',extend='both')
+        cbar = plt.colorbar(orientation='horizontal')
+        cbar.outline.set_linewidth(0.5)
+        cbar.ax.tick_params(labelsize=10)
+        cbar.set_label('$10^{-3}$')
+        ax.add_feature(countries_50m, linewidth=1)
+        gl = ax.gridlines(color="black", linestyle="dotted",draw_labels='True')
+        gl.xlabels_top = False
+        gl.ylabels_left = False
+        gl.xlines = True
+        gl.ylines = True
+        gl.xlocator = mticker.FixedLocator([-40,-35,-30,-25,-20,-15,-10,-5, 0,5,10,15,20,25,30])
+        gl.ylocator = mticker.FixedLocator([30,35,40,45,50,55,60,65,70,75,80])
+        gl.xformatter = LONGITUDE_FORMATTER
+        gl.yformatter = LATITUDE_FORMATTER
+        #Save and show the figure
+        plt.title("Specific Humidity")
+        plt.savefig(pathout+'/ERA_interim_specific_humidity'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')
+       
+        fig = plt.figure(figsize=(10,10))
+        ax = plt.axes(projection=ccrs.PlateCarree())
+        clevels = np.linspace(0,0.5,lats.size)
+        plt.contourf(lon_subset, lat_subset,CLWC_slice[lat_min_index:lat_max_index, lon_min_index:lon_max_index]*10**3,levels=clevels, transform=ccrs.PlateCarree(),cmap='Reds',extend='both')
+        cbar = plt.colorbar(orientation='horizontal')
+        cbar.outline.set_linewidth(0.5)
+        cbar.ax.tick_params(labelsize=10)
+        cbar.set_label('$10^{-3}$')
+        ax.add_feature(countries_50m, linewidth=1)
+        gl = ax.gridlines(color="black", linestyle="dotted",draw_labels='True')
+        gl.xlabels_top = False
+        gl.ylabels_left = False
+        gl.xlines = True
+        gl.ylines = True
+        gl.xlocator = mticker.FixedLocator([-40,-35,-30,-25,-20,-15,-10,-5, 0,5,10,15,20,25,30])
+        gl.ylocator = mticker.FixedLocator([30,35,40,45,50,55,60,65,70,75,80])
+        gl.xformatter = LONGITUDE_FORMATTER
+        gl.yformatter = LATITUDE_FORMATTER
+        #Save and show the figure
+        plt.title("Cloud Liquid Water Content")
+        plt.savefig(pathout+'/ERA_interim_CLWC_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')
+ 
+        fig = plt.figure(figsize=(10,10))
+        ax = plt.axes(projection=ccrs.PlateCarree())
         
+        clevels = np.linspace(0,1,lats.size)
+        plt.contourf(lon_subset, lat_subset,CIWC_slice[lat_min_index:lat_max_index, lon_min_index:lon_max_index]*10**4,levels=clevels, transform=ccrs.PlateCarree(),cmap='Reds',extend='both')
+        cbar = plt.colorbar(orientation='horizontal')
+        cbar.outline.set_linewidth(0.5)
+        cbar.ax.tick_params(labelsize=10)
+        cbar.set_label('$10^{-4}$')
+        ax.add_feature(countries_50m, linewidth=1)
+        gl = ax.gridlines(color="black", linestyle="dotted",draw_labels='True')
+        gl.xlabels_top = False
+        gl.ylabels_left = False
+        gl.xlines = True
+        gl.ylines = True
+        gl.xlocator = mticker.FixedLocator([-40,-35,-30,-25,-20,-15,-10,-5, 0,5,10,15,20,25,30])
+        gl.ylocator = mticker.FixedLocator([30,35,40,45,50,55,60,65,70,75,80])
+        gl.xformatter = LONGITUDE_FORMATTER
+        gl.yformatter = LATITUDE_FORMATTER
+        #Save and show the figure
+        plt.title("Cloud Ice Water Content")
+        plt.savefig(pathout+'/ERA_interim_CLIC_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')
 
+        ug_slice = ug[lat_min_index:lat_max_index,lon_min_index:lon_max_index]
+        vg_slice = vg[lat_min_index:lat_max_index,lon_min_index:lon_max_index]
+        uag_slice = uag[lat_min_index:lat_max_index,lon_min_index:lon_max_index]
+        vag_slice = vag[lat_min_index:lat_max_index,lon_min_index:lon_max_index]
 
+        fig = plt.figure(figsize=(10,10))
+        ax = plt.axes(projection=ccrs.PlateCarree())
+        #clevels = [-20,-18,-16,-14,-12,-10,-8,-6,-4,-2,0,2,4,6,8,10,12,14,16,18,20]
+        plt.contour(lon_subset, lat_subset,Z_slice[lat_min_index:lat_max_index, lon_min_index:lon_max_index],10, transform=ccrs.PlateCarree(),colors='black')
+        plt.quiver(lon_subset[::3],lat_subset[::3], ug_slice[::3,::3],vg_slice[::3,::3],transform=ccrs.PlateCarree(),linewidths=widths,color='blue',pivot='middle')
+        #plt.quiver(lon_subset[::3],lat_subset[::3], uag_slice[::3,::3],vag_slice[::3,::3],transform=ccrs.PlateCarree(),color='red',pivot='middle')
+
+        #cbar = plt.colorbar(orientation='horizontal')
+        #cbar.outline.set_linewidth(0.5)
+        #cbar.ax.tick_params(labelsize=10)
+        #cbar.set_label('$m^2 s^{-2}$')
+        ax.add_feature(countries_50m, linewidth=1)
+        gl = ax.gridlines(color="black", linestyle="dotted",draw_labels='True')
+        gl.xlabels_top = False
+        gl.ylabels_left = False
+        gl.xlines = True
+        gl.ylines = True
+        gl.xlocator = mticker.FixedLocator([-40,-35,-30,-25,-20,-15,-10,-5, 0,5,10,15,20,25,30])
+        gl.ylocator = mticker.FixedLocator([30,35,40,45,50,55,60,65,70,75,80])
+        gl.xformatter = LONGITUDE_FORMATTER
+        gl.yformatter = LATITUDE_FORMATTER
+        #Save and show the figure
+        plt.title("Geopotential Height Contours and Geostrophic Wind Vectors")
+        plt.savefig(pathout+'/ERA_interim_Z_geostrophic_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')
+      
+        fig = plt.figure(figsize=(10,10))
+        ax = plt.axes(projection=ccrs.PlateCarree())
+        #clevels = [-20,-18,-16,-14,-12,-10,-8,-6,-4,-2,0,2,4,6,8,10,12,14,16,18,20]
+        plt.contour(lon_subset, lat_subset,Z_slice[lat_min_index:lat_max_index, lon_min_index:lon_max_index],10, transform=ccrs.PlateCarree(),colors='black')
+        #plt.quiver(lon_subset[::3],lat_subset[::3], ug_slice[::3,::3],vg_slice[::3,::3],transform=ccrs.PlateCarree(),color='blue',pivot='middle')
+        plt.quiver(lon_subset[::3],lat_subset[::3], uag_slice[::3,::3],vag_slice[::3,::3],transform=ccrs.PlateCarree(),linewidths=widths,color='red',pivot='middle')
+        #cbar = plt.colorbar(orientation='horizontal')
+        #cbar.outline.set_linewidth(0.5)
+        #cbar.ax.tick_params(labelsize=10)
+        #cbar.set_label('$m^2 s^{-2}$')
+        ax.add_feature(countries_50m, linewidth=1)
+        gl = ax.gridlines(color="black", linestyle="dotted",draw_labels='True')
+        gl.xlabels_top = False
+        gl.ylabels_left = False
+        gl.xlines = True
+        gl.ylines = True
+        gl.xlocator = mticker.FixedLocator([-40,-35,-30,-25,-20,-15,-10,-5, 0,5,10,15,20,25,30])
+        gl.ylocator = mticker.FixedLocator([30,35,40,45,50,55,60,65,70,75,80])
+        gl.xformatter = LONGITUDE_FORMATTER
+        gl.yformatter = LATITUDE_FORMATTER
+        #Save and show the figure
+        plt.title("Geopotential Height Contours and Ageostrophic Wind Vectors")
+        plt.savefig(pathout+'/ERA_interim_Z_ageostrophic_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight') 
+        
+        
+        Qx_subset = Qx[lat_min_index:lat_max_index,lon_min_index:lon_max_index]
+        Qy_subset = Qy[lat_min_index:lat_max_index,lon_min_index:lon_max_index]
+        #N = np.sqrt(Qx_subset**2 + Qy_subset**2) 
+        #Qx_subset = Qx_subset/N
+        #Qy_subset = Qy_subset/N 
+        print Qx_subset.shape
+        print Qy_subset.shape
+        print divQ[lat_min_index:lat_max_index,lon_min_index:lon_max_index].shape
+
+        fig = plt.figure(figsize=(10,10))
+        ax = plt.axes(projection=ccrs.PlateCarree())
+        #clevels=np.linspace(-8,8,lats.size)*10**-13
+        #plt.contourf(lon_subset, lat_subset,-2*divQ[lat_min_index:lat_max_index, lon_min_index:lon_max_index], transform=ccrs.PlateCarree(),levels=clevels,cmap='seismic',extend='both')
+        plt.quiver(lon_subset[::3],lat_subset[::3],Qx_subset[::3,::3],Qy_subset[::3,::3],color='black',transform=ccrs.PlateCarree())
+        #cbar = plt.colorbar(orientation='horizontal')
+        #cbar.outline.set_linewidth(0.5)
+        #cbar.ax.tick_params(labelsize=10)
+        #cbar.set_label('$mkg^{-1}s^{-1}$')
+        ax.add_feature(countries_50m, linewidth=1)
+        gl = ax.gridlines(color="black", linestyle="dotted",draw_labels='True')
+        gl.xlabels_top = False
+        gl.ylabels_left = False
+        gl.xlines = True
+        gl.ylines = True
+        gl.xlocator = mticker.FixedLocator([-40,-35,-30,-25,-20,-15,-10,-5, 0,5,10,15,20,25,30])
+        gl.ylocator = mticker.FixedLocator([30,35,40,45,50,55,60,65,70,75,80])
+        gl.xformatter = LONGITUDE_FORMATTER
+        gl.yformatter = LATITUDE_FORMATTER
+        #Save and show the figure
+        plt.title("")
+        plt.savefig(pathout+'/ERA_interim_Q_vector_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')
+
+        fig = plt.figure(figsize=(10,10))
+        ax = plt.axes(projection=ccrs.PlateCarree())
+        clevels=np.linspace(-8,8,lats.size)*10**-13
+        widths = np.linspace(0,2,lats.size)*10**-13
+        cont = plt.contourf(lon_subset, lat_subset,-2*divQ[lat_min_index:lat_max_index, lon_min_index:lon_max_index], transform=ccrs.PlateCarree(),levels=clevels,cmap='seismic',extend='both')
+        plt.quiver(lon_subset[::5],lat_subset[::5],Qx_subset[::5,::5],Qy_subset[::5,::5],color='black',transform=ccrs.PlateCarree(),linewidth=widths)
+        cbar = plt.colorbar(cont,orientation='horizontal')
+        cbar.outline.set_linewidth(0.5)
+        cbar.ax.tick_params(labelsize=10)
+        cbar.set_label('$mkg^{-1}s^{-1}$')
+        ax.add_feature(countries_50m, linewidth=1)
+        gl = ax.gridlines(color="black", linestyle="dotted",draw_labels='True')
+        gl.xlabels_top = False
+        gl.ylabels_left = False
+        gl.xlines = True
+        gl.ylines = True
+        gl.xlocator = mticker.FixedLocator([-40,-35,-30,-25,-20,-15,-10,-5, 0,5,10,15,20,25,30])
+        gl.ylocator = mticker.FixedLocator([30,35,40,45,50,55,60,65,70,75,80])
+        gl.xformatter = LONGITUDE_FORMATTER
+        gl.yformatter = LATITUDE_FORMATTER
+        #Save and show the figure
+        plt.title("")
+        plt.savefig(pathout+'/ERA_interim_divQ_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')
         
 
         
