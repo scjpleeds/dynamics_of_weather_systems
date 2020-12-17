@@ -4,47 +4,48 @@ The top-level auxiliary file: winter_storm_friedhelm.aux
 Reallocating 'name_of_file' (item size: 1) to 15 items.
 Reallocating 'name_of_file' (item size: 1) to 4 items.
 The style file: apa.bst
-I found no \citation commands---while reading file winter_storm_friedhelm.aux
 Database file #1: references.bib
-You've used 0 entries,
+Warning--empty publisher in Holton2015
+Warning--empty publisher in Hoskins2013
+You've used 2 entries,
             1940 wiz_defined-function locations,
-            473 strings with 3728 characters,
-and the built_in function-call counts, 17 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 0
-:= -- 7
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
-chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+            485 strings with 4001 characters,
+and the built_in function-call counts, 647 in all, are:
+= -- 55
+> -- 20
+< -- 2
++ -- 6
+- -- 6
+* -- 51
+:= -- 116
+add.period$ -- 5
+call.type$ -- 2
+change.case$ -- 12
+chr.to.int$ -- 2
+cite$ -- 4
+duplicate$ -- 32
+empty$ -- 55
+format.name$ -- 10
+if$ -- 125
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 3
-num.names$ -- 0
-pop$ -- 0
+missing$ -- 3
+newline$ -- 12
+num.names$ -- 6
+pop$ -- 20
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 13
 quote$ -- 0
-skip$ -- 1
+skip$ -- 20
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
+substring$ -- 24
+swap$ -- 4
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 0
+type$ -- 10
+warning$ -- 2
+while$ -- 4
 width$ -- 0
-write$ -- 2
-(There was 1 error message)
+write$ -- 24
+(There were 2 warnings)

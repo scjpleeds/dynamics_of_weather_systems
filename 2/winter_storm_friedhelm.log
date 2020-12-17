@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.29)  10 DEC 2020 17:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.29)  17 DEC 2020 09:31
 entering extended mode
 **"c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/winter_storm_friedhelm.tex"
 ("c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/winter_storm_friedhelm.tex"
@@ -154,33 +154,66 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (C:\Users\jpwes\AppData\Local\Programs\MiKTeX\tex/latex/blindtext\blindtext.sty
+)) (C:\Users\jpwes\AppData\Local\Programs\MiKTeX\tex/latex/subfigure\subfigure.sty
+Package: subfigure 2002/07/30 v2.1.4 subfigure package
+\subfigtopskip=\skip54
+\subfigcapskip=\skip55
+\subfigcaptopadj=\dimen159
+\subfigbottomskip=\skip56
+\subfigcapmargin=\dimen160
+\subfiglabelskip=\skip57
+\c@subfigure=\count267
+\c@lofdepth=\count268
+\c@subtable=\count269
+\c@lotdepth=\count270
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(C:\Users\jpwes\AppData\Local\Programs\MiKTeX\tex/latex/subfigure\subfigure.cfg)
+\subfig@top=\skip58
+\subfig@bottom=\skip59
+) (C:\Users\jpwes\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count271
+\float@exts=\toks24
+\float@box=\box49
+\@float@everytoks=\toks25
+\@floatcapt=\box50
+) (C:\Users\jpwes\AppData\Local\Programs\MiKTeX\tex/latex/tools\bm.sty
+Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup6
+\symboldletters=\mathgroup7
+\symboldsymbols=\mathgroup8
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 209.
+) (C:\Users\jpwes\AppData\Local\Programs\MiKTeX\tex/latex/blindtext\blindtext.sty
 Package: blindtext 2012/01/06 V2.0 blindtext-Package
  (C:\Users\jpwes\AppData\Local\Programs\MiKTeX\tex/latex/tools\xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-\c@blindtext=\count267
-\c@Blindtext=\count268
-\c@blind@countparstart=\count269
-\blind@countxx=\count270
-\blindtext@numBlindtext=\count271
-\blind@countyy=\count272
-\c@blindlist=\count273
-\c@blindlistlevel=\count274
-\c@blindlist@level=\count275
-\blind@listitem=\count276
-\c@blind@listcount=\count277
-\c@blind@levelcount=\count278
-\blind@mathformula=\count279
-\blind@Mathformula=\count280
-\c@blind@randomcount=\count281
-\c@blind@randommax=\count282
-\c@blind@pangramcount=\count283
-\c@blind@pangrammax=\count284
+\c@blindtext=\count272
+\c@Blindtext=\count273
+\c@blind@countparstart=\count274
+\blind@countxx=\count275
+\blindtext@numBlindtext=\count276
+\blind@countyy=\count277
+\c@blindlist=\count278
+\c@blindlistlevel=\count279
+\c@blindlist@level=\count280
+\blind@listitem=\count281
+\c@blind@listcount=\count282
+\c@blind@levelcount=\count283
+\blind@mathformula=\count284
+\blind@Mathformula=\count285
+\c@blind@randomcount=\count286
+\c@blind@randommax=\count287
+\c@blind@pangramcount=\count288
+\c@blind@pangrammax=\count289
 ) (C:\Users\jpwes\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count285
-\l__pdf_internal_box=\box49
+\l__kernel_color_stack_int=\count290
+\l__pdf_internal_box=\box51
 ) ("c:/Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\2\winter_storm_friedhelm.aux")
 \openout1 = `winter_storm_friedhelm.aux'.
 
@@ -235,17 +268,17 @@ LaTeX Font Info:    ... okay on input line 13.
 
 (C:\Users\jpwes\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count286
-\scratchdimen=\dimen159
-\scratchbox=\box50
-\nofMPsegments=\count287
-\nofMParguments=\count288
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count289
-\MPscratchDim=\dimen160
-\MPnumerator=\count290
-\makeMPintoPDFobject=\count291
-\everyMPtoPDFconversion=\toks25
+\scratchcounter=\count291
+\scratchdimen=\dimen161
+\scratchbox=\box52
+\nofMPsegments=\count292
+\nofMParguments=\count293
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count294
+\MPscratchDim=\dimen162
+\MPnumerator=\count295
+\makeMPintoPDFobject=\count296
+\everyMPtoPDFconversion=\toks27
 ) (C:\Users\jpwes\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -261,25 +294,281 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write3
 \openout3 = `winter_storm_friedhelm.toc'.
 
- ("c:/Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\2\winter_storm_friedhelm.bbl"
+<friedhelm.jpg, id=1, 941.46324pt x 971.73851pt>
+File: friedhelm.jpg Graphic file (type jpg)
+<use friedhelm.jpg>
+Package pdftex.def Info: friedhelm.jpg  used on input line 23.
+(pdftex.def)             Requested size: 226.48395pt x 233.7558pt.
+ [1
 
-Package natbib Warning: Empty `thebibliography' environment on input line 3.
-
-) [1
-
-{C:/Users/jpwes/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] ("c:/Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\2\winter_storm_friedhelm.aux") ) 
+{C:/Users/jpwes/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
+<plots/ERA_interim_MSLP_20111208_0000.png, id=11, 599.3592pt x 558.4062pt>
+File: plots/ERA_interim_MSLP_20111208_0000.png Graphic file (type png)
+<use plots/ERA_interim_MSLP_20111208_0000.png>
+Package pdftex.def Info: plots/ERA_interim_MSLP_20111208_0000.png  used on input line 34.
+(pdftex.def)             Requested size: 203.83417pt x 189.90671pt.
+<plots/ERA_interim_MSLP_20111208_0600.png, id=13, 599.3592pt x 558.4062pt>
+File: plots/ERA_interim_MSLP_20111208_0600.png Graphic file (type png)
+<use plots/ERA_interim_MSLP_20111208_0600.png>
+Package pdftex.def Info: plots/ERA_interim_MSLP_20111208_0600.png  used on input line 35.
+(pdftex.def)             Requested size: 203.83417pt x 189.90671pt.
+<plots/ERA_interim_MSLP_20111208_1200.png, id=14, 599.3592pt x 558.4062pt>
+File: plots/ERA_interim_MSLP_20111208_1200.png Graphic file (type png)
+<use plots/ERA_interim_MSLP_20111208_1200.png>
+Package pdftex.def Info: plots/ERA_interim_MSLP_20111208_1200.png  used on input line 36.
+(pdftex.def)             Requested size: 203.83417pt x 189.90671pt.
+<plots/ERA_interim_MSLP_20111208_1800.png, id=15, 599.3592pt x 558.4062pt>
+File: plots/ERA_interim_MSLP_20111208_1800.png Graphic file (type png)
+<use plots/ERA_interim_MSLP_20111208_1800.png>
+Package pdftex.def Info: plots/ERA_interim_MSLP_20111208_1800.png  used on input line 37.
+(pdftex.def)             Requested size: 203.83417pt x 189.90671pt.
+ [2 <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/friedhelm.jpg>]
+<plots/ERA_interim_Windspeed_20111208_1200_850hPa.png, id=24, 600.8046pt x 565.1514pt>
+File: plots/ERA_interim_Windspeed_20111208_1200_850hPa.png Graphic file (type png)
+<use plots/ERA_interim_Windspeed_20111208_1200_850hPa.png>
+Package pdftex.def Info: plots/ERA_interim_Windspeed_20111208_1200_850hPa.png  used on input line 44.
+(pdftex.def)             Requested size: 203.83417pt x 191.735pt.
+<plots/ERA_interim_Windspeed_20111208_1200_500hPa.png, id=25, 600.8046pt x 565.1514pt>
+File: plots/ERA_interim_Windspeed_20111208_1200_500hPa.png Graphic file (type png)
+<use plots/ERA_interim_Windspeed_20111208_1200_500hPa.png>
+Package pdftex.def Info: plots/ERA_interim_Windspeed_20111208_1200_500hPa.png  used on input line 45.
+(pdftex.def)             Requested size: 203.83417pt x 191.735pt.
+<plots/ERA_interim_specific_humidity20111208_0000_850hPa.png, id=26, 599.3592pt x 560.8152pt>
+File: plots/ERA_interim_specific_humidity20111208_0000_850hPa.png Graphic file (type png)
+<use plots/ERA_interim_specific_humidity20111208_0000_850hPa.png>
+Package pdftex.def Info: plots/ERA_interim_specific_humidity20111208_0000_850hPa.png  used on input line 51.
+(pdftex.def)             Requested size: 203.83417pt x 190.72598pt.
+<plots/ERA_interim_specific_humidity20111208_0600_850hPa.png, id=27, 599.3592pt x 560.8152pt>
+File: plots/ERA_interim_specific_humidity20111208_0600_850hPa.png Graphic file (type png)
+<use plots/ERA_interim_specific_humidity20111208_0600_850hPa.png>
+Package pdftex.def Info: plots/ERA_interim_specific_humidity20111208_0600_850hPa.png  used on input line 52.
+(pdftex.def)             Requested size: 203.83417pt x 190.72598pt.
+<plots/ERA_interim_specific_humidity20111208_1200_850hPa.png, id=28, 599.3592pt x 560.8152pt>
+File: plots/ERA_interim_specific_humidity20111208_1200_850hPa.png Graphic file (type png)
+<use plots/ERA_interim_specific_humidity20111208_1200_850hPa.png>
+Package pdftex.def Info: plots/ERA_interim_specific_humidity20111208_1200_850hPa.png  used on input line 53.
+(pdftex.def)             Requested size: 203.83417pt x 190.72598pt.
+<plots/ERA_interim_specific_humidity20111208_1800_850hPa.png, id=29, 599.3592pt x 560.8152pt>
+File: plots/ERA_interim_specific_humidity20111208_1800_850hPa.png Graphic file (type png)
+<use plots/ERA_interim_specific_humidity20111208_1800_850hPa.png>
+Package pdftex.def Info: plots/ERA_interim_specific_humidity20111208_1800_850hPa.png  used on input line 54.
+(pdftex.def)             Requested size: 203.83417pt x 190.72598pt.
+ [3 <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_MSLP_20111208_0000.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_MSLP_20111208_0600.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_MSLP_20111208_1200.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_MSLP_20111208_1800.png>] [4 <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_Windspeed_20111208_1200_850hPa.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_Windspeed_20111208_1200_500hPa.png>]
+<plots/ERA_interim_Relative_Vorticity_20111208_0000_500hPa.png, id=43, 599.3592pt x 560.8152pt>
+File: plots/ERA_interim_Relative_Vorticity_20111208_0000_500hPa.png Graphic file (type png)
+<use plots/ERA_interim_Relative_Vorticity_20111208_0000_500hPa.png>
+Package pdftex.def Info: plots/ERA_interim_Relative_Vorticity_20111208_0000_500hPa.png  used on input line 68.
+(pdftex.def)             Requested size: 203.83417pt x 190.72598pt.
+<plots/ERA_interim_Relative_Vorticity_20111208_0600_500hPa.png, id=44, 599.3592pt x 560.8152pt>
+File: plots/ERA_interim_Relative_Vorticity_20111208_0600_500hPa.png Graphic file (type png)
+<use plots/ERA_interim_Relative_Vorticity_20111208_0600_500hPa.png>
+Package pdftex.def Info: plots/ERA_interim_Relative_Vorticity_20111208_0600_500hPa.png  used on input line 69.
+(pdftex.def)             Requested size: 203.83417pt x 190.72598pt.
+<plots/ERA_interim_Relative_Vorticity_20111208_1200_500hPa.png, id=45, 599.3592pt x 560.8152pt>
+File: plots/ERA_interim_Relative_Vorticity_20111208_1200_500hPa.png Graphic file (type png)
+<use plots/ERA_interim_Relative_Vorticity_20111208_1200_500hPa.png>
+Package pdftex.def Info: plots/ERA_interim_Relative_Vorticity_20111208_1200_500hPa.png  used on input line 70.
+(pdftex.def)             Requested size: 203.83417pt x 190.72598pt.
+<plots/ERA_interim_Relative_Vorticity_20111208_1800_500hPa.png, id=46, 599.3592pt x 560.8152pt>
+File: plots/ERA_interim_Relative_Vorticity_20111208_1800_500hPa.png Graphic file (type png)
+<use plots/ERA_interim_Relative_Vorticity_20111208_1800_500hPa.png>
+Package pdftex.def Info: plots/ERA_interim_Relative_Vorticity_20111208_1800_500hPa.png  used on input line 71.
+(pdftex.def)             Requested size: 203.83417pt x 190.72598pt.
+ [5 <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_specific_humidity20111208_0000_850hPa.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_specific_humidity20111208_0600_850hPa.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_specific_humidity20111208_1200_850hPa.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_specific_humidity20111208_1800_850hPa.png>]
+<plots/ERA_interim_Divergence_20111208_1200_850hPa.png, id=55, 599.3592pt x 560.8152pt>
+File: plots/ERA_interim_Divergence_20111208_1200_850hPa.png Graphic file (type png)
+<use plots/ERA_interim_Divergence_20111208_1200_850hPa.png>
+Package pdftex.def Info: plots/ERA_interim_Divergence_20111208_1200_850hPa.png  used on input line 77.
+(pdftex.def)             Requested size: 203.83417pt x 190.72598pt.
+<plots/ERA_interim_Divergence_20111208_1200_250hPa.png, id=56, 599.3592pt x 560.8152pt>
+File: plots/ERA_interim_Divergence_20111208_1200_250hPa.png Graphic file (type png)
+<use plots/ERA_interim_Divergence_20111208_1200_250hPa.png>
+Package pdftex.def Info: plots/ERA_interim_Divergence_20111208_1200_250hPa.png  used on input line 78.
+(pdftex.def)             Requested size: 203.83417pt x 190.72598pt.
+<plots/ERA_interim_Vertical_velocity_20111208_1200_850hPa.png, id=57, 599.3592pt x 560.8152pt>
+File: plots/ERA_interim_Vertical_velocity_20111208_1200_850hPa.png Graphic file (type png)
+<use plots/ERA_interim_Vertical_velocity_20111208_1200_850hPa.png>
+Package pdftex.def Info: plots/ERA_interim_Vertical_velocity_20111208_1200_850hPa.png  used on input line 79.
+(pdftex.def)             Requested size: 203.83417pt x 190.72598pt.
+<plots/ERA_interim_Vertical_velocity_20111208_1200_250hPa.png, id=58, 599.3592pt x 560.8152pt>
+File: plots/ERA_interim_Vertical_velocity_20111208_1200_250hPa.png Graphic file (type png)
+<use plots/ERA_interim_Vertical_velocity_20111208_1200_250hPa.png>
+Package pdftex.def Info: plots/ERA_interim_Vertical_velocity_20111208_1200_250hPa.png  used on input line 80.
+(pdftex.def)             Requested size: 203.83417pt x 190.72598pt.
+ [6 <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_Relative_Vorticity_20111208_0000_500hPa.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_Relative_Vorticity_20111208_0600_500hPa.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_Relative_Vorticity_20111208_1200_500hPa.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_Relative_Vorticity_20111208_1800_500hPa.png>]
+<plots/ERA_interim_CLWC_Cross_Section20111208_0600_Longitude_-5.png, id=66, 608.5134pt x 545.8794pt>
+File: plots/ERA_interim_CLWC_Cross_Section20111208_0600_Longitude_-5.png Graphic file (type png)
+<use plots/ERA_interim_CLWC_Cross_Section20111208_0600_Longitude_-5.png>
+Package pdftex.def Info: plots/ERA_interim_CLWC_Cross_Section20111208_0600_Longitude_-5.png  used on input line 87.
+(pdftex.def)             Requested size: 203.83417pt x 182.85614pt.
+<plots/ERA_interim_CIWC_Cross_Section20111208_0600_Longitude_-5.png, id=67, 608.5134pt x 545.8794pt>
+File: plots/ERA_interim_CIWC_Cross_Section20111208_0600_Longitude_-5.png Graphic file (type png)
+<use plots/ERA_interim_CIWC_Cross_Section20111208_0600_Longitude_-5.png>
+Package pdftex.def Info: plots/ERA_interim_CIWC_Cross_Section20111208_0600_Longitude_-5.png  used on input line 88.
+(pdftex.def)             Requested size: 203.83417pt x 182.85614pt.
+<plots/ERA_interim_CLWC_20111208_0600_850hPa.png, id=68, 599.3592pt x 560.8152pt>
+File: plots/ERA_interim_CLWC_20111208_0600_850hPa.png Graphic file (type png)
+<use plots/ERA_interim_CLWC_20111208_0600_850hPa.png>
+Package pdftex.def Info: plots/ERA_interim_CLWC_20111208_0600_850hPa.png  used on input line 89.
+(pdftex.def)             Requested size: 203.83417pt x 190.72598pt.
+<plots/ERA_interim_CLIC_20111208_0600_500hPa.png, id=69, 599.3592pt x 560.8152pt>
+File: plots/ERA_interim_CLIC_20111208_0600_500hPa.png Graphic file (type png)
+<use plots/ERA_interim_CLIC_20111208_0600_500hPa.png>
+Package pdftex.def Info: plots/ERA_interim_CLIC_20111208_0600_500hPa.png  used on input line 90.
+(pdftex.def)             Requested size: 203.83417pt x 190.72598pt.
+<plots/ERA_interim_CLWC_Cross_Section20111208_1200_Longitude_0.png, id=70, 608.5134pt x 545.8794pt>
+File: plots/ERA_interim_CLWC_Cross_Section20111208_1200_Longitude_0.png Graphic file (type png)
+<use plots/ERA_interim_CLWC_Cross_Section20111208_1200_Longitude_0.png>
+Package pdftex.def Info: plots/ERA_interim_CLWC_Cross_Section20111208_1200_Longitude_0.png  used on input line 97.
+(pdftex.def)             Requested size: 203.83417pt x 182.85614pt.
+<plots/ERA_interim_CIWC_Cross_Section20111208_1200_Longitude_0.png, id=71, 608.5134pt x 545.8794pt>
+File: plots/ERA_interim_CIWC_Cross_Section20111208_1200_Longitude_0.png Graphic file (type png)
+<use plots/ERA_interim_CIWC_Cross_Section20111208_1200_Longitude_0.png>
+Package pdftex.def Info: plots/ERA_interim_CIWC_Cross_Section20111208_1200_Longitude_0.png  used on input line 98.
+(pdftex.def)             Requested size: 203.83417pt x 182.85614pt.
+<plots/ERA_interim_CLWC_20111208_1200_850hPa.png, id=72, 599.3592pt x 560.8152pt>
+File: plots/ERA_interim_CLWC_20111208_1200_850hPa.png Graphic file (type png)
+<use plots/ERA_interim_CLWC_20111208_1200_850hPa.png>
+Package pdftex.def Info: plots/ERA_interim_CLWC_20111208_1200_850hPa.png  used on input line 99.
+(pdftex.def)             Requested size: 203.83417pt x 190.72598pt.
+<plots/ERA_interim_CLIC_20111208_1200_500hPa.png, id=73, 599.3592pt x 560.8152pt>
+File: plots/ERA_interim_CLIC_20111208_1200_500hPa.png Graphic file (type png)
+<use plots/ERA_interim_CLIC_20111208_1200_500hPa.png>
+Package pdftex.def Info: plots/ERA_interim_CLIC_20111208_1200_500hPa.png  used on input line 100.
+(pdftex.def)             Requested size: 203.83417pt x 190.72598pt.
+<plots/ERA_interim_w_Cross_Section20111208_1200_Longitude_-5.png, id=74, 608.5134pt x 545.8794pt>
+File: plots/ERA_interim_w_Cross_Section20111208_1200_Longitude_-5.png Graphic file (type png)
+<use plots/ERA_interim_w_Cross_Section20111208_1200_Longitude_-5.png>
+Package pdftex.def Info: plots/ERA_interim_w_Cross_Section20111208_1200_Longitude_-5.png  used on input line 108.
+(pdftex.def)             Requested size: 339.72592pt x 304.75748pt.
+ [7 <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_Divergence_20111208_1200_850hPa.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_Divergence_20111208_1200_250hPa.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_Vertical_velocity_20111208_1200_850hPa.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_Vertical_velocity_20111208_1200_250hPa.png>] [8 <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_CLWC_Cross_Section20111208_0600_Longitude_-5.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_CIWC_Cross_Section20111208_0600_Longitude_-5.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_CLWC_20111208_0600_850hPa.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_CLIC_20111208_0600_500hPa.png>] [9 <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_CLWC_Cross_Section20111208_1200_Longitude_0.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_CIWC_Cross_Section20111208_1200_Longitude_0.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_CLWC_20111208_1200_850hPa.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_CLIC_20111208_1200_500hPa.png>]
+<plots/ERA_interim_Windspeed_Cross_Section20111208_0000_Longitude_-20.png, id=98, 608.5134pt x 563.706pt>
+File: plots/ERA_interim_Windspeed_Cross_Section20111208_0000_Longitude_-20.png Graphic file (type png)
+<use plots/ERA_interim_Windspeed_Cross_Section20111208_0000_Longitude_-20.png>
+Package pdftex.def Info: plots/ERA_interim_Windspeed_Cross_Section20111208_0000_Longitude_-20.png  used on input line 115.
+(pdftex.def)             Requested size: 203.83417pt x 188.82762pt.
+<plots/ERA_interim_Windspeed_Cross_Section20111208_0600_Longitude_-14.png, id=99, 608.5134pt x 563.706pt>
+File: plots/ERA_interim_Windspeed_Cross_Section20111208_0600_Longitude_-14.png Graphic file (type png)
+<use plots/ERA_interim_Windspeed_Cross_Section20111208_0600_Longitude_-14.png>
+Package pdftex.def Info: plots/ERA_interim_Windspeed_Cross_Section20111208_0600_Longitude_-14.png  used on input line 116.
+(pdftex.def)             Requested size: 203.83417pt x 188.82762pt.
+<plots/ERA_interim_Windspeed_Cross_Section20111208_1200_Longitude_-5.png, id=100, 608.5134pt x 563.706pt>
+File: plots/ERA_interim_Windspeed_Cross_Section20111208_1200_Longitude_-5.png Graphic file (type png)
+<use plots/ERA_interim_Windspeed_Cross_Section20111208_1200_Longitude_-5.png>
+Package pdftex.def Info: plots/ERA_interim_Windspeed_Cross_Section20111208_1200_Longitude_-5.png  used on input line 117.
+(pdftex.def)             Requested size: 203.83417pt x 188.82762pt.
+<plots/ERA_interim_Windspeed_Cross_Section20111208_1800_Longitude_0.png, id=101, 608.5134pt x 563.706pt>
+File: plots/ERA_interim_Windspeed_Cross_Section20111208_1800_Longitude_0.png Graphic file (type png)
+<use plots/ERA_interim_Windspeed_Cross_Section20111208_1800_Longitude_0.png>
+Package pdftex.def Info: plots/ERA_interim_Windspeed_Cross_Section20111208_1800_Longitude_0.png  used on input line 118.
+(pdftex.def)             Requested size: 203.83417pt x 188.82762pt.
+ [10 <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_w_Cross_Section20111208_1200_Longitude_-5.png>] [11 <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_Windspeed_Cross_Section20111208_0000_Longitude_-20.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_Windspeed_Cross_Section20111208_0600_Longitude_-14.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_Windspeed_Cross_Section20111208_1200_Longitude_-5.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_Windspeed_Cross_Section20111208_1800_Longitude_0.png>]
+<plots/ERA_interim_potential_temperature_20111208_0000_850hPa.png, id=113, 599.3592pt x 558.4062pt>
+File: plots/ERA_interim_potential_temperature_20111208_0000_850hPa.png Graphic file (type png)
+<use plots/ERA_interim_potential_temperature_20111208_0000_850hPa.png>
+Package pdftex.def Info: plots/ERA_interim_potential_temperature_20111208_0000_850hPa.png  used on input line 133.
+(pdftex.def)             Requested size: 203.83417pt x 189.90671pt.
+<plots/ERA_interim_potential_temperature_20111208_0600_850hPa.png, id=114, 599.3592pt x 558.4062pt>
+File: plots/ERA_interim_potential_temperature_20111208_0600_850hPa.png Graphic file (type png)
+<use plots/ERA_interim_potential_temperature_20111208_0600_850hPa.png>
+Package pdftex.def Info: plots/ERA_interim_potential_temperature_20111208_0600_850hPa.png  used on input line 134.
+(pdftex.def)             Requested size: 203.83417pt x 189.90671pt.
+<plots/ERA_interim_potential_temperature_20111208_1200_850hPa.png, id=115, 599.3592pt x 558.4062pt>
+File: plots/ERA_interim_potential_temperature_20111208_1200_850hPa.png Graphic file (type png)
+<use plots/ERA_interim_potential_temperature_20111208_1200_850hPa.png>
+Package pdftex.def Info: plots/ERA_interim_potential_temperature_20111208_1200_850hPa.png  used on input line 135.
+(pdftex.def)             Requested size: 203.83417pt x 189.90671pt.
+<plots/ERA_interim_potential_temperature_20111208_1800_850hPa.png, id=116, 599.3592pt x 558.4062pt>
+File: plots/ERA_interim_potential_temperature_20111208_1800_850hPa.png Graphic file (type png)
+<use plots/ERA_interim_potential_temperature_20111208_1800_850hPa.png>
+Package pdftex.def Info: plots/ERA_interim_potential_temperature_20111208_1800_850hPa.png  used on input line 136.
+(pdftex.def)             Requested size: 203.83417pt x 189.90671pt.
+<plots/ERA_interim_Z_geostrophic_20111208_1200_850hPa.png, id=117, 606.1044pt x 443.256pt>
+File: plots/ERA_interim_Z_geostrophic_20111208_1200_850hPa.png Graphic file (type png)
+<use plots/ERA_interim_Z_geostrophic_20111208_1200_850hPa.png>
+Package pdftex.def Info: plots/ERA_interim_Z_geostrophic_20111208_1200_850hPa.png  used on input line 143.
+(pdftex.def)             Requested size: 203.83417pt x 149.06827pt.
+<plots/ERA_interim_Z_geostrophic_20111208_1200_500hPa.png, id=118, 606.1044pt x 443.256pt>
+File: plots/ERA_interim_Z_geostrophic_20111208_1200_500hPa.png Graphic file (type png)
+<use plots/ERA_interim_Z_geostrophic_20111208_1200_500hPa.png>
+Package pdftex.def Info: plots/ERA_interim_Z_geostrophic_20111208_1200_500hPa.png  used on input line 144.
+(pdftex.def)             Requested size: 203.83417pt x 149.06827pt.
+<plots/ERA_interim_Z_geostrophic_20111208_1200_250hPa.png, id=119, 606.1044pt x 443.256pt>
+File: plots/ERA_interim_Z_geostrophic_20111208_1200_250hPa.png Graphic file (type png)
+<use plots/ERA_interim_Z_geostrophic_20111208_1200_250hPa.png>
+Package pdftex.def Info: plots/ERA_interim_Z_geostrophic_20111208_1200_250hPa.png  used on input line 145.
+(pdftex.def)             Requested size: 203.83417pt x 149.06827pt.
+ [12]
+<plots/ERA_interim_theta_ageostrophic_20111208_1200_850hPa.png, id=123, 606.1044pt x 443.256pt>
+File: plots/ERA_interim_theta_ageostrophic_20111208_1200_850hPa.png Graphic file (type png)
+<use plots/ERA_interim_theta_ageostrophic_20111208_1200_850hPa.png>
+Package pdftex.def Info: plots/ERA_interim_theta_ageostrophic_20111208_1200_850hPa.png  used on input line 152.
+(pdftex.def)             Requested size: 203.83417pt x 149.06827pt.
+<plots/ERA_interim_theta_ageostrophic_20111208_1200_500hPa.png, id=124, 606.1044pt x 443.256pt>
+File: plots/ERA_interim_theta_ageostrophic_20111208_1200_500hPa.png Graphic file (type png)
+<use plots/ERA_interim_theta_ageostrophic_20111208_1200_500hPa.png>
+Package pdftex.def Info: plots/ERA_interim_theta_ageostrophic_20111208_1200_500hPa.png  used on input line 153.
+(pdftex.def)             Requested size: 203.83417pt x 149.06827pt.
+<plots/ERA_interim_theta_ageostrophic_20111208_1200_250hPa.png, id=125, 606.1044pt x 443.256pt>
+File: plots/ERA_interim_theta_ageostrophic_20111208_1200_250hPa.png Graphic file (type png)
+<use plots/ERA_interim_theta_ageostrophic_20111208_1200_250hPa.png>
+Package pdftex.def Info: plots/ERA_interim_theta_ageostrophic_20111208_1200_250hPa.png  used on input line 154.
+(pdftex.def)             Requested size: 203.83417pt x 149.06827pt.
+ [13 <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_potential_temperature_20111208_0000_850hPa.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_potential_temperature_20111208_0600_850hPa.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_potential_temperature_20111208_1200_850hPa.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_potential_temperature_20111208_1800_850hPa.png>]
+<plots/ERA_interim_T_Cross_Section20111208_0000_Longitude_-20.png, id=134, 608.5134pt x 559.3698pt>
+File: plots/ERA_interim_T_Cross_Section20111208_0000_Longitude_-20.png Graphic file (type png)
+<use plots/ERA_interim_T_Cross_Section20111208_0000_Longitude_-20.png>
+Package pdftex.def Info: plots/ERA_interim_T_Cross_Section20111208_0000_Longitude_-20.png  used on input line 161.
+(pdftex.def)             Requested size: 203.83417pt x 187.3751pt.
+<plots/ERA_interim_T_Cross_Section20111208_0600_Longitude_-14.png, id=135, 608.5134pt x 559.3698pt>
+File: plots/ERA_interim_T_Cross_Section20111208_0600_Longitude_-14.png Graphic file (type png)
+<use plots/ERA_interim_T_Cross_Section20111208_0600_Longitude_-14.png>
+Package pdftex.def Info: plots/ERA_interim_T_Cross_Section20111208_0600_Longitude_-14.png  used on input line 162.
+(pdftex.def)             Requested size: 203.83417pt x 187.3751pt.
+<plots/ERA_interim_T_Cross_Section20111208_1200_Longitude_-5.png, id=136, 608.5134pt x 559.3698pt>
+File: plots/ERA_interim_T_Cross_Section20111208_1200_Longitude_-5.png Graphic file (type png)
+<use plots/ERA_interim_T_Cross_Section20111208_1200_Longitude_-5.png>
+Package pdftex.def Info: plots/ERA_interim_T_Cross_Section20111208_1200_Longitude_-5.png  used on input line 163.
+(pdftex.def)             Requested size: 203.83417pt x 187.3751pt.
+ [14 <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_Z_geostrophic_20111208_1200_850hPa.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_Z_geostrophic_20111208_1200_500hPa.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_Z_geostrophic_20111208_1200_250hPa.png>] [15 <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_theta_ageostrophic_20111208_1200_850hPa.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_theta_ageostrophic_20111208_1200_500hPa.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_theta_ageostrophic_20111208_1200_250hPa.png>]
+<plots/ERA_interim_PV_Cross_Section20111208_0000_Longitude_-22.5.png, id=149, 608.5134pt x 559.3698pt>
+File: plots/ERA_interim_PV_Cross_Section20111208_0000_Longitude_-22.5.png Graphic file (type png)
+<use plots/ERA_interim_PV_Cross_Section20111208_0000_Longitude_-22.5.png>
+Package pdftex.def Info: plots/ERA_interim_PV_Cross_Section20111208_0000_Longitude_-22.5.png  used on input line 170.
+(pdftex.def)             Requested size: 452.9679pt x 416.39386pt.
+<plots/ERA_interim_divQ_20111208_0000_850hPa.png, id=150, 599.3592pt x 549.252pt>
+File: plots/ERA_interim_divQ_20111208_0000_850hPa.png Graphic file (type png)
+<use plots/ERA_interim_divQ_20111208_0000_850hPa.png>
+Package pdftex.def Info: plots/ERA_interim_divQ_20111208_0000_850hPa.png  used on input line 182.
+(pdftex.def)             Requested size: 203.83417pt x 186.79349pt.
+<plots/ERA_interim_divQ_20111208_0600_850hPa.png, id=151, 599.3592pt x 549.252pt>
+File: plots/ERA_interim_divQ_20111208_0600_850hPa.png Graphic file (type png)
+<use plots/ERA_interim_divQ_20111208_0600_850hPa.png>
+Package pdftex.def Info: plots/ERA_interim_divQ_20111208_0600_850hPa.png  used on input line 183.
+(pdftex.def)             Requested size: 203.83417pt x 186.79349pt.
+<plots/ERA_interim_divQ_20111208_1200_850hPa.png, id=152, 599.3592pt x 549.252pt>
+File: plots/ERA_interim_divQ_20111208_1200_850hPa.png Graphic file (type png)
+<use plots/ERA_interim_divQ_20111208_1200_850hPa.png>
+Package pdftex.def Info: plots/ERA_interim_divQ_20111208_1200_850hPa.png  used on input line 184.
+(pdftex.def)             Requested size: 203.83417pt x 186.79349pt.
+<plots/ERA_interim_divQ_20111208_1800_850hPa.png, id=153, 599.3592pt x 549.252pt>
+File: plots/ERA_interim_divQ_20111208_1800_850hPa.png Graphic file (type png)
+<use plots/ERA_interim_divQ_20111208_1800_850hPa.png>
+Package pdftex.def Info: plots/ERA_interim_divQ_20111208_1800_850hPa.png  used on input line 185.
+(pdftex.def)             Requested size: 203.83417pt x 186.79349pt.
+ [16 <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_T_Cross_Section20111208_0000_Longitude_-20.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_T_Cross_Section20111208_0600_Longitude_-14.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_T_Cross_Section20111208_1200_Longitude_-5.png>] [17 <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_PV_Cross_Section20111208_0000_Longitude_-22.5.png>] ("c:/Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\2\winter_storm_friedhelm.bbl" [18 <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_divQ_20111208_0000_850hPa.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_divQ_20111208_0600_850hPa.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_divQ_20111208_1200_850hPa.png> <c:/Users/jpwes/OneDrive - University of Leeds/Latex/dynamics_of_weather_systems/2/plots/ERA_interim_divQ_20111208_1800_850hPa.png>]) [19] ("c:/Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\2\winter_storm_friedhelm.aux") ) 
 Here is how much of TeX's memory you used:
- 4124 strings out of 479799
- 58607 string characters out of 2869722
- 359117 words of memory out of 3000000
- 21071 multiletter control sequences out of 15000+200000
- 540112 words of font info for 48 fonts, out of 3000000 for 9000
+ 4817 strings out of 479799
+ 81472 string characters out of 2869722
+ 367645 words of memory out of 3000000
+ 21673 multiletter control sequences out of 15000+200000
+ 551942 words of font info for 90 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,6n,72p,398b,206s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on "c:/Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\2\winter_storm_friedhelm.pdf" (1 page, 65587 bytes).
+ 66i,7n,72p,1271b,267s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/jpwes/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on "c:/Users\jpwes\OneDrive - University of Leeds\Latex\dynamics_of_weather_systems\2\winter_storm_friedhelm.pdf" (19 pages, 13185351 bytes).
 PDF statistics:
- 26 PDF objects out of 1000 (max. 8388607)
+ 224 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 251 words of extra memory for PDF output out of 10000 (max. 10000000)
 

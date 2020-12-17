@@ -1,5 +1,8 @@
 \babel@toc {english}{}
 \contentsline {section}{\numberline {1}Introduction}{1}{}%
-\contentsline {section}{\numberline {2}Methods}{1}{}%
-\contentsline {section}{\numberline {3}Analysis}{1}{}%
-\contentsline {section}{\numberline {4}Conclusion}{1}{}%
+\contentsline {section}{\numberline {2}Methods}{2}{}%
+\contentsline {section}{\numberline {3}Analysis}{2}{}%
+\contentsline {subsection}{\numberline {3.1}MSLP, Relative Vorticity and Wind Speed}{2}{}%
+\contentsline {subsection}{\numberline {3.2}Variations in Temperature and the Geostrophic Wind}{11}{}%
+\contentsline {subsection}{\numberline {3.3}PV Perspective}{16}{}%
+\contentsline {section}{\numberline {4}Conclusion}{18}{}%

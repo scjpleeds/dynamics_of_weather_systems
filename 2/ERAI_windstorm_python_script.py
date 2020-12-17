@@ -41,7 +41,7 @@ mon= "12"
 
 # Just want to output for one time and day...then use e.g.:
 hours = ["00","06","12","18"]
-days = ["06","07","08","09","10","11","12","13"]
+days = ["06","07","08"]
 
 # In[]: Loop over all years, months, days and hours specified above to load in the data and then plot horizontal windspeed
 # vertical cross-sections of windspeed, calculate relative vorticity and plot relative vorticity. 
@@ -103,12 +103,13 @@ for d in days:
         
         # In[]: 
         #define the pressure level you wish to use to plot the horizontal windspeed and relative vorticity plots
-        p_lev = 500 # this indicates 500hPa level
-        p_level = '500' # this is used to label the figures which are saved at the end
+        p_lev = 850 # this indicates 500hPa level
+        p_top= 250
+        p_level = '850' # this is used to label the figures which are saved at the end
         
         # Find at which index in the array for pressure the p_lev specified is located
         pressure = np.where(p==p_lev) 
-        
+        top = np.where(p==p_top)
         # Take time/pressure slice
         u_slice = u[0,pressure,:,:]
         v_slice = v[0,pressure,:,:]
@@ -117,6 +118,7 @@ for d in days:
         T_slice = T[0,pressure,:,:]
         D_slice = D[0,pressure,:,:]
         PV_slice = PV[0,pressure,:,:]
+        PV_top = PV[0,top,:,:]
         Q_slice = Q[0,pressure,:,:]
         CLWC_slice = CLWC[0,pressure,:,:]
         CIWC_slice = CIWC[0,pressure,:,:]
@@ -132,6 +134,7 @@ for d in days:
         Q_slice = Q_slice[0,0,:,:]
         CLWC_slice = CLWC_slice[0,0,:,:]
         CIWC_slice = CIWC_slice[0,0,:,:]
+        PV_top = PV_top[0,0,:,:]
 
         
        
@@ -309,6 +312,7 @@ for d in days:
         p0 = 1000
         theta = T_slice*(p0/p_lev)**(0.286)
 
+
         #Q vector
         dug_array = np.empty(ug.shape)
         dvg_array = np.empty(vg.shape)
@@ -421,12 +425,14 @@ for d in days:
         u_subset=  u_slice[lat_min_index:lat_max_index,lon_min_index:lon_max_index]
         v_subset = v_slice[lat_min_index:lat_max_index,lon_min_index:lon_max_index]
         w_subset = w_slice[lat_min_index:lat_max_index,lon_min_index:lon_max_index]
-        theta_subset = theta[lat_min_index:lat_max_index,lon_min_index:lon_max_index]
+        
+        
         #In[]: Plot the windspeed with windbarbs to indicate wind direction
 
         #Specify manually the contour levels that will be plotted
         wlevels = [0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75]
         
+
         #Plot the windspeed
         fig = plt.figure(figsize=(10,10))
         ax = plt.axes(projection=ccrs.PlateCarree())
@@ -470,7 +476,7 @@ for d in days:
             idx = (np.abs(array - value)).argmin()
             return array[idx]
         #Specify the longitude value you wish to plot a cross-section through
-        lon_cross_section = -10
+        lon_cross_section = -20
         #Find the nearest longitude value to lon_cross_section value that is contained in the ERA-interim longitude values
         nearest = find_nearest(lon_subset,lon_cross_section)
         print nearest , 'nearest value'
@@ -482,28 +488,185 @@ for d in days:
         #Create an array of windspeeds for all pressure levels, through the sub-section range of latitudes and 
         #through the longitude value just determined above
         windspeed_vert = wspeed_all[:,lat_min_index:lat_max_index,lon_slice_index]
+        CLWC_vert = CLWC[0,:,lat_min_index:lat_max_index,lon_slice_index]
+        CIWC_vert = CIWC[0,:,lat_min_index:lat_max_index,lon_slice_index]
+        T_vert = T[0,:,lat_min_index:lat_max_index,lon_slice_index]
+        Z_vert = Z[0,:,lat_min_index:lat_max_index,lon_slice_index]
+        PV_vert = PV[0,:,lat_min_index:lat_max_index,lon_slice_index]
+        Q_vert = Q[0,:,:lat_min_index:lat_max_index,lon_slice_index]
+        D_vert = D[0,:,:lat_min_index:lat_max_index,lon_slice_index]
+        
+        print D_vert.shape
         
         # In[]: Plot vertical cross-section for windspeed
+        w_vert = w[0,:,lat_min_index:lat_max_index,lon_slice_index]      
+        #ug_vert = ug[0,:lat_min_index:lat_max_index,lon_slice_index]
+        #vg_vert = vg[0,:lat_min_index:lat_max_index,lon_slice_index]
+        ug_slice = ug[lat_min_index:lat_max_index,lon_min_index:lon_max_index]
+        vg_slice = vg[lat_min_index:lat_max_index,lon_min_index:lon_max_index]
+        uag_slice = uag[lat_min_index:lat_max_index,lon_min_index:lon_max_index]
+        vag_slice = vag[lat_min_index:lat_max_index,lon_min_index:lon_max_index]
         
-        #Create the contour levels that will be used when plotting: this creates 41 equally spaced contour levels between 0 and 40
-        clevels=np.linspace(0,40,num=41)
+        fig = plt.figure(figsize=(10,10))
+        ax = plt.axes(projection=ccrs.PlateCarree())
+        #clevels = [-20,-18,-16,-14,-12,-10,-8,-6,-4,-2,0,2,4,6,8,10,12,14,16,18,20]
+        plt.contour(lon_subset, lat_subset,theta[lat_min_index:lat_max_index, lon_min_index:lon_max_index],10, transform=ccrs.PlateCarree(),colors='black')
+        plt.quiver(lon_subset[::3],lat_subset[::3], uag_slice[::3,::3],vag_slice[::3,::3],transform=ccrs.PlateCarree(),linewidths=widths,color='blue',pivot='middle')
+        #plt.quiver(lon_subset[::3],lat_subset[::3], uag_slice[::3,::3],vag_slice[::3,::3],transform=ccrs.PlateCarree(),color='red',pivot='middle')
+
+        #cbar = plt.colorbar(orientation='horizontal')
+        #cbar.outline.set_linewidth(0.5)
+        #cbar.ax.tick_params(labelsize=10)
+        #cbar.set_label('$m^2 s^{-2}$')
+        ax.add_feature(countries_50m, linewidth=1)
+        gl = ax.gridlines(color="black", linestyle="dotted",draw_labels='True')
+        gl.xlabels_top = False
+        gl.ylabels_left = False
+        gl.xlines = True
+        gl.ylines = True
+        gl.xlocator = mticker.FixedLocator([-40,-35,-30,-25,-20,-15,-10,-5, 0,5,10,15,20,25,30])
+        gl.ylocator = mticker.FixedLocator([30,35,40,45,50,55,60,65,70,75,80])
+        gl.xformatter = LONGITUDE_FORMATTER
+        gl.yformatter = LATITUDE_FORMATTER
+        #Save and show the figure
+        plt.title("Geopotential Height Contours and ageostrophic Wind Vectors")
+        plt.savefig(pathout+'/ERA_interim_theta_ageostrophic_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')
+
+        #clevels = np.linspace(180,300,lats.size)
+        fig = plt.figure(figsize=(10,10))
+        clevels=np.linspace(0,1.5,lats.size)
+        plt.gca().invert_yaxis()
+        plt.contourf(lat_subset, p, PV_vert[0,:,:]*10**6,levels=clevels,cmap='Reds',extend='max')
+        cbar = plt.colorbar(orientation='horizontal')
+        cbar.outline.set_linewidth(0.5)
+        cbar.ax.tick_params(labelsize=10)
+        cbar.set_label('$PVU$')
+        plt.title("PV")
+        #save the figures for all dates and times 
+        plt.savefig(pathout+'/ERA_interim_PV_Cross_Section'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_Longitude_'+str(lon_cross_section)+'.png',format ='png', dpi=150, bbox_inches='tight')
+
+        fig = plt.figure(figsize=(10,10))
+        #clevels=np.linspace(0,1.5,lats.size)
+        plt.gca().invert_yaxis()
+        plt.contourf(lat_subset, p, Q_vert[0,:,:]*10**6,cmap='Reds',extend='max')
+        cbar = plt.colorbar(orientation='horizontal')
+        cbar.outline.set_linewidth(0.5)
+        cbar.ax.tick_params(labelsize=10)
+        cbar.set_label('$PVU$')
+        plt.title("PV")
+        #save the figures for all dates and times 
+        plt.savefig(pathout+'/ERA_interim_Q_Cross_Section'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_Longitude_'+str(lon_cross_section)+'.png',format ='png', dpi=150, bbox_inches='tight')
+
+
+        
+        
+        
+        fig = plt.figure(figsize=(10,10))
+        ax = plt.axes(projection=ccrs.PlateCarree())
+        clevels = np.linspace(0,1.5,lats.size)
+        plt.contour(lon_subset, lat_subset,theta[lat_min_index:lat_max_index, lon_min_index:lon_max_index],10, transform=ccrs.PlateCarree(),colors='black')
+        plt.contourf(lon_subset, lat_subset,PV_top[lat_min_index:lat_max_index, lon_min_index:lon_max_index]*10**6, transform=ccrs.PlateCarree(),levels=clevels,cmap='Reds',extend='both')
+        cbar = plt.colorbar(orientation='horizontal')
+        cbar.outline.set_linewidth(0.5)
+        cbar.ax.tick_params(labelsize=10)
+        cbar.set_label('$10^{-6}$ PVU')
+        ax.add_feature(countries_50m, linewidth=1)
+        gl = ax.gridlines(color="black", linestyle="dotted",draw_labels='True')
+        gl.xlabels_top = False
+        gl.ylabels_left = False
+        gl.xlines = True
+        gl.ylines = True
+        gl.xlocator = mticker.FixedLocator([-40,-35,-30,-25,-20,-15,-10,-5, 0,5,10,15,20,25,30])
+        gl.ylocator = mticker.FixedLocator([30,35,40,45,50,55,60,65,70,75,80])
+        gl.xformatter = LONGITUDE_FORMATTER
+        gl.yformatter = LATITUDE_FORMATTER
+        #Save and show the figure
+        plt.title("Potential Vorticity")
+        plt.savefig(pathout+'/ERA_interim_potential_vorticity_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')
+
+        Qx_subset = Qx[lat_min_index:lat_max_index,lon_min_index:lon_max_index]
+        Qy_subset = Qy[lat_min_index:lat_max_index,lon_min_index:lon_max_index]
+        ug_subset = ug[lat_min_index:lat_max_index,lon_min_index:lon_max_index]
+        vg_subset = vg[lat_min_index:lat_max_index,lon_min_index:lon_max_index]
+
+
+
+        fig = plt.figure(figsize=(10,10))
+        ax = plt.axes(projection=ccrs.PlateCarree())
+        clevels=np.linspace(-15,15,lats.size)*10**-14
+        widths = np.linspace(-10,10,lats.size)*10**5
+        templevels=np.linspace(230,290,35)
+        cont = plt.contourf(lon_subset, lat_subset,-2*divQ[lat_min_index:lat_max_index, lon_min_index:lon_max_index], transform=ccrs.PlateCarree(),levels=clevels,cmap='seismic',extend='both')
+        #plt.quiver(lon_subset[::3],lat_subset[::3],ug_subset[::3,::3],vg_subset[::3,::3],color='black',transform=ccrs.PlateCarree(),linewidth=widths)
+        ptemp = plt.contour(lon_subset,lat_subset,theta[lat_min_index:lat_max_index,lon_min_index:lon_max_index],transform=ccrs.PlateCarree(),levels=templevels,colors='black')
+        plt.clabel(ptemp,inline=1,fontsize=10) 
+        cbar = plt.colorbar(cont,orientation='horizontal')
+        cbar.outline.set_linewidth(0.5)
+        cbar.ax.tick_params(labelsize=10)
+        cbar.set_label('$mkg^{-1}s^{-1}$')
+        ax.add_feature(countries_50m, linewidth=1)
+        gl = ax.gridlines(color="black", linestyle="dotted",draw_labels='True')
+        gl.xlabels_top = False
+        gl.ylabels_left = False
+        gl.xlines = True
+        gl.ylines = True
+        gl.xlocator = mticker.FixedLocator([-40,-35,-30,-25,-20,-15,-10,-5, 0,5,10,15,20,25,30])
+        gl.ylocator = mticker.FixedLocator([30,35,40,45,50,55,60,65,70,75,80])
+        gl.xformatter = LONGITUDE_FORMATTER
+        gl.yformatter = LATITUDE_FORMATTER
+        #Save and show the figure
+        plt.title("")
+        plt.savefig(pathout+'/ERA_interim_divQ_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight') 
+
+        
+        
+        #Plot the vertical cross-section
+'''
+        clevels = np.linspace(-1.5,1.5,50)
+        fig = plt.figure(figsize=(10,10))
+        plt.gca().invert_yaxis()
+        plt.contourf(lat_subset, p, w_vert[0,:,:],levels=clevels,cmap='seismic',extend='max')
+        cbar = plt.colorbar(orientation='horizontal')
+        cbar.outline.set_linewidth(0.5)
+        cbar.ax.tick_params(labelsize=10)
+        cbar.set_label('$ms^{-1}$')
+        plt.title("Vertical Velocity")
+        #save the figures for all dates and times 
+        plt.savefig(pathout+'/ERA_interim_w_Cross_Section'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_Longitude_'+str(lon_cross_section)+'.png',format ='png', dpi=150, bbox_inches='tight')
+
+        clevels=np.linspace(0,3,41)*10**-4
         
         #Plot the vertical cross-section
         fig = plt.figure(figsize=(10,10))
         plt.gca().invert_yaxis()
-        plt.contourf(lat_subset, p, windspeed_vert[:,:,0], levels=clevels, cmap=plt.cm.rainbow,extend='max')
+        plt.contourf(lat_subset, p, CLWC_vert[0,:,:],levels=clevels,cmap=plt.cm.rainbow,extend='max')
         cbar = plt.colorbar(orientation='horizontal')
         cbar.outline.set_linewidth(0.5)
         cbar.ax.tick_params(labelsize=10)
-        cbar.set_label('Wind speed (ms$^{-1}$)')
-        plt.title("Windspeed")
+        cbar.set_label('')
+        plt.title("Cloud Liquid Water Content")
         #save the figures for all dates and times 
-        plt.savefig(pathout+'/ERA_interim_Windspeed_Cross_Section'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_Longitude_'+str(lon_cross_section)+'.png',format ='png', dpi=150, bbox_inches='tight')
+        plt.savefig(pathout+'/ERA_interim_CLWC_Cross_Section'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_Longitude_'+str(lon_cross_section)+'.png',format ='png', dpi=150, bbox_inches='tight')
 
+        clevels=np.linspace(0,2,41)*10**-4
         
+        #Plot the vertical cross-section
+        fig = plt.figure(figsize=(10,10))
+        plt.gca().invert_yaxis()
+        plt.contourf(lat_subset, p, CIWC_vert[0,:,:],levels=clevels,cmap=plt.cm.rainbow,extend='max')
+        cbar = plt.colorbar(orientation='horizontal')
+        cbar.outline.set_linewidth(0.5)
+        cbar.ax.tick_params(labelsize=10)
+        cbar.set_label('')
+        plt.title("Cloud Ice Water Content")
+        #save the figures for all dates and times 
+        plt.savefig(pathout+'/ERA_interim_CIWC_Cross_Section'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_Longitude_'+str(lon_cross_section)+'.png',format ='png', dpi=150, bbox_inches='tight')
+
+
         print 'plotted  windspeed cross section now to plot relative vorticity'
         #print MSLP_slice.shape 
         # In[]: Plot the relative vorticity
+
         fig = plt.figure(figsize=(10,10))
         ax = plt.axes(projection=ccrs.PlateCarree())
         clevels = [-20,-18,-16,-14,-12,-10,-8,-6,-4,-2,0,2,4,6,8,10,12,14,16,18,20]
@@ -592,16 +755,15 @@ for d in days:
         #Save and show the figure
         plt.title("Divergence")
         plt.savefig(pathout+'/ERA_interim_Divergence_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')
-       
 
         fig = plt.figure(figsize=(10,10))
         ax = plt.axes(projection=ccrs.PlateCarree())
         clevels = np.linspace(0,2,lats.size)
-        plt.contourf(lon_subset, lat_subset,PV_slice[lat_min_index:lat_max_index, lon_min_index:lon_max_index]*10**4,levels=clevels, transform=ccrs.PlateCarree(),cmap='Reds',extend='both')
+        plt.contourf(lon_subset, lat_subset,PV_slice[lat_min_index:lat_max_index, lon_min_index:lon_max_index]*10**6, transform=ccrs.PlateCarree(),levels=clevels,cmap='Reds',extend='both')
         cbar = plt.colorbar(orientation='horizontal')
         cbar.outline.set_linewidth(0.5)
         cbar.ax.tick_params(labelsize=10)
-        cbar.set_label('$10^{-4}$ PVU')
+        cbar.set_label('$10^{-6}$ PVU')
         ax.add_feature(countries_50m, linewidth=1)
         gl = ax.gridlines(color="black", linestyle="dotted",draw_labels='True')
         gl.xlabels_top = False
@@ -616,10 +778,9 @@ for d in days:
         plt.title("Potential Vorticity")
         plt.savefig(pathout+'/ERA_interim_potential_vorticity_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')
 
-
         fig = plt.figure(figsize=(10,10))
         ax = plt.axes(projection=ccrs.PlateCarree())
-        clevels = np.linspace(230,290,lats.size)
+        clevels = np.linspace(230,330,lats.size)
         plt.contourf(lon_subset, lat_subset,T_slice[lat_min_index:lat_max_index, lon_min_index:lon_max_index],levels=clevels, transform=ccrs.PlateCarree(),cmap='jet',extend='both')
         cbar = plt.colorbar(orientation='horizontal')
         cbar.outline.set_linewidth(0.5)
@@ -642,8 +803,9 @@ for d in days:
         fig = plt.figure(figsize=(10,10))
         ax = plt.axes(projection=ccrs.PlateCarree())
         clevels = np.linspace(230,290,lats.size)
-        plt.contourf(lon_subset, lat_subset,theta[lat_min_index:lat_max_index, lon_min_index:lon_max_index],levels=clevels, transform=ccrs.PlateCarree(),cmap='jet',extend='both')
-        cbar = plt.colorbar(orientation='horizontal')
+        cont= plt.contourf(lon_subset, lat_subset,theta[lat_min_index:lat_max_index, lon_min_index:lon_max_index],levels=clevels, transform=ccrs.PlateCarree(),cmap='jet',extend='both')
+        plt.contour(lon_subset,lat_subset,MSLP_slice[lat_min_index:lat_max_index,lon_min_index:lon_max_index],15,colors='black',transform=ccrs.PlateCarree())
+        cbar = plt.colorbar(cont,orientation='horizontal')
         cbar.outline.set_linewidth(0.5)
         cbar.ax.tick_params(labelsize=10)
         cbar.set_label('$K$')
@@ -661,7 +823,6 @@ for d in days:
         plt.title("Potential Temperature")
         plt.savefig(pathout+'/ERA_interim_potential_temperature_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')
    
-
         fig = plt.figure(figsize=(10,10))
         ax = plt.axes(projection=ccrs.PlateCarree())
         clevels = np.linspace(0,8,lats.size)
@@ -686,7 +847,7 @@ for d in days:
        
         fig = plt.figure(figsize=(10,10))
         ax = plt.axes(projection=ccrs.PlateCarree())
-        clevels = np.linspace(0,0.5,lats.size)
+        clevels = np.linspace(0,1,lats.size)
         plt.contourf(lon_subset, lat_subset,CLWC_slice[lat_min_index:lat_max_index, lon_min_index:lon_max_index]*10**3,levels=clevels, transform=ccrs.PlateCarree(),cmap='Reds',extend='both')
         cbar = plt.colorbar(orientation='horizontal')
         cbar.outline.set_linewidth(0.5)
@@ -737,7 +898,7 @@ for d in days:
         fig = plt.figure(figsize=(10,10))
         ax = plt.axes(projection=ccrs.PlateCarree())
         #clevels = [-20,-18,-16,-14,-12,-10,-8,-6,-4,-2,0,2,4,6,8,10,12,14,16,18,20]
-        plt.contour(lon_subset, lat_subset,Z_slice[lat_min_index:lat_max_index, lon_min_index:lon_max_index],10, transform=ccrs.PlateCarree(),colors='black')
+        plt.contour(lon_subset, lat_subset,Z_slice[lat_min_index:lat_max_index, lon_min_index:lon_max_index],15, transform=ccrs.PlateCarree(),colors='black')
         plt.quiver(lon_subset[::3],lat_subset[::3], ug_slice[::3,::3],vg_slice[::3,::3],transform=ccrs.PlateCarree(),linewidths=widths,color='blue',pivot='middle')
         #plt.quiver(lon_subset[::3],lat_subset[::3], uag_slice[::3,::3],vag_slice[::3,::3],transform=ccrs.PlateCarree(),color='red',pivot='middle')
 
@@ -758,11 +919,11 @@ for d in days:
         #Save and show the figure
         plt.title("Geopotential Height Contours and Geostrophic Wind Vectors")
         plt.savefig(pathout+'/ERA_interim_Z_geostrophic_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')
-      
+    
         fig = plt.figure(figsize=(10,10))
         ax = plt.axes(projection=ccrs.PlateCarree())
         #clevels = [-20,-18,-16,-14,-12,-10,-8,-6,-4,-2,0,2,4,6,8,10,12,14,16,18,20]
-        plt.contour(lon_subset, lat_subset,Z_slice[lat_min_index:lat_max_index, lon_min_index:lon_max_index],10, transform=ccrs.PlateCarree(),colors='black')
+        plt.contour(lon_subset, lat_subset,Z_slice[lat_min_index:lat_max_index, lon_min_index:lon_max_index],25, transform=ccrs.PlateCarree(),colors='black')
         #plt.quiver(lon_subset[::3],lat_subset[::3], ug_slice[::3,::3],vg_slice[::3,::3],transform=ccrs.PlateCarree(),color='blue',pivot='middle')
         plt.quiver(lon_subset[::3],lat_subset[::3], uag_slice[::3,::3],vag_slice[::3,::3],transform=ccrs.PlateCarree(),linewidths=widths,color='red',pivot='middle')
         #cbar = plt.colorbar(orientation='horizontal')
@@ -781,17 +942,16 @@ for d in days:
         gl.yformatter = LATITUDE_FORMATTER
         #Save and show the figure
         plt.title("Geopotential Height Contours and Ageostrophic Wind Vectors")
-        plt.savefig(pathout+'/ERA_interim_Z_ageostrophic_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight') 
-        
-        
+        plt.savefig(pathout+'/ERA_interim_Z_ageostrophic_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')    
+
         Qx_subset = Qx[lat_min_index:lat_max_index,lon_min_index:lon_max_index]
         Qy_subset = Qy[lat_min_index:lat_max_index,lon_min_index:lon_max_index]
         #N = np.sqrt(Qx_subset**2 + Qy_subset**2) 
         #Qx_subset = Qx_subset/N
         #Qy_subset = Qy_subset/N 
-        print Qx_subset.shape
-        print Qy_subset.shape
-        print divQ[lat_min_index:lat_max_index,lon_min_index:lon_max_index].shape
+        #print Qx_subset.shape
+        #print Qy_subset.shape
+        #print divQ[lat_min_index:lat_max_index,lon_min_index:lon_max_index].shape
 
         fig = plt.figure(figsize=(10,10))
         ax = plt.axes(projection=ccrs.PlateCarree())
@@ -818,10 +978,13 @@ for d in days:
 
         fig = plt.figure(figsize=(10,10))
         ax = plt.axes(projection=ccrs.PlateCarree())
-        clevels=np.linspace(-8,8,lats.size)*10**-13
-        widths = np.linspace(0,2,lats.size)*10**-13
+        clevels=np.linspace(-3.5,3.5,lats.size)*10**-14
+        widths = np.linspace(0,2,lats.size)*10**-16
+        templevels=np.linspace(230,290,35)
         cont = plt.contourf(lon_subset, lat_subset,-2*divQ[lat_min_index:lat_max_index, lon_min_index:lon_max_index], transform=ccrs.PlateCarree(),levels=clevels,cmap='seismic',extend='both')
-        plt.quiver(lon_subset[::5],lat_subset[::5],Qx_subset[::5,::5],Qy_subset[::5,::5],color='black',transform=ccrs.PlateCarree(),linewidth=widths)
+        #plt.quiver(lon_subset[::5],lat_subset[::5],Qx_subset[::5,::5],Qy_subset[::5,::5],color='black',transform=ccrs.PlateCarree(),linewidth=widths)
+        ptemp = plt.contour(lon_subset,lat_subset,theta[lat_min_index:lat_max_index,lon_min_index:lon_max_index],transform=ccrs.PlateCarree(),levels=templevels,colors='black')
+        plt.clabel(ptemp,inline=1,fontsize=10) 
         cbar = plt.colorbar(cont,orientation='horizontal')
         cbar.outline.set_linewidth(0.5)
         cbar.ax.tick_params(labelsize=10)
@@ -838,10 +1001,5 @@ for d in days:
         gl.yformatter = LATITUDE_FORMATTER
         #Save and show the figure
         plt.title("")
-        plt.savefig(pathout+'/ERA_interim_divQ_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight')
-        
-
-        
-
-     
-#        
+        plt.savefig(pathout+'/ERA_interim_divQ_'+str(year)+''+str(mon)+''+str(d)+'_'+str(time)+'00_'+str(p_level)+'hPa.png',format ='png', dpi=150, bbox_inches='tight') 
+'''
